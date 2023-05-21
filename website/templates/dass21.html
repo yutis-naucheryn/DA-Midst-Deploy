@@ -346,15 +346,14 @@
 <br />
 <button type="button" class="btn btn-secondary" onclick="calculateDASS21Score()" style="float: right; margin-left: 10px;">Calculate score</button>
 <button type="button" class="btn btn-outline-secondary" onclick="dass21_result()" style="float: right;">Previous scores</button>
-
 <br />
-<br /><br />
-
+{% if results %}
+<br />
+<br />
 <!-- Display latest score -->
 <h5>Latest DASS-21 score: </h5>
 <p>If you just submitted a new survey, please refresh to view the newest score.
   To view all score history, please click 'Previous scores' button above.</p>
-{% if results %}
 <table style="margin: 0 auto;">
   <thead>
     <tr>
