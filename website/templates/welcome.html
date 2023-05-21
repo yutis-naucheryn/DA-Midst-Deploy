@@ -1,0 +1,101 @@
+{% extends "base.html" %} {% block title %}DA-Midst{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DA-Midst</title>
+    <style>
+      body {
+        background-image: url("{{ url_for('static', filename='/image/welcome-bg.png') }}");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .logo {
+        font-size: 72px; /* Set font size */
+        font-weight: bold; /* Set font weight */
+        color: #ffffff; /* Set text color */
+        text-align: center; /* Center the text horizontally */
+        text-shadow: 2px 2px 4px #878787;
+      }
+      .welcome {
+        font-size: 24px; /* Set font size */
+        color: #484848;
+        text-align: center; /* Center the text horizontally */
+        margin-top: 20px; /* Add top margin */
+      }
+
+      /* Button styles */
+      .button {
+        background-color: #695a4c; /* Set button color */
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 25px; /* Add rounded corners */
+        transition: background-color 0.3s; /* Add hover effect */
+        width: 5cm;
+      }
+      
+      /* Button hover styles */
+      .button:hover {
+        background-color: #443629;
+      }
+    </style>
+  </head>
+  <body>
+    <br>
+    <!-- welcome words -->
+    <div class="welcome">
+    <p style="text-align: left; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 32px; line-height: 1;">
+      <b>WELCOME TO</b>
+    </p></div>
+    
+    <div style="display: flex; flex-direction: row;">
+    <div class="logo">
+    <p style="text-align: left; font-family: 'Times New Roman', Times, serif; font-size: 120px; line-height: 1;">
+      <i><b>D<span style="color: #d9f17b;">A</span>-Midst</b></i></p></div>
+    <p style="margin-top: 2cm; margin-left: 20px; font-family: 'Times New Roman', Times, serif;
+      font-size: 24px; color: #443629">
+      <i><b>Damai, Amidst, Midst</b> - In the middle of peace</i></p>
+    </div>
+    <p style="text-align: left; ">
+      <span style="font-size: 24px; line-height: 1.5;">
+        A Chatbot-Enabled Platform for Stress and Anxiety Management System
+      </span>
+      <br>
+       Designed to provide university students with simple yet effective tools to help manage stress and promote mental well-being.
+    </p>
+
+<br>
+<div style="display: flex; flex-direction: row;">
+    <p style="margin-right: 28%; font-size: 48px; display: inline-block; border: 2px solid #F6F5E9; padding: 20px;
+    font-family: monospace; text-shadow: 2px 2px 4px #d4d4d4; color: #443629;">
+        LET'S<br>
+        START<br>
+        THE<br>
+        JOURNEY &#160;&#160;&#160;&#160;&#160;
+      </p>
+      
+    <!-- Register button -->
+    <div style="display: flex; flex-direction: column; margin-top: 50px;">
+    <p style="text-align: right;">
+        <a href="/register" class="button">Register</a></p>
+    <p style="text-align: right; margin-top: 5px;">
+        <a href="/login" class="button">Login</a></p>
+    <!-- <p style="text-align: right;">Already have an account? <a href="/login">Log in here</a></p> -->
+    </div>
+</div>
+    
+  </body>
+</html>
+
+    
+{% endblock %}

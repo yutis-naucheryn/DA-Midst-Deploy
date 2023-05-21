@@ -1,0 +1,183 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Tell the time
+  steps:
+  - intent: inquire_time
+  - action: action_tell_time
+
+- rule: Where I live intent
+  steps:
+  - intent: where_i_live
+  - action: action_remember_where
+
+- rule: Time Difference Intent
+  steps:
+  - intent: inquire_time_difference
+  - action: action_time_difference
+
+- rule: Stress Handling Advice
+  steps:
+  - intent: ask_for_stress_handling_advice
+  - action: utter_suggest_activity
+
+- rule: User Needs Help
+  steps:
+  - intent: mood_helpless
+  - action: utter_to_help
+
+- rule: User Done Pouring Out #say whatever they wants to say and needs no reply
+  steps:
+  - intent: finish_talking
+  - action: utter_done_listen
+
+- rule: Stress Advoidance Advice
+  steps: 
+  - intent: ask_for_stress_avoidence
+  - action: utter_stress_avoid_advice
+
+- rule: User Refuse Help
+  steps:
+  - intent: refuse_help
+  - action: utter_end_conversation
+
+- rule: User is in positive mood
+  steps:
+  - intent: mood_positive
+  - action: utter_happy
+
+- rule: User is in neutral mood
+  steps:
+  - intent: mood_neutral
+  - action: utter_end_conversation
+
+- rule: User is in negative mood
+  steps:
+  - intent: mood_negative
+  - action: utter_talk_about_it
+
+- rule: User is having assignment problem
+  steps:
+  - intent: problem_assignment
+  - action: utter_too_many_assignments_advice
+
+- rule: User is having financial issues
+  steps:
+  - intent: problem_financial
+  - action: utter_financial_issues_advice
+
+- rule: User is having presentation problem
+  steps: 
+  - intent: problem_presentation
+  - action: utter_difficulties_to_do_presentation_advice
+
+- rule: User is in critical situation
+  steps:
+  - intent: mood_danger
+  - action: utter_danger
+
+- rule: User wanted a listener
+  steps:
+  - intent: ask_for_listening
+  - action: utter_listen
+
+- rule: Calming Advice
+  steps:
+  - intent: ask_for_calming_advice
+  - action: utter_calming_advice
+
+- rule: Emotional Venting Support
+  steps:
+  - intent: ask_for_emotional_venting_support
+  - action: utter_emotional_venting_support
+
+- rule: When user is worrying
+  steps:
+  - intent: worrying
+  - action: utter_respond_to_worry
+
+- rule: Out of scope handlnig
+  steps:
+  - intent: out_of_scope
+  - action: action_fallback
+
+- rule: Recommend Music
+  steps:
+  - intent: recommend_music
+  - action:  utter_recommend_music
+
+- rule: Report Bullying
+  steps:
+  - intent: report_bullying
+  - action: utter_report_bullying
+
+- rule: Catch-all rule for unknown inputs
+  steps:
+  - intent: '*'
+  - action: action_handle_unknown_intent
+
+- rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+  steps:
+  - intent: nlu_fallback
+  - action: utter_please_rephrase
+
+- rule: Gratitude
+  steps:
+  - intent: gratitude
+  - action: utter_gratitude
+
+- rule: Mindfulness
+  steps:
+  - intent: mindfulness
+  - action: utter_mindfulness
+
+- rule: Time Management Issue
+  steps:
+  - intent: time_management
+  - action: utter_time_management
+
+- rule: Time Management Tips
+  steps:
+  - intent: time_management_tips
+  - action: utter_time_management_tips
+
+- rule: Self Care
+  steps:
+  - intent: self_care
+  - action: utter_self_care
+
+- rule: Self Care Tips
+  steps:
+  - intent: self_care_tips
+  - action: utter_self_care_tips
+
+- rule: Social Support
+  steps:
+  - intent: social_support
+  - action: utter_social_support
+
+- rule: Procrastination
+  steps:
+  - intent: procrastination
+  - action: utter_procrastination
+
+- rule: Sleeping Trouble
+  steps:
+  - intent: sleeping_trouble
+  - action: utter_sleeping_trouble
+
+- rule: Thank you
+  steps:
+  - intent: thank_you
+  - action: utter_helping

@@ -1,0 +1,106 @@
+{% extends "base.html" %} {% block title %}All Journal{% endblock %}
+
+{% block content %}
+<html>
+<head>
+<!--.myJournal is to wrap the text of journal if it is too long-->
+<style>
+    .myJournal{
+        word-wrap: break-word;
+    }
+
+    .note-date {
+    color: #999;
+    font-size: 0.8rem;
+    }
+
+    .note-date p {
+    display: inline-block;
+    margin-right: 1rem;
+    }
+
+</style>  
+</head>
+<body>
+{% if user.notes %}
+
+<br /><br />
+<p style="line-height: 1; font-size: 12px; text-align: right;" class="popup-info">
+    <span style="font-size: 16px;">🛈</span>
+    <button onclick="changeColor_green()" 
+    style="color: #C7EDCC; background-color: #C7EDCC; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+    <button onclick="changeColor_yellow()" 
+    style="color: #FAF9DE; background-color: #FAF9DE; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+    <button onclick="changeColor_orange()" 
+    style="color: #FFF2E2; background-color: #FFF2E2; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+    <button onclick="changeColor_red()" 
+    style="color: #FDE6E0; background-color: #FDE6E0; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+    <button onclick="changeColor_blue()" 
+    style="color: #DCE2F1; background-color: #DCE2F1; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+    <button onclick="changeColor_purple()" 
+    style="color: #E9EBFE; background-color: #E9EBFE; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+    <button onclick="changeColor_grey()" 
+    style="color: #EAEAEF; background-color: #EAEAEF; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+    <button onclick="changeColor_greenLight()" 
+    style="color: #E3EDCD; background-color: #E3EDCD; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+    <button onclick="changeColor_white()" 
+    style="color: #FFFFFF; background-color: #FFFFFF; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  </p>
+  
+<div style="display: flex; flex-direction: row;">
+    <img src="{{ url_for('static', filename='/image/menu.png') }}" 
+    alt="number-two" style="width:1cm;height:1cm; margin-right: 20px; margin-top: 5px">
+    <h3 style="margin-top: 5px;">Welcome to your Personal Space!</h3></div>
+
+<p style="margin-left: 1.5cm;  text-align: justify;">
+Here you can see all the stress-relief journals that you've written. 
+We hope that reviewing your past entries will help you reflect on your experiences and see how far you've come.
+
+If you'd like to edit or delete a journal entry, simply click on the respective buttons beside each entry.
+
+To print or save all your entries in a PDF file, please click the "Print Journal" button below.
+
+Remember that journaling can be a great way to relieve stress, so keep on writing!
+</p>
+<p style="text-align: justify; flex: 1; color: rgb(62, 62, 62); font-size: 14px; margin-left: 1.5cm;">
+    For immediate assistance, please call: <a href="tel:+60327806803" target="_blank">+603 2780 6803</a> (Mon.-Fri. 9am-5pm, except public holidays).<br>
+    For more resources and information, please visit <a href="https://mmha.org.my/find-help" target="_blank">Malaysia Mental Health Association (MMHA)</a>.</p>
+
+<button type="button" class="btn btn-dark" OnClick="printNote()" style="float: right; margin:5px;">Print Journal</button>
+<button type="button" class="btn btn-outline-dark" OnClick="personal_space()" style="float: right; margin:5px;">Back</button>
+
+<br /><br />
+<hr style="border-top: 1px dotted #628CA0; margin-top: 20px;">
+<hr style="border-top: 1px dotted #628CA0;">
+<ul class="list-group list-group-flush" id="notes">
+    {% for note in user.notes|reverse %}
+    <!--display list of datetime-->
+    <br>
+    <div class="note-date">
+        <p style="line-height: 1;">↓ Created on: {{ note.date.strftime('%Y-%m-%d %H:%M:%S')|truncate(19, True, '') }}</p>
+        <p style="line-height: 1;">| &nbsp;&nbsp;Last updated on: {{ note.updated_on.strftime('%Y-%m-%d %H:%M:%S')|truncate(19, True, '') }}</p>
+
+      </div>
+    <!--display list of notes-->
+    <li class="list-group-item"><div class="myJournal">{{ note.data }}</div>
+        <!--delete notes-->
+        <button type="button" class="close" onClick="return confirm('Are you sure you want to delete this journal?') ? deleteNote({{ note.id }}) : false;"> <!--ignore this error-->
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <!--edit notes-->
+        <button type="button" class="btn btn-outline-secondary btn-sm" data-id="{{ note.id }}" style="float: right; margin:10px;" onClick="editNote(event)">Edit
+        </button>
+    </li>
+    {% endfor %}
+</ul>
+
+{% else %}
+<br />
+<br />
+<p>You haven't written any journal entries yet. Start journaling now to keep track of your thoughts and feelings.</p>
+<button type="button" class="btn btn-outline-info" OnClick="personal_space()" style="float: right; width: 4cm;">Start journaling</button>
+{% endif %}
+<br /><br /><br />
+</body>
+</html>
+{% endblock %}

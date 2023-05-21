@@ -1,0 +1,81 @@
+{% extends "base.html" %} {% block title %}Personal Spcae{% endblock %}
+
+{% block content %}
+<html>
+<head>
+
+</head>
+<body>
+<br />
+<h1 align="center">Personal Space</h1>
+<p style="line-height: 1; font-size: 12px; text-align: right;" class="popup-info">
+    <span style="font-size: 16px;">🛈</span>
+    <button onclick="changeColor_green()" 
+    style="color: #C7EDCC; background-color: #C7EDCC; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+    <button onclick="changeColor_yellow()" 
+    style="color: #FAF9DE; background-color: #FAF9DE; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+    <button onclick="changeColor_orange()" 
+    style="color: #FFF2E2; background-color: #FFF2E2; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+    <button onclick="changeColor_red()" 
+    style="color: #FDE6E0; background-color: #FDE6E0; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+    <button onclick="changeColor_blue()" 
+    style="color: #DCE2F1; background-color: #DCE2F1; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+    <button onclick="changeColor_purple()" 
+    style="color: #E9EBFE; background-color: #E9EBFE; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+    <button onclick="changeColor_grey()" 
+    style="color: #EAEAEF; background-color: #EAEAEF; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+    <button onclick="changeColor_greenLight()" 
+    style="color: #E3EDCD; background-color: #E3EDCD; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+    <button onclick="changeColor_white()" 
+    style="color: #FFFFFF; background-color: #FFFFFF; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  </p>
+<form method="POST">
+    <div style="display: flex; flex-direction: row;">
+        <img src="{{ url_for('static', filename='/image/writing.png') }}" 
+        alt="number-two" style="width:1cm;height:1cm; margin-right: 20px; margin-top: 5px">
+        <h3 style="margin-top: 5px;">Write What You Feel</h3></div>
+    <p style="margin-left: 1.5cm;  text-align: justify;">
+        Take a deep breath and feel free to write down your thoughts in the text area below. 
+        This is a safe space for you to express yourself and reflect on your day. 
+        You can write as much or as little as you like, and remember, there is no right or wrong way to journal. 
+        So go ahead, and let your thoughts flow onto the page.
+    </p>
+    <textarea name="note" id="note" class="form-control" rows="15"></textarea>
+    <br />
+    <div align="center">
+        <button type="submit" class="btn btn-info" style="float: right; width: 4cm;">Add New Journal</button>
+    </div>
+</form>
+<br />
+<br />
+{% if user.notes %}
+<div style="display: flex; flex-direction: row;">
+    <img src="{{ url_for('static', filename='/image/menu.png') }}" 
+    alt="number-two" style="width:1cm;height:1cm; margin-right: 20px; margin-top: 5px">
+    <h3 style="margin-top: 5px;">Previous Journals</h3></div>
+
+<p style="margin-left: 1.5cm; text-align: justify;">Hi {{ user.user_name }}.
+    If you would like to view your previously written journal entries, 
+    please click the "Previous Journal" button below.</p>
+<button type="button" class="btn btn-outline-info" OnClick="all_journal()" style="float: right; width: 4cm;">Previous Journal</button>
+
+{% else %}
+<br />
+<div style="display: flex; flex-direction: row;">
+    <img src="{{ url_for('static', filename='/image/menu.png') }}" 
+    alt="number-two" style="width:1cm;height:1cm; margin-right: 20px; margin-top: 5px">
+    <h3 style="margin-top: 5px;">Previous Journals</h3></div>
+<p style="margin-left: 1.5cm; text-align: justify;">Hi {{ user.user_name }}.
+    You haven't written any journal entries yet. Start journaling now to keep track of your thoughts and feelings.</p>
+
+{% endif %}
+<br /><br />
+<p style="text-align: left; flex: 1; color: rgb(62, 62, 62); font-size: 12px; margin-top: 10px;">
+    For immediate assistance, please call: <a href="tel:+60327806803" target="_blank">+603 2780 6803</a> (Mon.-Fri. 9am-5pm, except public holidays).<br>
+    For more resources and information, please visit <a href="https://mmha.org.my/find-help" target="_blank">Malaysia Mental Health Association (MMHA)</a>.</p>
+  
+
+<br /><br /><br />
+</body>
+</html>
+{% endblock %}

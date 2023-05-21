@@ -1,0 +1,146 @@
+{% extends "base.html" %} {% block title %}DASS-21 Result{% endblock %}
+
+{% block content %}
+
+<head>
+    <style>
+        /* Make table look neat */
+        table {
+          border-collapse: collapse;
+          width: 100%;
+          }
+          
+          /* Add border line to the table */
+          td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 5px;
+          }
+      
+        td.score {
+          padding-left: 20px;
+        }
+        .score-cube {
+          display: inline-block;
+          position: relative;
+          margin-right: 5px;
+          width: 12px;
+          height: 12px;
+          border: 1px solid #999999;
+          border-radius: 2px;
+        }
+      </style>
+    </head>
+
+<br /><br />
+<h1 align="center">DASS-21 Result</h1>
+<p style="line-height: 1; font-size: 12px; text-align: right;" class="popup-info">
+  <span style="font-size: 16px;">🛈</span>
+  <button onclick="changeColor_green()" 
+  style="color: #C7EDCC; background-color: #C7EDCC; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_yellow()" 
+  style="color: #FAF9DE; background-color: #FAF9DE; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_orange()" 
+  style="color: #FFF2E2; background-color: #FFF2E2; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_red()" 
+  style="color: #FDE6E0; background-color: #FDE6E0; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_blue()" 
+  style="color: #DCE2F1; background-color: #DCE2F1; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_purple()" 
+  style="color: #E9EBFE; background-color: #E9EBFE; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_grey()" 
+  style="color: #EAEAEF; background-color: #EAEAEF; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_greenLight()" 
+  style="color: #E3EDCD; background-color: #E3EDCD; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_white()" 
+  style="color: #FFFFFF; background-color: #FFFFFF; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+</p>
+
+<!-- display results -->
+{% if results %}
+
+<h5>Score interpretation</h5>
+<div><span class="score-cube ml-2" style="background-color:#51ffdf; margin-top: 5px;"></span>Normal
+  <span class="score-cube ml-2" style="background-color:#51ff62; margin-top: 5px;"></span>Mild
+  <span class="score-cube ml-2" style="background-color:#ebff51; margin-top: 5px;"></span>Moderate
+  <span class="score-cube ml-2" style="background-color:#ffe251; margin-top: 5px;"></span>Severe
+  <span class="score-cube ml-2" style="background-color:#ff5151; margin-top: 5px;"></span>Extremely severe
+  <button type="button" class="btn btn-dark btn" OnClick="printNote()" style="float: right; margin-left: 10px;">Print Results</button>
+  <button type="button" class="btn btn-outline-secondary" onClick="dass21()" style="float: right; margin-left: 10px;">DASS-21 Survey</button>
+</div>
+<br />
+<br />
+
+<p style="text-align: justify;">Hi {{ user.user_name }}. <br>
+  Here is a record of your previous DASS-21 survey scores.
+  By monitoring your DASS-21 scores, you can make informed decisions about your mental health.
+  If you are struggling with your mental health, 
+  we encourage you to seek help from a mental health professional who can provide personalized guidance and support.
+</p>
+<p style="text-align: justify; flex: 1; color: rgb(62, 62, 62); font-size: 14px;">
+  For immediate assistance, please call: <a href="tel:+60327806803" target="_blank">+603 2780 6803</a> (Mon.-Fri. 9am-5pm, except public holidays).<br>
+  For more resources and information, please visit <a href="https://mmha.org.my/find-help" target="_blank">Malaysia Mental Health Association (MMHA)</a>.</p>
+
+<br />
+<table style="margin: 0 auto;">
+  <thead>
+    <tr>
+      <th>Submission Time</th>
+      <th>Depression Score</th>
+      <th>Anxiety Score</th>
+      <th>Stress Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for result in results %}
+      <tr>
+        <td>{{ result.submission_time.strftime('%Y-%m-%d %H:%M:%S')|truncate(19, True, '') }}</td>
+        <td> <div><span class="score-cube ml-2" {% if result.depression <= 4 %} style="background-color:#51ffdf; margin-top:4px" 
+          {% elif result.depression >= 5 and result.depression <= 6 %} style="background-color:#51ff62; margin-top:4px"
+          {% elif result.depression >= 7 and result.depression <= 10 %} style="background-color:#ebff51; margin-top:4px"
+          {% elif result.depression >= 11 and result.depression <= 13 %} style="background-color:#ffe251; margin-top:4px"
+          {% elif result.depression >= 14 %} style="background-color:#ff5151; margin-top:4px"{% endif %}</span>&nbsp;&nbsp;&nbsp;&nbsp;{{ result.depression }}</div></td>
+        <td> <div><span class="score-cube ml-2" {% if result.anxiety <= 3 %} style="background-color:#51ffdf; margin-top:4px" 
+          {% elif result.anxiety >= 4 and result.anxiety <= 5 %} style="background-color:#51ff62; margin-top:4px"
+          {% elif result.anxiety >= 6 and result.anxiety <= 7 %} style="background-color:#ebff51; margin-top:4px"
+          {% elif result.anxiety >= 8 and result.anxiety <= 9 %} style="background-color:#ffe251; margin-top:4px"
+          {% elif result.anxiety >= 10 %} style="background-color:#ff5151; margin-top:4px" {% endif %}</span>&nbsp;&nbsp;&nbsp;&nbsp;{{ result.anxiety }}</td>
+        <td> <div><span class="score-cube ml-2" {% if result.stress <= 7 %} style="background-color:#51ffdf; margin-top:4px" 
+          {% elif result.stress >= 8 and result.stress <= 9 %} style="background-color:#51ff62; margin-top:4px"
+          {% elif result.stress >= 10 and result.stress <= 12 %} style="background-color:#ebff51; margin-top:4px"
+          {% elif result.stress >= 13 and result.stress <= 16 %} style="background-color:#ffe251; margin-top:4px"
+          {% elif result.stress >= 17 %} style="background-color:#ff5151; margin-top:4px" {% endif %}</span>&nbsp;&nbsp;&nbsp;&nbsp;{{ result.stress }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<br />
+<br />
+<br />
+
+{% else %}
+<br />
+<div style="display: flex; flex-direction: row;">
+<img src="{{ url_for('static', filename='/image/online-survey.png') }}" alt="online-survey" style="width:250px;height:250px;">
+<div style="display: flex; flex-direction: column;">
+<p style="margin-left: 1cm; text-align: justify;">
+  <br>
+  Hi {{ user.user_name }}! Please complete at least one DASS-21 survey to view your score history. 
+  Click the 'DASS-21 Survey' button to take the survey now.
+  If you're looking for additional support, 
+  we recommend reaching out to a mental health professional who can provide you with personalized guidance and support.
+  <br><br>
+  <button type="button" class="btn btn-outline-secondary" onClick="dass21()" style="float: right; margin-left: 10px;">DASS-21 Survey</button>
+</p>
+
+<p style="text-align: right; flex: 1; color: rgb(62, 62, 62); font-size: 12px; margin-left: 1cm; margin-top: 10px;">
+  For immediate assistance, please call: <a href="tel:+60327806803" target="_blank">+603 2780 6803</a> (Mon.-Fri. 9am-5pm, except public holidays).<br>
+  For more resources and information, please visit <a href="https://mmha.org.my/find-help" target="_blank">Malaysia Mental Health Association (MMHA)</a>.</p>
+
+</div>
+</div>
+  <br />
+
+{% endif %}
+
+{% endblock %}

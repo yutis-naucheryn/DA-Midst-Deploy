@@ -1,0 +1,98 @@
+{% extends "base.html" %} {% block title %}Daily Mood Tracking{% endblock %}
+
+{% block content %}
+
+<br />
+<h1 align="center">Daily Mood Tracking</h1>
+<p style="line-height: 1; font-size: 12px; text-align: right;" class="popup-info">
+    <span style="font-size: 16px;">🛈</span>
+    <button onclick="changeColor_green()" 
+    style="color: #C7EDCC; background-color: #C7EDCC; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+    <button onclick="changeColor_yellow()" 
+    style="color: #FAF9DE; background-color: #FAF9DE; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+    <button onclick="changeColor_orange()" 
+    style="color: #FFF2E2; background-color: #FFF2E2; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+    <button onclick="changeColor_red()" 
+    style="color: #FDE6E0; background-color: #FDE6E0; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+    <button onclick="changeColor_blue()" 
+    style="color: #DCE2F1; background-color: #DCE2F1; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+    <button onclick="changeColor_purple()" 
+    style="color: #E9EBFE; background-color: #E9EBFE; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+    <button onclick="changeColor_grey()" 
+    style="color: #EAEAEF; background-color: #EAEAEF; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+    <button onclick="changeColor_greenLight()" 
+    style="color: #E3EDCD; background-color: #E3EDCD; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+    <button onclick="changeColor_white()" 
+    style="color: #FFFFFF; background-color: #FFFFFF; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  </p>
+<br />
+<br />
+<div style="display: flex; flex-direction: row;">
+<img src="{{ url_for('static', filename='/image/stress-anxiety-depress.jpg') }}" 
+    alt="stress-anxiety-depress" style="width:425px;height:282px; margin-right: 1cm;">
+<p style="text-align: justify; flex: 1;">
+    Hey there! If you're looking for an effective tool to manage stress and anxiety, DASS-21 might be just what you need. 
+    By using this assessment to track your mood on a regular basis, you can gain a deeper understanding of your 
+    emotional state and identify patterns and triggers that contribute to your stress and anxiety. 
+    This information can then be used to develop personalized coping strategies that work for you, 
+    whether it's practicing mindfulness or seeking support from a therapist. And the best part? 
+    By tracking your progress over time, you can see how far you've come and feel empowered to 
+    continue managing your stress and anxiety effectively. Give it a try and see how it works for you!
+    <br />
+    <br />
+    <!--go to DASS-21-->
+<button type="button" class="btn btn-secondary" onClick="dass21()" style="float: right; margin-left: 10px;">DASS-21 Survey</button>
+<button type="button" class="btn btn-outline-secondary" onclick="dass21_result()" style="float: right;">DASS-21 Score History</button></p></div>
+<br />
+<br />
+<!-- Explanation of Why DASS-21 -->
+<h2 style="margin-bottom: 15px;">Why DASS-21?</h2>
+<div style="display: flex; flex-direction: row;">
+    <img src="{{ url_for('static', filename='/image/number-one.png') }}" 
+    alt="number-one" style="width:1cm;height:1cm; margin-right: 20px; margin-top: 5px">
+    <p style="text-align: justify; flex: 1;">
+    DASS-21 is a commonly used self-report questionnaire that is designed to measure the severity of 
+    symptoms related to stress, anxiety, and depression. It has been scientifically validated and 
+    widely used in clinical and research settings.
+    <br></p></div>
+<div style="display: flex; flex-direction: row;">
+    <img src="{{ url_for('static', filename='/image/number-two.png') }}" 
+    alt="number-two" style="width:1cm;height:1cm; margin-right: 20px; margin-top: 5px">
+    <p style="text-align: justify; flex: 1;">
+    Using DASS-21 in a daily mood tracking tool can provide several benefits. 
+    It allows users to monitor their mood over time and identify changes in their mental health. 
+    This can help users detect potential issues early on and seek appropriate support if needed.
+    <br></p></div>
+<div style="display: flex; flex-direction: row;">
+    <img src="{{ url_for('static', filename='/image/number-three.png') }}" 
+    alt="number-three" style="width:1cm;height:1cm; margin-right: 20px; margin-top: 5px">
+    <p style="text-align: justify; flex: 1;">
+    Tracking mood using a validated tool like DASS-21 can provide users with a more 
+    objective assessment of their mental health. This can be especially helpful for individuals who 
+    may struggle to accurately assess their own emotions.
+    <br></p></div>
+<div style="display: flex; flex-direction: row;">
+    <img src="{{ url_for('static', filename='/image/number-four.png') }}" 
+    alt="number-four" style="width:1cm;height:1cm; margin-right: 20px; margin-top: 5px">
+    <p style="text-align: justify; flex: 1;">
+    DASS-21 is a reliable and valid tool that can provide users with valuable 
+    information about their mental health. By incorporating it into a daily mood tracking tool, 
+    users can gain insights into their emotional patterns and potentially identify triggers for stress and anxiety.
+    <br></p></div>
+<br>
+<p style="text-align: justify; flex: 1;">
+    Click <a href="https://www2.psy.unsw.edu.au/groups/dass/" target="_blank">here</a> to visit the official DASS website and learn more about the survey.
+    If you feel like you need extra help, 
+    we recommend reaching out to a mental health professional for personalized support and guidance.
+</p>
+<br />
+<p  style="text-align: justify; flex: 1; color: rgb(62, 62, 62); font-size: 14px;">
+For immediate assistance, please call: <a href="tel:+60327806803" target="_blank">+603 2780 6803</a> (Mon.-Fri. 9am-5pm, except public holidays).<br>
+For more resources and information, please visit <a href="https://mmha.org.my/find-help" target="_blank">Malaysia Mental Health Association (MMHA)</a>.</p>
+<br />
+<br />
+<br />
+
+
+  
+{% endblock %}

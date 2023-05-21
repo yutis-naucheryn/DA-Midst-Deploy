@@ -1,0 +1,44 @@
+{% extends "base.html" %} {% block title %}Login{% endblock %}
+{% block content %}
+<br /><br />
+
+<!-- welcome words -->
+<p style="text-align: left; font-family: 'Times New Roman', Times, serif; font-size: 48px; line-height: 1;">
+    <i>Welcome back to <b><span style="font-size: 72px;">DA-Midst</span></b></i></p>
+<p style="text-align: left; font-size: 24px; line-height: 1;">
+    A Chatbot-Enabled Platform for Stress and Anxiety Management System</p>
+<br />
+<p style="text-align: justify; flex: 1;">
+    Log in to DA-Midst and start prioritizing your mental wellbeing with our suite of stress management tools, 
+    including DASS-21 mood tracking and stress-relief journaling. <a href="/about-us">About Us</a>
+</p>
+<!-- login form -->
+<form method="POST">
+    <br />
+    <h5>Login here: </h5>
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input 
+            type="email" 
+            class="form-control" 
+            id="email" 
+            name="email" 
+            placeholder="Enter email"
+        />
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+            type="password" 
+            class="form-control" 
+            id="password" 
+            name="password" 
+            placeholder="Enter password"
+        />
+    </div>
+    <p style="color: rgb(160, 160, 160); font-size: 14px;">Don't have an account? Click 
+        <a href="/register">here</a> to register.</p>
+    <button type="submit" class="btn btn-dark">Login</button>
+</form>
+
+{% endblock %}

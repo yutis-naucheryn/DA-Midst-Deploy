@@ -1,0 +1,61 @@
+{% extends "base.html" %} {% block title %}Register{% endblock %}
+
+{% block content %}
+<br /><br />
+
+<!-- welcome words -->
+<p style="text-align: left; font-family: 'Times New Roman', Times, serif; font-size: 48px; line-height: 1;">
+    <i>Welcome to <b><span style="font-size: 72px;">DA-Midst</span></b></i></p>
+<p><span style="text-align: left; font-size: 24px; line-height: 1;">
+    A Chatbot-Enabled Platform for Stress and Anxiety Management System</span> 
+    &nbsp;&nbsp;<a href="/about-us">About Us</a></p>
+<!-- register form -->
+<form method="POST">
+    <br />
+    <h5>To get started, please create an account: </h5>
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input 
+            type="email" 
+            class="form-control" 
+            id="email" 
+            name="email" 
+            placeholder="Enter email"
+        />
+    </div>
+    <div class="form-group">
+        <label for="userName">Nickname</label>
+        <input 
+            type="text" 
+            class="form-control" 
+            id="userName" 
+            name="userName" 
+            placeholder="Enter your nickname"
+        />
+    </div>
+    <div class="form-group">
+        <label for="password1">Password</label>
+        <input 
+            type="password" 
+            class="form-control" 
+            id="password1" 
+            name="password1" 
+            placeholder="Enter password"
+        />
+    </div>
+    <div class="form-group">
+        <label for="password2">Confirm Password</label>
+        <input 
+            type="password" 
+            class="form-control" 
+            id="password2" 
+            name="password2" 
+            placeholder="Confirm password"
+        />
+    </div>
+    <p style="color: rgb(160, 160, 160); font-size: 14px;">Already have an account? Click 
+        <a href="/login">here</a> to login.</p>
+    <button type="submit" class="btn btn-dark">Register Now</button>
+</form>
+<br />
+{% endblock %}

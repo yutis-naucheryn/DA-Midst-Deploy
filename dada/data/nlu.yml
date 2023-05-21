@@ -1,0 +1,311 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - Hi
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - It doesnt help. It is cute but, not helping
+- intent: mood_positive
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_negative
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+    - Im so overwhelmed, I cant cope
+    - I should be able to handle going out but I just cant face it
+    - I feel like I'm not good enough and I'll never be able to succeed
+    - I wish I could just take a day off to relax, but I have too much work to do
+    - I hate you
+    - stress
+    - I am stress
+    - I am so stress
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: inquire_time
+  examples: |
+    - what time is it?
+    - what time is it in [Amsterdam](place)?
+    - what time is it in [London](place)?
+    - tell me the time in [Lisbon](place)
+    - what is the current time in [Berlin](place)
+    - what time is it in [amsterdam](place)
+    - what time is it in [Malaysia](place)?
+    - what is the time in [malaysia](place) now?
+    - tell me the time in [Malaysia](place)
+    - what is the time in [Malaysia](place) now?
+    - what is the time in [Msia](place) now?
+    - what is the time in [msia](place) now?
+    - what is the time in [m'sia](place) now?
+    - what is the time in [M'sia](place) now?
+- synonym: Malaysia
+  examples: |
+    - M'sia
+    - msia
+    - Msia
+    - m'sia
+    - malaysia
+- intent: where_i_live
+  examples: |
+    - please remember that i live in [Amsterdam](place)?
+    - my house is in [London](place)?
+    - reminder. i live in [Lisbon](place)
+    - my residence is in [Berlin](place)
+    - remember that i live in [london](place)
+    - i live in [amsterdam](place)
+- intent: inquire_time_difference
+  examples: |
+    - time difference between [Amsterdam](place)?
+    - what is my time difference with [London](place)?
+    - how big is the time delta with [Berlin](place)?
+    - is there a time difference with [Lisbon](place)?
+    - what is the time difference with [amsterdam](place)
+    - what is the time different with [london](place)
+    - what is the time different with [Malaysia](place)
+    - what is the time different with [london](place)?
+- intent: mood_danger
+  examples: |
+    - I feel like I wanna die
+    - I can't take it anymore
+    - I cant take it anymore
+    - I wanna die
+- intent: mood_helpless
+  examples: |
+    - What can I do?
+    - I'm just not good enough
+    - It feels like the world is against me
+    - I feel like giving up because nothing seems to work
+    - I don't know what to do to make things better
+    - I feel like I have no control over my life
+    - Nothing ever goes my way
+    - I can't do anything right
+    - what can I do?
+    - what should I do?
+    - I donno what can I do anymore for my final year project
+    - Why am I experiencing this?
+- intent: worrying
+  examples: |
+    - Will worrying about it cause anything to change?
+    - Is there any point in worrying about something that's out of my control?
+- intent: problem_assignment
+  examples: |
+    - I feel like I'm falling behind on my coursework, and it's causing me a lot of stress and anxiety
+    - I'm having trouble sleeping because I'm constantly worried about finishing all these assignments on time
+    - I'm so stressed out about these assignments. I feel like I don't have enough time to complete them all
+    - there are too many assignments
+    - Stress gila bro, aku tak tahu nak buat macam mana ni
+    - Wah, damn tired lah, been doing this assignment for hours still haven't finish
+    - Eh, damn a lot of work to do lah, don't know can finish on time or not
+    - there are too many assignments. I feel like I have no enough time to finish it
+    - I have too many assignments
+- intent: problem_financial
+  examples: |
+    - I'm feeling stressed about my finances
+    - I'm having trouble paying my bills this month
+    - I'm really struggling to make ends meet right now
+    - im poor
+- intent: problem_presentation
+  examples: |
+    - I'm really nervous about giving this presentation
+    - I'm having trouble organizing my thoughts
+    - I'm having trouble creating a cohesive presentationtation
+    - I'm having technical difficulties with my presentation
+    - I'm really nervouse about giving this presentation
+    - I am really nervous when doing presentation
+- intent: ask_for_stress_handling_advice
+  examples: |
+    - Is there any way for me to relieve my stress?
+    - How can I handle my stress?
+    - Can you lift my mood up?
+    - I am too stressed and anxious, like I dont know what to do, what should I do?
+    - How can I manage my stress levels?
+    - What are some techniques for managing stress?
+    - I'm feeling really stressed out. What can I do?
+    - Can you help me relax?
+    - How can I unwind after a long day?
+    - What are some ways to reduce stress?
+    - How can I chill out?
+    - What are some techniques for calming down?
+    - I'm feeling really tense. What can I do?
+    - Can you help me unwind?
+    - How can I de-stress after a long day?
+    - What are some ways to alleviate stress?
+- intent: ask_for_calming_advice
+  examples: |
+    - What can I do to calm myself down?
+    - what can I do to calm
+    - I need to calm down, but how?
+    - how can I calm?
+    - Can you help me in controlling my emotions so that I won't be so nervous?
+- intent: ask_for_emotional_venting_support
+  examples: |
+    - who can I rely on to listen to me vent my emotions?
+    - Is there anyone I can talk to when I need to vent my feelings?
+    - Who would be a safe and supportive person for me to talk to when I need to release my emotions?
+- intent: ask_for_listening
+  examples: |
+    - Listen to me
+    - I'm feeling really stressed right now and I could use someone to talk to. Would you be willing to listen?
+    - can you listen to me?
+    - I need you to listen to me
+    - please listen to me
+- intent: ask_for_stress_avoidence
+  examples: |
+    - How can I avoid stress?
+    - Is there any way to avoid stress?
+- intent: finish_talking
+  examples: |
+    - Thank you for listening to me
+    - I feel better now
+    - Nevermind. I feel better now.
+    - thank you for listening to me
+- intent: refuse_help
+  examples: |
+    - I don't need any help
+    - I think I can handle it
+- intent: out_of_scope
+  examples: |
+    - What's the latest news on COVID-19?
+    - Can you help me book a flight to New York?
+    - What's your favorite restaurant in town?
+    - I want to eat burger
+- intent: recommend_music
+  examples: |
+    - Can you suggest some music for me to listen to?
+    - I need some help finding music to relax to
+- intent: report_bullying
+  examples: |
+    - Someone is bullying me
+    - I'm being bullied at school
+    - My boss is bullying me at work
+    - I feel like I'm being harassed
+    - there is some one bully me
+    - lecturer bully me
+- intent: gratitude
+  examples: |
+    - I'm so thankful for my friends
+    - I'm grateful for my family and my health
+- intent: mindfulness
+  examples: |
+    - Can you tell me more about mindfulness meditation?
+    - Can you recommend a mindfulness exercise?
+- intent: time_management
+  examples: |
+    - I'm having trouble keeping up with my coursework
+    - I have a lot of assignments due this week and I don't know how to manage my time.
+- intent: time_management_tips
+  examples: |
+    - Can you provide me some tips on time management?
+    - How can I manage my time?
+- intent: self_care
+  examples: |
+    - I feel really burnt out lately
+    - I've been feeling really stressed and overwhelmed lately
+- intent: self_care_tips
+  examples: |
+    - Can you provide me some tips on self care?
+    - Can you recommend me some ideas on self care?
+- intent: social_support
+  examples: |
+    - I'm feeling really stressed about my upcoming exams
+    - I don't have anyone to talk to about my problems.
+- intent: procrastination
+  examples: |
+    - I keep putting off my assignments and it's making me really anxious
+    - I keep procrastinating on my assignments and then feeling guilty about it
+- intent: sleeping_trouble
+  examples: |
+    - I'm having trouble sleeping at night
+    - I have trouble falling asleep at night and then feel tired during the day
+- intent: thank_you
+  examples: |
+    - thanks
+    - thank you
+    - thank you very much
+- synonym: difficulties to do presentation
+  examples: |
+    - nervous about giving this presentation
+    - trouble organizing my thoughts
+    - trouble creating a cohesive presentation
+    - technical difficulties with my presentation
+    - nervous about presentations
+    - technical diffuculties with presentation
+    - trouble organizing thoughts
+- lookup: place
+  examples: |
+    - brussels
+    - zagreb
+    - london
+    - lisbon
+    - amsterdam
+    - seattle
+    - malaysia
+    - Malaysia

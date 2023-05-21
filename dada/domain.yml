@@ -1,0 +1,212 @@
+version: '3.1'
+intents:
+- affirm
+- ask_for_calming_advice
+- ask_for_emotional_venting_support
+- ask_for_listening
+- ask_for_stress_avoidence
+- ask_for_stress_handling_advice
+- bot_challenge
+- deny
+- finish_talking
+- goodbye
+- gratitude
+- greet
+- inquire_time
+- inquire_time_difference
+- mindfulness
+- mood_danger
+- mood_helpless
+- mood_negative
+- mood_neutral
+- mood_positive
+- out_of_scope
+- problem_assignment
+- problem_financial
+- problem_presentation
+- procrastination
+- recommend_music
+- refuse_help
+- report_bullying
+- self_care
+- self_care_tips
+- sleeping_trouble
+- social_support
+- thank_you
+- time_management
+- time_management_tips
+- where_i_live
+- worrying
+- '*'
+entities:
+- place
+slots:
+  location:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: place
+      intent: action_remember_where
+responses:
+  utter_greet:
+  - text: Hey! How do you feel today?
+    buttons:
+    - title: I am great today
+      payload: /mood_positive
+    - title: I don't know
+      payload: /mood_neutral
+    - title: Not so good
+      payload: /mood_negative
+  utter_to_help:
+  - text: I want you to know that there is help available and you don't have to go through this alone. Can I help you find some resources?
+    buttons:
+    - title: Financial advice
+      payload: /problem_financial
+    - title: Assignments handling advice
+      payload: /problem_assignment
+    - title: Stress relieving activities recommendation
+      payload: /ask_for_stress_handling_advice
+    - title: Just listen to me
+      payload: /ask_for_listening
+    - title: No thanks
+      payload: /refuse_help
+  utter_suggest_activity:
+  - text: Exercising, listening to music, spending time in nature... There are many activities that can help you to handle your stress. You can also try to write some journal in your personal space! :D
+  utter_listen:
+  - text: I'm here for you and I'm listening. Take your time and share whatever you feel comfortable sharing. I'm here to support you.
+  utter_done_listen:
+  - text: I appreciate you sharing with me. Is there anything else I can do to support you right now?
+    buttons:
+    - title: Financial advice
+      payload: /problem_financial
+    - title: Assignments handling advice
+      payload: /problem_assignment
+    - title: Stress relieving activities recommendation
+      payload: /ask_for_stress_handling_advice
+    - title: Just listen
+      payload: /ask_for_listening
+    - title: Nothing
+      payload: /refuse_help
+  utter_stress_avoid_advice:
+  - text: To reduce stress, prioritize self-care, manage your workload and time effectively, set boundaries, take care of your physical health, stay connected with others, and practice stress-reduction techniques.
+  utter_calming_advice:
+  - text: You can try taking a few deep breaths, focusing on inhaling and exhaling slowly and deeply to help calm your nerves.
+  utter_emotional_venting_support:
+  - text: It depends on your personal preferences and relationships, but you could try reaching out to a trusted friend, family member, therapist, support group, or religious or spiritual advisor to listen to you vent your emotions.
+  utter_respond_to_worry:
+  - text: Worrying won't change the situation, so it's important to focus on what you can control and take action where possible.
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_not_helping:
+  - text: I feel sorry that it doesn't help :(
+  utter_helping:
+  - text: I am glad that helped!
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Goodbye! I'm here if you need me again.
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_talk_about_it:
+  - text: Can we grab some coffee and talk about it?
+  utter_danger:
+  - text: Your life is valuable and important. Let's find a way to get you the help you need to feel better.
+  - text: It's understandable that you're feeling overwhelmed, but suicide is not the answer. Let's work together to find a way to get you the help you need.
+  utter_too_many_assignments_advice:
+  - text: I'm sorry to hear that you have too many assignments. It can be overwhelming, but remember to prioritize your tasks and break them down into manageable pieces. You might also consider talking to your teacher or professor about your workload and asking for an extension or extra help if needed.
+  utter_financial_issues_advice:
+  - text: I'm sorry to hear that you're dealing with financial issues. It can be stressful, but there are resources available to help. You might look into financial aid programs or scholarships, or consider talking to a financial advisor or counselor for guidance.
+  utter_difficulties_to_do_presentation_advice:
+  - text: It sounds like you're having difficulties with your presentation. Remember to practice ahead of time and familiarize yourself with the material. You might also consider asking a friend or classmate for feedback or seeking help from your teacher or professor. Don't be afraid to take a break and come back to it later if you're feeling overwhelmed.
+  utter_continue:
+  - text: I just want to make sure that we've covered everything you wanted to talk about. If there's anything else on your mind, I'm here to listen.
+  utter_end_conversation:
+  - text: Okay. Just know that I'm always here for you if you need someone to talk to or if you're feeling stressed.
+  utter_recommend_music:
+  - text: Sure. You may try Weightless by Marconi Union. This song has been scientifically proven to reduce anxiety levels by up to 65%.
+  - text: Sure. You may try Claire de Lune by Claude Debussy. This classical piece has a slow and calming tempo that can help to reduce stress.
+  - text: Sure. You may try The Four Seasons by Antonio Vivaldi. This classical piece features four different movements, each with a different mood, and can be a great way to unwind and relax.
+  - text: Sure. You may try Piano and Rain by Relaxing Music. This instrumental piece combines the sound of a gentle rainstorm with soothing piano music.
+  - text: Sure. The Sound of Silence by Simon & Garfunkel. This classic song has a calming melody and meaningful lyrics that can help to reduce stress and anxiety.
+  utter_report_bullying:
+  - text: |
+      I'm sorry to hear that you are being bullied. Bullying can be really tough to deal with. It takes a lot of courage to speak up about it. Let's talk about what you can do to get help and protect yourself.
+
+      You can try talking to a trusted adult, like a teacher or counselor, about what's happening. They can help you come up with a plan to deal with the situation. It's important to remember that you are not alone and that there are people who care about you and want to help.
+
+      If you don't feel comfortable talking to someone at school, there are other resources you can turn to. The National Bullying Prevention Center has a lot of great information and resources for people who are dealing with bullying. Here's a link to their website: https://www.pacer.org/bullying/
+
+      Remember, it's never okay for someone to bully you or make you feel unsafe. You have the right to feel safe and respected at all times.
+  utter_please_rephrase:
+  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+  utter_gratitude:
+  - text: It's great to hear that you have such supportive friends! Expressing gratitude can help improve our overall well-being. Is there anything else you're feeling grateful for today?
+  - text: That's wonderful to hear! Expressing gratitude can help improve our mood and overall well-being. Is there anything else you're feeling thankful for today?
+  utter_mindfulness:
+  - text: Sure! One simple mindfulness exercise is to focus on your breath and notice any thoughts or distractions that come up, then gently redirect your attention back to your breath. You can do this for a few minutes at a time, either sitting or lying down in a comfortable position.
+  utter_time_management:
+  - text: Managing your time effectively can be challenging, but it's an essential skill for success. Have you tried using a planner or scheduling tool to help you stay on track? I can also offer some tips for managing your workload, if that would be helpful.
+    buttons:
+    - title: Yes I need tips for time management
+      payload: /time_management_tips
+    - title: No thanks
+      payload: /refuse_help
+  utter_time_management_tips:
+  - text: Sure. You may to set specific goals and deadlines to yourself, break tasks into smaller and more manageable pieces, avoid multitasking and focus on one task at a time, or etc.
+  utter_self_care:
+  - text: It's important to take care of yourself, especially when you're feeling stressed. What are some activities you enjoy that help you relax or feel better? I can offer some additional ideas for self-care if you're interested.
+    buttons:
+    - title: Yes I need some ideas for self care
+      payload: /self_care_tips
+    - title: No thanks
+      payload: /refuse_help
+  utter_self_care_tips:
+  - text: Sure. You may try to prioritize sleep and establish a regular sleep routine, eat a balanced and nutritious diet, stay physically active with exercise that you enjoy, or etc.
+  utter_social_support:
+  - text: It sounds like you could use some support right now. Is there someone you feel comfortable talking to, like a friend or family member? Sometimes just talking things out can help us feel better.
+  utter_procrastination:
+  - text: Procrastination can be a tough habit to break, but it's important to try to stay on top of your work to avoid feeling overwhelmed. You may try on breaking down your assignments into smaller, more manageable tasks.
+  - text: It's common to struggle with procrastination, but there are strategies that can help. You may try on setting specific goals and deadlines for yourself, or using a reward system to help motivate yourself.
+  utter_sleeping_trouble:
+  - text: That sounds frustrating. Have you tried establishing a regular sleep schedule, or creating a relaxing bedtime routine? I can also offer some additional tips for improving your sleep hygiene, such as avoiding screens before bedtime and limiting caffeine intake.
+  - text: Getting enough sleep is important for your overall health and well-being. Have you tried establishing a bedtime routine or creating a calming sleep environment? I can offer some additional tips for improving your sleep, if you're interested.
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+actions:
+- utter_listen
+- utter_end_conversation
+- utter_done_listen
+- utter_greet
+- utter_talk_about_it
+- utter_too_many_assignments_advice
+- utter_danger
+- action_handle_unknown_intent
+- utter_helping
+- utter_to_help
+- utter_did_that_help
+- action_tell_time
+- utter_not_helping
+- utter_cheer_up
+- utter_happy
+- action_remember_where
+- action_time_difference
+- utter_suggest_activity
+- action_fallback
+- utter_recommend_music
+- utter_report_bullying
+- utter_gratitude
+- utter_please_rephrase
+- utter_mindfulness
+- utter_time_management
+- utter_time_management_tips
+- utter_self_care
+- utter_self_care_tips
+- utter_social_support
+- utter_procrastination
+- utter_sleeping_trouble
+- listen

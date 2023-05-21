@@ -1,0 +1,139 @@
+{% extends "base.html" %} {% block title %}About Us{% endblock %}
+
+{% block content %}
+
+<br />
+
+<html>
+  <head>
+    <title>About Us</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      /* Insert your custom CSS here */
+    </style>
+  </head>
+  <body>
+    <header>
+        <h1 align="center">About Us</h1>
+    </header>
+    <!-- Change color -->
+    <p style="line-height: 1; font-size: 12px; text-align: right;" class="popup-info">
+      <span style="font-size: 16px;">🛈</span>
+      <button onclick="changeColor_green()" 
+      style="color: #C7EDCC; background-color: #C7EDCC; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+      <button onclick="changeColor_yellow()" 
+      style="color: #FAF9DE; background-color: #FAF9DE; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+      <button onclick="changeColor_orange()" 
+      style="color: #FFF2E2; background-color: #FFF2E2; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+      <button onclick="changeColor_red()" 
+      style="color: #FDE6E0; background-color: #FDE6E0; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+      <button onclick="changeColor_blue()" 
+      style="color: #DCE2F1; background-color: #DCE2F1; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+      <button onclick="changeColor_purple()" 
+      style="color: #E9EBFE; background-color: #E9EBFE; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+      <button onclick="changeColor_grey()" 
+      style="color: #EAEAEF; background-color: #EAEAEF; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+      <button onclick="changeColor_greenLight()" 
+      style="color: #E3EDCD; background-color: #E3EDCD; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+      <button onclick="changeColor_white()" 
+      style="color: #FFFFFF; background-color: #FFFFFF; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+    </p>
+	
+    <main>
+      <section>
+        <h2>Meet the Developer</h2>
+        <p style="text-align: justify;">
+            DA-Midst is a high-fidelity prototype developed by Chu Sin Ning, a Bachelor of Science 
+            (Information Technology [Hons]) degree student majoring in Intelligent Systems 
+            from Universiti Utara Malaysia (UUM), as the final year project for the A222 semester. 
+            The project is non-profit and non-funded, and was supervised by Mr. Azizi Ab Aziz. 
+            Our goal is to provide a stress and anxiety management system that helps users manage 
+            daily pressures through various tools such as mood tracking and stress-relief journaling.
+        </p>
+      </section>
+      <section>
+        <br />
+        <h2>Contact Us</h2>
+        <p>If you have any questions or concerns, please don't hesitate to reach out to us if you need assistance or have feedback to share.<br>
+            <p style="font-size: 17px; line-height: 1;"><b>Chu Sin Ning</b></p>
+            E-mail&#160;&#160;&#160;&#160;&#160;: chu_sin_ning@soc.uum.edu.my
+        </p>
+      </section>
+      <section>
+        <br />
+        <h2>Frequently Asked Questions (FAQs)</h2>
+        <dl style="margin-left: 20px;">
+          <dt style="font-size: 18px;">What is DA-Midst and what does it do?</dt>
+          <dd style="text-align: justify; margin-bottom: 20px;">
+            DA-Midst is a web-based platform designed to help university students manage their stress and anxiety. 
+            The name DA-Midst is derived from the words Damai, Amidst, and Midst, which convey our mission to help users 
+            find inner peace and balance in the midst of their daily challenges.
+            Our platform offers various tools to assist users in managing their stress and anxiety, 
+            such as mood tracking and stress-relief journaling. It's important to note that DA-Midst is not a diagnostic tool, 
+            but rather a screening tool that aims to provide guidance and support to users.
+            We believe that mental health is a crucial aspect of overall well-being, and we strive to provide a safe 
+            and supportive environment for our users to address their mental health needs. DA-Midst is committed to 
+            continuously improving and updating our platform to meet the evolving needs of our users</dd>
+
+          <dt style="font-size: 18px;">Is DA-Midst a free or paid service?</dt>
+          <dd style="text-align: justify; margin-bottom: 20px;">
+            DA-Midst is completely free to use. We believe that access to mental health resources should be available to everyone, 
+            regardless of their financial situation. Our goal is to make stress and anxiety management more accessible to university 
+            students, and we hope that by offering our platform for free, we can make a positive impact on their mental health and well-being.</dd>
+
+          <dt style="font-size: 18px;">Does DA-Midst offer any additional features besides mood tracking and journaling?</dt>
+          <dd style="text-align: justify; margin-bottom: 20px;">
+            At the moment, DA-Midst is in the prototype stage and only offers mood tracking and journaling features. 
+            However, as we continue to gather feedback from users during the testing phase, we will be exploring 
+            the possibility of introducing additional features to the platform. We are committed to providing a user-friendly 
+            and effective tool to help university students manage their stress and anxiety, and we will continue to work on enhancing 
+            the platform based on user needs and feedback.</dd>
+
+          <dt style="font-size: 18px;">Are there any age restrictions or limitations for using DA-Midst?</dt>
+          <dd style="text-align: justify; margin-bottom: 20px;">
+            DA-Midst is primarily designed for university students who may be experiencing stress and anxiety. 
+            As such, we recommend that users be at least 18 years old to use our service. However, we understand 
+            that mental health can affect individuals of all ages, so we do not have any strict age restrictions 
+            or limitations for using DA-Midst. We encourage anyone who feels that our service could be beneficial 
+            to them to give it a try. We also suggest that users consult with a mental health professional if they 
+            have any concerns about their mental wellbeing.</dd>
+
+        <dt style="font-size: 18px;">What can the DA-Midst chatbot (DaDa) do?</dt>
+          <dd style="text-align: justify; margin-bottom: 20px;">
+            Currently, the DaDa is able to perform basic communication and tell the time. 
+            It also has the ability to suggest some hardcoded music to users. 
+            Please note that as our chatbot is still in training, it may not always provide 
+            appropriate or optimal responses. Personalized communication is not currently available, 
+            but we are continuously working to improve and expand the chatbot's capabilities.</dd>
+            
+            <!-- Add more questions and answers as needed -->
+          <!-- <dt style="font-size: 18px;">Not answering </dt>
+          <dd style="text-align: justify; margin-bottom: 20px;">Answer...</dd> -->
+        </dl>
+      </section>
+      <section>
+        <br />
+        <h2>Credits</h2>
+        <p style="margin-left: 20px;">All the graphic materials used in DA-Midst are created by/adopted from:
+          <br>1. Freepik, photo3idea_studio, FBJan, Hight Quality Icons, smashingstocks from 
+            <a href="https://www.flaticon.com/" title="Flaticon" style="color: rgb(114, 114, 114);" target="_blank">www.flaticon.com</a>
+          <br>2.  
+            <a href="https://www.lawyerswithdepression.com/articles/stress-and-depression/" title="Stress and Depression" style="color: rgb(114, 114, 114);" target="_blank">Stress and Depression</a></p>
+          </p>
+      </section>
+      <br />
+      <p style="text-align: justify;">If you have any further questions or concerns that were not addressed in our FAQs section, 
+        please feel free to reach out to us by submitting your inquiry through our 
+        <a href="https://forms.gle/Bf6cR8czX2dumKeZ9" target="_blank">contact form</a>.
+        We will do our best to get back to you as soon as possible.</p>
+        {#<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfgSjJtQUmKqe05msNO8BW4s_nv4MBXvXYGpHE6Kvn3ej7waw/viewform?embedded=true" width="640" height="1430" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>#}
+    </main>
+    <!-- <footer>
+      <p>Insert your copyright and attribution information here.</p>
+    </footer> -->
+  </body>
+</html>
+
+<br /><br /><br />
+{% endblock %}

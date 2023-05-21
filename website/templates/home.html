@@ -1,0 +1,97 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %}
+
+{% block content %}
+<style>
+.popup-link {
+  position: relative; /* Set position of link to relative */
+  text-decoration: none; /* Remove default underline */
+}
+
+.popup-link::before {
+  content: "About Us"; /* Set content of the popup */
+  position: absolute; /* Set position of popup to absolute */
+  top: -30px; /* Set distance from top of link to the popup */
+  left: 50%; /* Set distance from left of link to the popup */
+  transform: translateX(-50%); /* Center the popup horizontally */
+  padding: 8px 12px; /* Add padding to the popup */
+  background-color: #fff; /* Set background color of the popup */
+  border: 1px solid #ccc; /* Add border to the popup */
+  border-radius: 4px; /* Add border radius to the popup */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add box shadow to the popup */
+  font-size: 14px; /* Set font size of the popup */
+  opacity: 0; /* Hide the popup by default */
+  transition: opacity 0.2s ease-in-out; /* Add transition effect to the popup */
+  width: 2.5cm;
+  text-align: center;
+}
+
+.popup-link:hover::before {
+  opacity: 1; /* Show the popup when the user hovers over the link */
+}
+</style>
+
+<br /><br />
+<div style="display: flex; flex-direction: row; justify-content: space-between;">
+<p style="text-align: left; font-family: 'Times New Roman', Times, serif; font-size: 48px; line-height: 1;">
+    <i>Welcome to <b><span style="font-size: 72px;">DA-Midst</span></b></i></p>
+    <p style="line-height: 1; font-size: 12px; text-align: right;" class="popup-info">
+        <span style="font-size: 16px;">🛈</span>
+        <button onclick="changeColor_green()" 
+        style="color: #C7EDCC; background-color: #C7EDCC; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+        <button onclick="changeColor_yellow()" 
+        style="color: #FAF9DE; background-color: #FAF9DE; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+        <button onclick="changeColor_orange()" 
+        style="color: #FFF2E2; background-color: #FFF2E2; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+        <button onclick="changeColor_red()" 
+        style="color: #FDE6E0; background-color: #FDE6E0; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+        <button onclick="changeColor_blue()" 
+        style="color: #DCE2F1; background-color: #DCE2F1; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+        <button onclick="changeColor_purple()" 
+        style="color: #E9EBFE; background-color: #E9EBFE; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+        <button onclick="changeColor_grey()" 
+        style="color: #EAEAEF; background-color: #EAEAEF; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+        <button onclick="changeColor_greenLight()" 
+        style="color: #E3EDCD; background-color: #E3EDCD; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+        <button onclick="changeColor_white()" 
+        style="color: #FFFFFF; background-color: #FFFFFF; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+      </p>
+    </div>
+<p style="text-align: left; font-size: 24px; line-height: 1;">
+    A Chatbot-Enabled Platform for Stress and Anxiety Management System</p>
+<br />
+<p style="text-align: justify; flex: 1;">
+    DA-Midst is a stress and anxiety management system designed to help you manage 
+    the pressures of daily life. Our platform offers a range of tools and resources, including 
+    daily mood tracking using DASS-21, stress-relief journaling, and music recommendations to 
+    help you feel calm and centered. We are committed to providing a safe and inclusive 
+    space to support your mental wellbeing.
+    If you are concerned about your mental wellbeing, 
+    we advise seeking help from a mental health professional who can provide you with personalized guidance and support. 
+    {#<a href="/about-us" class="popup-link">🛈</a>#}
+</p>
+<br />
+<!-- introduce chatbot -->
+<p style="text-align: left; font-size: 24px; line-height: 1;">
+    Meet <b><i><span style="font-size: 30px;">DaDa</span></i></b>: Your personal chatbot for stress and anxiety management, available 24/7</p>
+<br />
+<div style="display: flex; flex-direction: row;">
+<img src="{{ url_for('static', filename='/image/chatbot.png') }}" alt="chatbot" style="width:240px; height:240px; margin-right: 2cm;">
+    <div style="display: flex; flex-direction: column;">
+    <p style="text-align: justify;">
+        <span style="font-size: 24px;">Hi {{ user.user_name }}! </span><br>
+        I'm DaDa, your personal stress and anxiety management chatbot. How can I assist you today?
+        Click the button below and chat with me now!
+        If you are yet ready to chat with me, you may also click the buttons on the menu bar to explore DA-Midst.
+    <br><br>
+    <!--activate chatbot-->
+    <!-- change to onClick="chat()" if dont want the chat interface to be open in another tab -->
+    <!-- change to onclick="window.open('/home/chat')" if want the chat interface to be open in another tab -->
+    <button type="button" class="btn btn-info" onclick="chat()" target="_blank" 
+    style="float: right; margin-left: 10px; margin-top: 10px;">Chat with DaDa</button>
+    </p>
+    <p style="text-align: right; flex: 1; color: rgb(62, 62, 62); font-size: 12px;">
+        For immediate assistance, please call: <a href="tel:+60327806803" target="_blank">+603 2780 6803</a> (Mon.-Fri. 9am-5pm, except public holidays).<br>
+        For more resources and information, please visit <a href="https://mmha.org.my/find-help" target="_blank">Malaysia Mental Health Association (MMHA)</a>.</p>
+    </div>
+</div>
+{% endblock %}

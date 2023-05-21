@@ -1,0 +1,27 @@
+body {
+    background-color: white;
+  }
+
+  .popup-info {
+    position: relative; /* Set position of link to relative */
+    text-decoration: none; /* Remove default underline */
+  }
+  
+  .popup-info::before {
+    content: "Click to change background color."; /* Set content of the popup */
+    position: absolute; /* Set position of popup to absolute */
+    top: -40px; /* Set distance from top of link to the popup */
+    padding: 8px 12px; /* Add padding to the popup */
+    background-color: #fff; /* Set background color of the popup */
+    border: 1px solid #ccc; /* Add border to the popup */
+    border-radius: 4px; /* Add border radius to the popup */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add box shadow to the popup */
+    font-size: 14px; /* Set font size of the popup */
+    opacity: 0; /* Hide the popup by default */
+    transition: opacity 0.2s ease-in-out; /* Add transition effect to the popup */
+    text-align: center;
+  }
+  
+  .popup-info:hover::before {
+    opacity: 1; /* Show the popup when the user hovers over the link */
+  }

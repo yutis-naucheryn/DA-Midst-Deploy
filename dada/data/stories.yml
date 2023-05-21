@@ -1,0 +1,95 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_positive
+  - action: utter_happy
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: where_i_live
+    entities:
+    - place: amsterdam
+  - action: action_remember_where
+  - slot_was_set:
+    - location: amsterdam
+  - intent: inquire_time_difference
+    entities:
+    - place: london
+  - action: action_time_difference
+  - intent: inquire_time_difference
+    entities:
+    - place: malaysia
+  - action: action_time_difference
+
+- story: interactive_story_1
+  steps:
+  - intent: where_i_live
+    entities:
+    - place: amsterdam
+  - action: action_remember_where
+  - slot_was_set:
+    - location: amsterdam
+  - intent: inquire_time_difference
+    entities:
+    - place: london
+  - action: action_time_difference
+  - intent: inquire_time_difference
+    entities:
+    - place: malaysia
+  - action: action_time_difference
+
+- story: danger situation
+  steps:
+  - intent: mood_danger
+  - action: utter_danger
+  - intent: mood_helpless
+  - action: utter_to_help
+
+- story: If advice is not helping
+  steps:
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_not_helping 
+  - action: utter_continue
+
+- story: If advice is helping
+  steps:
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_helping 
+  - action: utter_continue
+
+
+- story: interactive_story_1
+  steps:
+  - intent: mood_danger
+  - action: utter_danger
+  - intent: mood_negative
+  - action: utter_talk_about_it
+  - intent: problem_assignment
+  - action: utter_too_many_assignments_advice
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_neutral
+  - action: utter_end_conversation
+
+- story: interactive_story_1
+  steps:
+  - intent: ask_for_listening
+  - action: utter_listen
+  - intent: finish_talking
+  - action: utter_done_listen
+  - intent: refuse_help
+  - action: utter_end_conversation

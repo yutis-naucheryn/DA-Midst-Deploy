@@ -1,0 +1,448 @@
+{% extends "base.html" %} {% block title %}DASS-21{% endblock %}
+
+{% block content %}
+
+<head>
+    <style>
+      .dass-select {
+        float: right;
+        margin-left: 10px;
+      }
+
+      /* Make table look neat */
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        }
+
+        /* Add border line to the table */
+        td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 5px;
+        }
+    </style>
+      <script>
+        function calculateDASS21Score() {
+          // Get the selected option values from the select elements
+          var item1 = parseInt(document.getElementById("dass-q1").value);
+          var item2 = parseInt(document.getElementById("dass-q2").value);
+          var item3 = parseInt(document.getElementById("dass-q3").value);
+          var item4 = parseInt(document.getElementById("dass-q4").value);
+          var item5 = parseInt(document.getElementById("dass-q5").value);
+          var item6 = parseInt(document.getElementById("dass-q6").value);
+          var item7 = parseInt(document.getElementById("dass-q7").value);
+          var item8 = parseInt(document.getElementById("dass-q8").value);
+          var item9 = parseInt(document.getElementById("dass-q9").value);
+          var item10 = parseInt(document.getElementById("dass-q10").value);
+          var item11 = parseInt(document.getElementById("dass-q11").value);
+          var item12 = parseInt(document.getElementById("dass-q12").value);
+          var item13 = parseInt(document.getElementById("dass-q13").value);
+          var item14 = parseInt(document.getElementById("dass-q14").value);
+          var item15 = parseInt(document.getElementById("dass-q15").value);
+          var item16 = parseInt(document.getElementById("dass-q16").value);
+          var item17 = parseInt(document.getElementById("dass-q17").value);
+          var item18 = parseInt(document.getElementById("dass-q18").value);
+          var item19 = parseInt(document.getElementById("dass-q19").value);
+          var item20 = parseInt(document.getElementById("dass-q20").value);
+          var item21 = parseInt(document.getElementById("dass-q21").value);
+          
+          // Calculate the subscale scores
+          // Based on https://www.healthfocuspsychology.com.au/tools/dass-21/ 
+          var depressionScore = (item3 + item5 + item10 + item13 + item16 + item17 + item21);
+          var anxietyScore = (item2 + item4 + item7 + item9 + item15 + item19 + item20);
+          var stressScore = (item1 + item6 + item8 + item11 + item12 + item14 + item18);
+
+          // Another way
+        //   var depressionScore = (item3 + item5 + item10 + item13 + item16 + item17 + item21) * 2;
+        //   var anxietyScore = (item2 + item4 + item7 + item9 + item15 + item19 + item20) * 2;
+        //   var stressScore = (item1 + item6 + item8 + item11 + item12 + item14 + item18) * 2;
+          
+          // Calculate the total score
+          var totalScore = depressionScore + anxietyScore + stressScore;
+          
+          // Display the results
+          alert("Your DASS-21 score is:\n\nDepression: " + depressionScore + "\nAnxiety: " + anxietyScore + "\nStress: " + stressScore + "\n\nTotal: " + totalScore);
+          
+          // create a JSON object with the calculated scores
+          var data = {
+              'depressionScore': depressionScore,
+              'anxietyScore': anxietyScore,
+              'stressScore': stressScore
+          };
+          // make an AJAX request to save the scores to the database
+          var xhr = new XMLHttpRequest();
+          xhr.open('POST', '/moodtrack/dass-21/submit', true);
+          xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+          xhr.onload = function() {
+              if (xhr.status === 200) {
+                  console.log('DASS-21 scores saved to database');
+              } else {
+                  console.log('Error saving DASS-21 scores to database');
+              }
+          };
+          xhr.send(JSON.stringify(data));
+        
+        }
+      </script>
+  </head>
+
+<br />
+<h1 align="center">DASS-21</h1>
+<p style="line-height: 1; font-size: 12px; text-align: right;" class="popup-info">
+  <span style="font-size: 16px;">🛈</span>
+  <button onclick="changeColor_green()" 
+  style="color: #C7EDCC; background-color: #C7EDCC; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_yellow()" 
+  style="color: #FAF9DE; background-color: #FAF9DE; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_orange()" 
+  style="color: #FFF2E2; background-color: #FFF2E2; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_red()" 
+  style="color: #FDE6E0; background-color: #FDE6E0; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_blue()" 
+  style="color: #DCE2F1; background-color: #DCE2F1; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_purple()" 
+  style="color: #E9EBFE; background-color: #E9EBFE; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_grey()" 
+  style="color: #EAEAEF; background-color: #EAEAEF; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_greenLight()" 
+  style="color: #E3EDCD; background-color: #E3EDCD; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_white()" 
+  style="color: #FFFFFF; background-color: #FFFFFF; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+</p>
+
+<p style="text-align: justify; flex: 1;">
+  The DASS-21 (Depression Anxiety Stress Scale - 21 items) is a self-report questionnaire designed 
+    to measure the three related negative emotional states of depression, anxiety and stress. 
+    It consists of 21 items that assess the severity of each of these emotional states over the past week.
+    The DASS-21 questionnaire is a valuable tool for understanding your emotional state. 
+    By taking the questionnaire, you can gain insights into any symptoms of depression, 
+    anxiety, or stress you may be experiencing.</p>
+<p style="text-align: justify; flex: 1;">
+  Taking the DASS-21 questionnaire can be a proactive step towards taking care of your mental health. 
+    It can help you gain a better understanding of yourself and identify any areas where you may 
+    need additional support or resources.</p>
+<!-- Official FAQs for DASS -->
+<p style="text-align: justify; flex: 1;">
+  Click <a href="http://www2.psy.unsw.edu.au/dass/dassfaq.htm" target="_blank">here</a> to visit the official DASS FAQs.
+</p>
+<br />
+<h2 align="center">DASS-21 Survey</h2>
+<br />
+<form action="{{ url_for('views.submit_dass') }}">
+<!-- Q1 -->
+    <select id="dass-q1" class="dass-select" name="scores">
+        <option value="0">Never</option>
+        <option value="1">Sometimes</option>
+        <option value="2">Often</option>
+        <option value="3">Almost always</option>
+    </select>
+    <label for="dass-q1" class="dass-select">Answer for Q1:</label>
+<p>1. I found it hard to wind down.</p>
+
+<!-- Q2 -->
+    <select id="dass-q2" class="dass-select" name="scores">
+        <option value="0">Never</option>
+        <option value="1">Sometimes</option>
+        <option value="2">Often</option>
+        <option value="3">Almost always</option>
+    </select>
+    <label for="dass-q2" class="dass-select">Answer for Q2:</label>
+<p>2. I was aware of dryness of my mouth.</p>
+
+<!-- Q3 -->
+<select id="dass-q3" class="dass-select" name="scores">
+    <option value="0">Never</option>
+    <option value="1">Sometimes</option>
+    <option value="2">Often</option>
+    <option value="3">Almost always</option>
+</select>
+<label for="dass-q3" class="dass-select">Answer for Q3:</label>
+<p>3. I couldn`t seem to experience any positive feeling at all.</p>
+
+<!-- Q4 -->
+<select id="dass-q4" class="dass-select" name="scores">
+    <option value="0">Never</option>
+    <option value="1">Sometimes</option>
+    <option value="2">Often</option>
+    <option value="3">Almost always</option>
+</select>
+<label for="dass-q4" class="dass-select">Answer for Q4:</label>
+<p>4. I experienced breathing difficulty.</p>
+
+<!-- Q5 -->
+<select id="dass-q5" class="dass-select" name="scores">
+    <option value="0">Never</option>
+    <option value="1">Sometimes</option>
+    <option value="2">Often</option>
+    <option value="3">Almost always</option>
+</select>
+<label for="dass-q5" class="dass-select">Answer for Q5:</label>
+<p>5. I found it difficult to work up the initiative to do things.</p>
+
+<!-- Q6 -->
+<select id="dass-q6" class="dass-select" name="scores">
+    <option value="0">Never</option>
+    <option value="1">Sometimes</option>
+    <option value="2">Often</option>
+    <option value="3">Almost always</option>
+</select>
+<label for="dass-q6" class="dass-select">Answer for Q6:</label>
+<p>6. I tended to over-react to situations.</p>
+
+<!-- Q7 -->
+<select id="dass-q7" class="dass-select" name="scores">
+    <option value="0">Never</option>
+    <option value="1">Sometimes</option>
+    <option value="2">Often</option>
+    <option value="3">Almost always</option>
+</select>
+<label for="dass-q7" class="dass-select">Answer for Q7:</label>
+<p>7. I experienced trembling (eg, in the hands).</p>
+
+<!-- Q8 -->
+<select id="dass-q8" class="dass-select" name="scores">
+    <option value="0">Never</option>
+    <option value="1">Sometimes</option>
+    <option value="2">Often</option>
+    <option value="3">Almost always</option>
+</select>
+<label for="dass-q8" class="dass-select">Answer for Q8:</label>
+<p>8. I felt that I was using a lot of nervous energy.</p>
+
+<!-- Q9 -->
+<select id="dass-q9" class="dass-select" name="scores">
+    <option value="0">Never</option>
+    <option value="1">Sometimes</option>
+    <option value="2">Often</option>
+    <option value="3">Almost always</option>
+</select>
+<label for="dass-q9" class="dass-select">Answer for Q9:</label>
+<p>9. I was worried about situations in which I might panic and make a fool of myself.</p>
+
+<!-- Q10 -->
+<select id="dass-q10" class="dass-select" name="scores">
+    <option value="0">Never</option>
+    <option value="1">Sometimes</option>
+    <option value="2">Often</option>
+    <option value="3">Almost always</option>
+</select>
+<label for="dass-q10" class="dass-select">Answer for Q10:</label>
+<p>10. I felt that I had nothing to look forward to</p>
+
+<!-- Q11 -->
+<select id="dass-q11" class="dass-select" name="scores">
+    <option value="0">Never</option>
+    <option value="1">Sometimes</option>
+    <option value="2">Often</option>
+    <option value="3">Almost always</option>
+</select>
+<label for="dass-q11" class="dass-select">Answer for Q11:</label>
+<p>11. I found myself getting agitated.</p>
+
+<!-- Q12 -->
+<select id="dass-q12" class="dass-select" name="scores">
+    <option value="0">Never</option>
+    <option value="1">Sometimes</option>
+    <option value="2">Often</option>
+    <option value="3">Almost always</option>
+</select>
+<label for="dass-q12" class="dass-select">Answer for Q12:</label>
+<p>12. I found it difficult to relax.</p>
+
+<!-- Q13 -->
+<select id="dass-q13" class="dass-select" name="scores">
+    <option value="0">Never</option>
+    <option value="1">Sometimes</option>
+    <option value="2">Often</option>
+    <option value="3">Almost always</option>
+</select>
+<label for="dass-q13" class="dass-select">Answer for Q13:</label>
+<p>13. I felt down-hearted and blue.</p>
+
+<!-- Q14 -->
+<select id="dass-q14" class="dass-select" name="scores">
+    <option value="0">Never</option>
+    <option value="1">Sometimes</option>
+    <option value="2">Often</option>
+    <option value="3">Almost always</option>
+</select>
+<label for="dass-q14" class="dass-select">Answer for Q14:</label>
+<p>14. I was intolerant of anything that kept me from getting on with what I was doing.</p>
+
+<!-- Q15 -->
+<select id="dass-q15" class="dass-select" name="scores">
+    <option value="0">Never</option>
+    <option value="1">Sometimes</option>
+    <option value="2">Often</option>
+    <option value="3">Almost always</option>
+</select>
+<label for="dass-q15" class="dass-select">Answer for Q15:</label>
+<p>15. I felt I was close to panic.</p>
+
+<!-- Q16 -->
+<select id="dass-q16" class="dass-select" name="scores">
+    <option value="0">Never</option>
+    <option value="1">Sometimes</option>
+    <option value="2">Often</option>
+    <option value="3">Almost always</option>
+</select>
+<label for="dass-q16" class="dass-select">Answer for Q16:</label>
+<p>16. I was unable to become enthusiastic about anything.</p>
+
+<!-- Q17 -->
+<select id="dass-q17" class="dass-select" name="scores">
+    <option value="0">Never</option>
+    <option value="1">Sometimes</option>
+    <option value="2">Often</option>
+    <option value="3">Almost always</option>
+</select>
+<label for="dass-q17" class="dass-select">Answer for Q17:</label>
+<p>17. I felt I wasn`t worth much as a person.</p>
+
+<!-- Q18 -->
+<select id="dass-q18" class="dass-select" name="scores">
+    <option value="0">Never</option>
+    <option value="1">Sometimes</option>
+    <option value="2">Often</option>
+    <option value="3">Almost always</option>
+</select>
+<label for="dass-q18" class="dass-select">Answer for Q18:</label>
+<p>18. I felt that I was rather touchy.</p>
+
+<!-- Q19 -->
+<select id="dass-q19" class="dass-select" name="scores">
+    <option value="0">Never</option>
+    <option value="1">Sometimes</option>
+    <option value="2">Often</option>
+    <option value="3">Almost always</option>
+</select>
+<label for="dass-q19" class="dass-select">Answer for Q19:</label>
+<p>19. I was aware of the action of my heart in the absence of physical exertion.</p>
+
+<!-- Q20 -->
+<select id="dass-q20" class="dass-select" name="scores">
+    <option value="0">Never</option>
+    <option value="1">Sometimes</option>
+    <option value="2">Often</option>
+    <option value="3">Almost always</option>
+</select>
+<label for="dass-q20" class="dass-select">Answer for Q20:</label>
+<p>20. I felt scared without any good reason.</p>
+
+<!-- Q21 -->
+<select id="dass-q21" class="dass-select" name="scores">
+    <option value="0">Never</option>
+    <option value="1">Sometimes</option>
+    <option value="2">Often</option>
+    <option value="3">Almost always</option>
+</select>
+<label for="dass-q21" class="dass-select">Answer for Q21:</label>
+<p>21. I felt that life was meaningless.</p>
+
+</form>
+
+<!-- Button to trigger js function -->
+<br />
+<button type="button" class="btn btn-secondary" onclick="calculateDASS21Score()" style="float: right; margin-left: 10px;">Calculate score</button>
+<button type="button" class="btn btn-outline-secondary" onclick="dass21_result()" style="float: right;">Previous scores</button>
+
+<br />
+<br /><br />
+
+<!-- Display latest score -->
+<h5>Latest DASS-21 score: </h5>
+<p>If you just submitted a new survey, please refresh to view the newest score.
+  To view all score history, please click 'Previous scores' button above.</p>
+{% if results %}
+<table style="margin: 0 auto;">
+  <thead>
+    <tr>
+      <th>Submission Time</th>
+      <th>Depression Score</th>
+      <th>Anxiety Score</th>
+      <th>Stress Score</th>
+    </tr>
+  </thead>
+<tbody>
+<tr>
+  <td>{{ results.submission_time.strftime('%Y-%m-%d %H:%M:%S')|truncate(19, True, '') }}</td>
+  <td>{{ results.depression }}</td>
+  <td>{{ results.anxiety }}</td>
+  <td>{{ results.stress }}</td>
+</tr>
+</tbody>
+</table>
+{% else %}
+
+{% endif %}
+<br /><br />
+<h5>The table below introduces the score interpretation for each dimension:</h5>
+<table>
+    <thead>
+      <tr>
+        <th>Level/Disorder</th>
+        <th>Depression</th>
+        <th>Anxiety</th>
+        <th>Stress</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Normal</td>
+        <td>0 - 4</td>
+        <td>0 - 3</td>
+        <td>0 - 7</td>
+      </tr>
+      <tr>
+        <td>Mild</td>
+        <td>5 - 6</td>
+        <td>4 - 5</td>
+        <td>8 - 9</td>
+      </tr>
+      <tr>
+        <td>Moderate</td>
+        <td>7 - 10</td>
+        <td>6 - 7</td>
+        <td>10 - 12</td>
+      </tr>
+      <tr>
+        <td>Severe</td>
+        <td>11 - 13</td>
+        <td>8 - 9</td>
+        <td>13 - 16</td>
+      </tr>
+      <tr>
+        <td>Extremely severe</td>
+        <td>≥14</td>
+        <td>≥10</td>
+        <td>≥17</td>
+      </tr>
+    </tbody>
+  </table>
+<!-- Credit to reference -->
+<p style="color: rgb(160, 160, 160); font-size: 12px; text-align: right; margin-top: 5px;" >Table adopted from
+  <a href="https://www.healthfocuspsychology.com.au/tools/dass-21/" title="Flaticon" style="color: rgb(114, 114, 114);"  target="_blank">healthfocuspsychology</a></p>
+<br />
+<p style="margin-bottom: 25px; text-align: justify;">Or you may click the button below based on your preferred language to try DASS-21.
+  Please note that if you choose to take the DASS-21 survey in another language through the following buttons, 
+  your score will not be recorded in the DA-Midst system.
+</p>
+<div style="display: flex; justify-content: center;">
+    {#<button type="button" class="btn btn-info" style="flex: 1; margin-right: 5px;" onclick="window.open('https://www.healthfocuspsychology.com.au/tools/dass-21/', '_blank');" target="_blank">DASS-21 Main Reference</button>#}
+    <button type="button" class="btn btn-info" style="flex: 1; margin-right: 5px;" onclick="window.open('https://cn.askpsychologist.my/assessments/depression-anxiety-stress-scale-21/2', '_blank');" target="_blank">DASS-21 Mandarin</button>
+    <button type="button" class="btn btn-info" style="flex: 1;" onclick="window.open('https://www.ramlimusa.com/questionnaires/depression-anxiety-stress-scale-dass-21-bahasa-malaysia/', '_blank');" target="_blank">DASS-21 Malay</button>
+  </div>
+  <br />
+<p style="text-align: justify; margin-top: 20px;">If you are feeling overwhelmed and need additional assistance in managing your stress and anxiety, 
+  we highly recommend seeking help from a qualified mental health professional who can provide tailored 
+  support and guidance to address your individual needs.</p>
+  <p  style="text-align: justify; flex: 1; color: rgb(62, 62, 62); font-size: 14px;">
+  For immediate assistance, please call: <a href="tel:+60327806803" target="_blank">+603 2780 6803</a> (Mon.-Fri. 9am-5pm, except public holidays).<br>
+  For more resources and information, please visit <a href="https://mmha.org.my/find-help" target="_blank">Malaysia Mental Health Association (MMHA)</a>.</p>
+  <br />
+  <br />
+  <br />
+  
+
+{% endblock %}
