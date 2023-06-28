@@ -33,11 +33,8 @@
 <h3>Welcome to the Little World of Stress Relief!</h3>
 
 <p style="text-align: justify; flex: 1;">
-    Stress can be a challenging experience, but there are simple activities that can help you 
-    manage it in your daily life. In this section, we've curated a list of activities that can 
-    help you reduce stress and anxiety, improve your mood, and feel more grounded.</p>
+  Feel free to embark on your stress-relieving journey by choosing any activity that resonates with you!</p>
 
-<p style="text-align: justify; flex:1;">If you're not sure where to start, we recommend trying the simplest activity: </p>
 <br />
 <!-- First row -->
 <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
@@ -61,20 +58,29 @@
   <p style="margin-left: 1cm;">Journaling</p>
 <!-- Eating image button -->
     <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 50px;">
-      <a href="/activity#section2">
+      <a href="https://www.healthline.com/health/healthy-eating/why-do-i-eat-when-im-stressed#eating-when-stressed" target="_blank">
         <img src="{{ url_for('static', filename='/image/healthy-food.png') }}" alt="Eating" 
         style="width:150px; height:150px;">
       </a>
       
     </div>
   <p style="margin-left: 1cm;">Eating</p>
+<!-- Sleeping image button -->
+  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 50px;">
+    <a href="/activity#section2">
+      <img src="{{ url_for('static', filename='/image/btn-sleep.png') }}" alt="Sleeping" 
+      style="width:150px; height:150px;">
+    </a>
+    
+  </div>
+<p style="margin-left: 1cm;">Sleeping</p>
 </div>
 <br /> <br />
 <!-- Second row -->
 <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
   <!-- Exercise image button -->
-  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 50px;">
-    <a href="/activity#section2">
+  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <a href="https://www.healthline.com/health/heart-disease/exercise-stress-relief" target="_blank">
       <img src="{{ url_for('static', filename='/image/exercising.png') }}" alt="Exercising" 
       style="width:120px; height:120px;">
     </a>
@@ -108,6 +114,15 @@
     
   </div>
 <p style="margin-left: 0.5cm;">Interact</p>
+  <!-- Drawing image button -->
+  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 50px;">
+    <a href="https://www.healthline.com/health/mental-health/anxiety-drawing" target="_blank">
+      <img src="{{ url_for('static', filename='/image/btn-drawing.png') }}" alt="Drawing" 
+      style="width:120px; height:120px;">
+    </a>
+    
+  </div>
+<p style="margin-left: 0.5cm;">Drawing</p>
 </div>
 <br>
 <br>
