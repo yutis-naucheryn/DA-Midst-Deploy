@@ -39,7 +39,79 @@
 
 <p style="text-align: justify; flex:1;">If you're not sure where to start, we recommend trying the simplest activity: </p>
 <br />
-
+<!-- First row -->
+<div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+  <!-- Music image button -->
+  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; ">
+      <a href="/activity#section1">
+        <img src="{{ url_for('static', filename='/image/btn-music.png') }}" alt="Music" 
+        style="width:150px; height:150px;">
+      </a>
+      
+    </div>
+  <p style="margin-left: 1cm;">Music</p>
+<!-- Journaling image button -->
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 50px;">
+      <a href="/activity#section2">
+        <img src="{{ url_for('static', filename='/image/btn-space.png') }}" alt="Journaling" 
+        style="width:150px; height:150px;">
+      </a>
+      
+    </div>
+  <p style="margin-left: 1cm;">Journaling</p>
+<!-- Eating image button -->
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 50px;">
+      <a href="/activity#section2">
+        <img src="{{ url_for('static', filename='/image/healthy-food.png') }}" alt="Eating" 
+        style="width:150px; height:150px;">
+      </a>
+      
+    </div>
+  <p style="margin-left: 1cm;">Eating</p>
+</div>
+<br /> <br />
+<!-- Second row -->
+<div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+  <!-- Exercise image button -->
+  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 50px;">
+    <a href="/activity#section2">
+      <img src="{{ url_for('static', filename='/image/exercising.png') }}" alt="Exercising" 
+      style="width:120px; height:120px;">
+    </a>
+    
+  </div>
+<p style="margin-left: 0.5cm;">Exercise</p>
+  <!-- Singing image button -->
+  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 50px;">
+    <a href="/activity#section2">
+      <img src="{{ url_for('static', filename='/image/btn-sing.png') }}" alt="Sing" 
+      style="width:120px; height:120px;">
+    </a>
+    
+  </div>
+<p style="margin-left: 0.5cm;">Sing</p>
+  <!-- Talk image button -->
+  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 50px;">
+    <a href="/activity#section2">
+      <img src="{{ url_for('static', filename='/image/btn-talk.png') }}" alt="Talk to trusted ones" 
+      style="width:120px; height:120px;">
+    </a>
+    
+  </div>
+<p style="margin-left: 0.5cm; text-align: center;">Pour out</p>
+  <!-- Interact image button -->
+  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 50px;">
+    <a href="/activity#section2">
+      <img src="{{ url_for('static', filename='/image/btn-cat.png') }}" alt="Interact with pets or animals" 
+      style="width:120px; height:120px;">
+    </a>
+    
+  </div>
+<p style="margin-left: 0.5cm;">Interact</p>
+</div>
+<br>
+<br>
+<div id="section1"></div>
 <!-- Listen to Music -->
 <div style="display: flex; flex-direction: row;">
     <img src="{{ url_for('static', filename='/image/number-one.png') }}" 
@@ -49,20 +121,15 @@
 <div style="display: flex; flex-direction: row; margin-left: 1cm;">
 <img src="{{ url_for('static', filename='/image/activity-music.jpg') }}" 
         alt="activity-music" style="width: 250px; height: 250px; margin-right: 1cm;">
-<p style="text-align: justify; flex: 1;">Music has long been known to have a positive effect on our emotions and can be a powerful tool 
-    in managing stress and anxiety. Listening to music can help to reduce feelings of stress and 
-    promote relaxation by slowing down the heart rate and breathing. It can also distract the mind 
-    from negative thoughts and feelings, allowing us to focus on the music instead. Additionally, 
-    music has been shown to stimulate the release of dopamine, a feel-good chemical in the brain, 
-    which can boost mood and reduce feelings of anxiety. Whether it's through calming melodies or 
-    upbeat rhythms, incorporating music into our daily routine can be an effective way to manage 
-    stress and improve our overall mental wellbeing.
+<p style="text-align: justify; flex: 1;">
+  Melodies dance, stress takes flight, as music's soothing embrace brings respite.
     <br />
     <br />
 <!-- go to reference website -->
 <button type="button" class="btn btn-outline-info" onClick="window.open('https://www.unr.edu/counseling/virtual-relaxation-room/releasing-stress-through-the-power-of-music', '_blank');" target="_blank" style="float: right; margin-left: 10px;">Learn More</button>
 </p></div>
 <br />
+<div id="section1.1"></div>
 <!-- list of suggested music -->
 <h5 style="text-align: justify; flex: 1; margin-left: 1cm;">Not sure what kind of music can help you? Why not try these types of music!</h5>
 <div style="text-align: justify; flex: 1; margin-left: 1cm; margin-top: 15px;">
@@ -98,6 +165,7 @@
     combining listening to music with writing in a stress relief journal. 
     This can be a great way to reflect on your thoughts and feelings while enjoying the calming effects of music.</p>
 <br />
+<div id="section2"></div>
 <!-- Stress relief journaling -->
 <div style="display: flex; flex-direction: row;">
     <img src="{{ url_for('static', filename='/image/number-two.png') }}" 
@@ -126,6 +194,7 @@
 <h5 style="text-align: justify; flex:1;">
     Looking for more ways to manage your stress and anxiety? Here are more options for you.</h5>
 <br />
+<div id="sectionZ"></div>
 <!-- Other activities -->
 <div style="display: flex; flex-direction: row;">
     <img src="{{ url_for('static', filename='/image/menu.png') }}" 
