@@ -14,23 +14,7 @@ views = Blueprint('views', __name__)
 
 # Set up the action endpoint configuration
 # Remember to run 'rasa run actions' in the directory that saved the rasa actions.py first to make it work
-import socket
-
-# List of known remote IP addresses
-remote_ips = ['13.228.225.19', '18.142.128.26', '54.254.162.138']
-
-# Get the remote IP address
-remote_ip = socket.gethostbyname(socket.gethostname())
-
-# Check if the remote IP matches any of the known IP addresses
-if remote_ip in remote_ips:
-    # Use the known IP address
-    action_endpoint = EndpointConfig(url=f"http://{remote_ip}:5055/webhook")
-else:
-    # Use the default URL
-    action_endpoint = EndpointConfig(url="http://localhost:5055/webhook")
-
-#action_endpoint = EndpointConfig(url="http://localhost:5055/webhook")
+action_endpoint = EndpointConfig(url="http://localhost:5055/webhook")
 
 # Load the Rasa agent
 #agent = Agent.load(r'C:\Users\Hp\Documents\da-midst\current_directory\models\20230413-230954-dry-font.tar', action_endpoint=action_endpoint)
