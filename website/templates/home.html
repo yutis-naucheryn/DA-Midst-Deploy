@@ -8,7 +8,7 @@
 }
 
 .popup-link::before {
-  content: "About Us"; /* Set content of the popup */
+  content: "About DA-Midst"; /* Set content of the popup */
   position: absolute; /* Set position of popup to absolute */
   top: -30px; /* Set distance from top of link to the popup */
   left: 50%; /* Set distance from left of link to the popup */
@@ -21,7 +21,7 @@
   font-size: 14px; /* Set font size of the popup */
   opacity: 0; /* Hide the popup by default */
   transition: opacity 0.2s ease-in-out; /* Add transition effect to the popup */
-  width: 2.5cm;
+  width: 4cm;
   text-align: center;
 }
 
@@ -34,6 +34,7 @@
 <div style="display: flex; flex-direction: row; justify-content: space-between;">
 <p style="text-align: left; font-family: 'Times New Roman', Times, serif; font-size: 48px; line-height: 1;">
     <i>Welcome to <b><span style="font-size: 72px;">DA-Midst</span></b></i></p>
+    <!-- Change bg colour -->
     <p style="line-height: 1; font-size: 12px; text-align: right;" class="popup-info">
         <span style="font-size: 16px;">🛈</span>
         <button onclick="changeColor_green()" 
@@ -56,21 +57,101 @@
         style="color: #FFFFFF; background-color: #FFFFFF; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
       </p>
     </div>
+<!-- title -->
 <p style="text-align: left; font-size: 24px; line-height: 1;">
-    A Chatbot-Enabled Platform for Stress and Anxiety Management System</p>
+    A Chatbot-Enabled Platform for Stress and Anxiety Management System &nbsp;
+    <a href="/about-us" class="popup-link">🛈</a></p>
 <br />
-<p style="text-align: justify; flex: 1;">
-    DA-Midst is a stress and anxiety management system designed to help you manage 
-    the pressures of daily life. Our platform offers a range of tools and resources, including 
-    daily mood tracking using DASS-21, stress-relief journaling, and music recommendations to 
-    help you feel calm and centered. We are committed to providing a safe and inclusive 
-    space to support your mental wellbeing.
-    If you are concerned about your mental wellbeing, 
-    we advise seeking help from a mental health professional who can provide you with personalized guidance and support. 
-    {#<a href="/about-us" class="popup-link">🛈</a>#}
-</p>
+
+<!-- menu -->
+<div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+  <!-- Daily Mood Tracking image button -->
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 50px;">
+      <a href="/moodtrack">
+        <img src="{{ url_for('static', filename='/image/btn-moodtrack.png') }}" alt="Daily Mood Tracking" 
+        style="width:100px; height:100px;">
+      </a>
+      <p style="text-align: center; flex: 1; margin-top: 4px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+        Mood Tracking
+      </p>
+    </div>
+<!-- Activity image button -->
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 50px;">
+      <a href="/activity">
+        <img src="{{ url_for('static', filename='/image/btn-activity.png') }}" alt="Activity" 
+        style="width:100px; height:100px;">
+      </a>
+      <p style="text-align: center; flex: 1; margin-top: 4px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+        Activity
+      </p>
+    </div>
+<!-- Personal Space image button -->
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 50px;">
+      <a href="/space">
+        <img src="{{ url_for('static', filename='/image/btn-space.png') }}" alt="Personal Space" 
+        style="width:100px; height:100px;">
+      </a>
+      <p style="text-align: center; flex: 1; margin-top: 4px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+        Personal Space
+      </p>
+    </div>
+<!-- DASS-21 image button -->
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 50px;">
+      <a href="/moodtrack/dass-21">
+        <img src="{{ url_for('static', filename='/image/btn-dass21.png') }}" alt="DASS-21 Survey" 
+        style="width:100px; height:100px;">
+      </a>
+      <p style="text-align: center; flex: 1; margin-top: 4px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+        DASS-21 Survey
+      </p>
+    </div>
+<!-- DASS-21 record image button -->
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 50px;">
+      <a href="/moodtrack/dass-21/result">
+        <img src="{{ url_for('static', filename='/image/btn-dass_record.png') }}" alt="DASS-21 Record" 
+        style="width:100px; height:100px;">
+      </a>
+      <p style="text-align: center; flex: 1; margin-top: 4px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+        DASS-21 Record
+      </p>
+    </div>
+  </div>
+</br>
+<!-- introduce DaDa -->
+<div style="display: flex; flex-direction: row;">
+  <div style="display: flex; flex-direction: column;">
+  <a href="/home/chat">
+  <img src="{{ url_for('static', filename='/image/chatbot.png') }}" alt="chatbot" style="width:240px; height:240px; margin-right: 1cm;"></a>
+  <p style="text-align: center; flex: 1; margin-top: 10px; margin-right: 1cm; color: #7e7e7e;">
+    <i>Available 24/7</i>
+  </p>
+</div>
+  <div style="display: flex; flex-direction: column; margin-top: 1cm;">
+  <p style="text-align: justify;">
+    <span style="font-size: 24px;">Hi {{ user.user_name }}! </span><br>
+    <span>I'm <span style="font-size: 20px;"><b>DaDa</b></span>, your personal stress and anxiety management chatbot. How can I assist you today?
+    Click the button below and chat with me now!
+    If you are yet ready to chat with me, you may also click the buttons on the menu bar to explore DA-Midst.</span>
+  <br><br>
+    <!--activate chatbot-->
+    <!-- change to onClick="chat()" if dont want the chat interface to be open in another tab -->
+    <!-- change to onclick="window.open('/home/chat')" if want the chat interface to be open in another tab -->
+    <button type="button" class="btn btn-info" onclick="chat()" target="_blank" 
+    style="float: right; margin-left: 10px; margin-top: 10px;">Chat with DaDa</button>
+  </p>
+  <p style="text-align: right; flex: 1; color: rgb(62, 62, 62); font-size: 12px;">
+    For immediate assistance, please call: <a href="tel:+60327806803" target="_blank">+603 2780 6803</a> (Mon.-Fri. 9am-5pm, except public holidays).<br>
+    For more resources and information, please visit <a href="https://mmha.org.my/find-help" target="_blank">Malaysia Mental Health Association (MMHA)</a>.</p>
+</div>
+</div>
+
+<!-- can use this to do FAQ
+  <p style="text-align: justify; flex: 1;">
+  {#<a href="/about-us#section1">Learn more about DA-Midst</a>#}
+</p> -->
 <br />
 <!-- introduce chatbot -->
+{#
 <p style="text-align: left; font-size: 24px; line-height: 1;">
     Meet <b><i><span style="font-size: 30px;">DaDa</span></i></b>: Your personal chatbot for stress and anxiety management, available 24/7</p>
 <br />
@@ -93,5 +174,5 @@
         For immediate assistance, please call: <a href="tel:+60327806803" target="_blank">+603 2780 6803</a> (Mon.-Fri. 9am-5pm, except public holidays).<br>
         For more resources and information, please visit <a href="https://mmha.org.my/find-help" target="_blank">Malaysia Mental Health Association (MMHA)</a>.</p>
     </div>
-</div>
+</div>#}
 {% endblock %}
