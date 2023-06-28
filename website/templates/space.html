@@ -3,7 +3,13 @@
 {% block content %}
 <html>
 <head>
-
+    <style>
+        /* Custom styles for specific pop-up links */
+          #popup-link-journal::before {
+            content: "How it helps?";
+          }
+          
+        </style>
 </head>
 <body>
 <br />
@@ -33,7 +39,11 @@
     <div style="display: flex; flex-direction: row;">
         <img src="{{ url_for('static', filename='/image/writing.png') }}" 
         alt="number-two" style="width:1cm;height:1cm; margin-right: 20px; margin-top: 5px">
-        <h3 style="margin-top: 5px;">Write What You Feel</h3></div>
+        <h3 style="margin-top: 5px;">Write What You Feel &nbsp;</h3>
+        <p>
+            <a href="https://psychcentral.com/stress/how-to-begin-journaling-for-stress-relief" class="popup-link" id="popup-link-journal" target="_blank">🛈</a>
+        </p>
+    </div>
     <p style="margin-left: 1.5cm;  text-align: justify;">
         Take a deep breath and feel free to write down your thoughts in the text area below. 
         This is a safe space for you to express yourself and reflect on your day. 

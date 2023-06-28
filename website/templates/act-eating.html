@@ -1,0 +1,80 @@
+{% extends "base.html" %} {% block title %}Eating{% endblock %}
+
+{% block content %}
+<style>
+    /* Custom styles for specific pop-up links */
+      #popup-link-eat::before {
+        content: "Learn mroe";
+      }
+      
+    </style>
+
+<br />
+<h1 align="center">Activity</h1>
+<p style="line-height: 1; font-size: 12px; text-align: right;" class="popup-info">
+  <span style="font-size: 16px;">🛈</span>
+  <button onclick="changeColor_green()" 
+  style="color: #C7EDCC; background-color: #C7EDCC; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_yellow()" 
+  style="color: #FAF9DE; background-color: #FAF9DE; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_orange()" 
+  style="color: #FFF2E2; background-color: #FFF2E2; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_red()" 
+  style="color: #FDE6E0; background-color: #FDE6E0; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_blue()" 
+  style="color: #DCE2F1; background-color: #DCE2F1; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_purple()" 
+  style="color: #E9EBFE; background-color: #E9EBFE; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_grey()" 
+  style="color: #EAEAEF; background-color: #EAEAEF; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_greenLight()" 
+  style="color: #E3EDCD; background-color: #E3EDCD; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_white()" 
+  style="color: #FFFFFF; background-color: #FFFFFF; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+</p>
+
+<!-- section 1 -->
+<div style="display: flex; flex-direction: row;">
+    <h2 style="margin-bottom: 15px;"><i><b>Why Stress Eating?</b></i>&nbsp;</h2>
+    <p>
+        <a href="https://www.healthline.com/health/healthy-eating/why-do-i-eat-when-im-stressed#eating-when-stressed" class="popup-link" id="popup-link-eat" target="_blank">🛈</a>
+    </p>
+    </div>
+
+<p style="text-align: justify; flex: 1; font-size: 18px;">
+    Stress eating refers to the tendency of consuming food as a coping mechanism or emotional response to alleviate stress or anxiety.
+</p>
+
+<br/>
+<!-- section 2 -->
+<div style="display: flex; flex-direction: row;">
+    <img src="{{ url_for('static', filename='/image/healthy-food.png') }}" 
+        alt="number-two" style="width:1cm;height:1cm; margin-right: 20px; margin-top: 5px">
+    <h2 style="margin-bottom: 15px;"><i><b>How can I Eat to Reduce Stress?</b></i>&nbsp;</h2>
+    <p>
+        <a href="https://health.clevelandclinic.org/eat-these-foods-to-reduce-stress-and-anxiety/" class="popup-link" id="popup-link-eat" target="_blank">🛈</a>
+    </p>
+    </div>
+
+<p style="text-align: justify; flex: 1; font-size: 18px;">
+    Eating can be a source of stress relief, providing comfort and pleasure through the enjoyment of food.
+</p>
+
+
+<div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+    <iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/r-sX4heBTVE" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen></iframe>
+    <p style="text-align: justify; flex: 1; margin-top: 10px; margin-left: 1cm;">
+        Emphasizing the significance of adopting a healthier approach over stress eating, 
+        this section underscores the long-term benefits of mindful and nourishing dietary choices for managing stress effectively. 
+        Watch the video beside to gain insights into how specific foods, such as dark chocolate, oatmeal, and sweet red peppers, 
+        can contribute to calming effects and stress reduction. Remember to consume these foods in moderation, 
+        as stress can sometimes lead to overeating.
+    </p>
+</div>
+
+{% endblock %}

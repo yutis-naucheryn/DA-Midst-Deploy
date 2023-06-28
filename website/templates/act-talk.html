@@ -1,0 +1,53 @@
+{% extends "base.html" %} {% block title %}Sing{% endblock %}
+
+{% block content %}
+<style>
+    /* Custom styles for specific pop-up links */
+      #popup-link-ani::before {
+        content: "Learn more";
+      }
+      
+    </style>
+
+<br />
+<h1 align="center">Activity</h1>
+<p style="line-height: 1; font-size: 12px; text-align: right;" class="popup-info">
+  <span style="font-size: 16px;">🛈</span>
+  <button onclick="changeColor_green()" 
+  style="color: #C7EDCC; background-color: #C7EDCC; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_yellow()" 
+  style="color: #FAF9DE; background-color: #FAF9DE; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_orange()" 
+  style="color: #FFF2E2; background-color: #FFF2E2; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_red()" 
+  style="color: #FDE6E0; background-color: #FDE6E0; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_blue()" 
+  style="color: #DCE2F1; background-color: #DCE2F1; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_purple()" 
+  style="color: #E9EBFE; background-color: #E9EBFE; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_grey()" 
+  style="color: #EAEAEF; background-color: #EAEAEF; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_greenLight()" 
+  style="color: #E3EDCD; background-color: #E3EDCD; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_white()" 
+  style="color: #FFFFFF; background-color: #FFFFFF; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+</p>
+
+<div style="display: flex; flex-direction: row;">
+    <img src="{{ url_for('static', filename='/image/btn-drawing.png') }}" 
+        alt="number-two" style="width:1cm;height:1cm; margin-right: 20px; margin-top: 5px">
+    <h2 style="margin-bottom: 15px;"><i><b>Talk to trusted ones</b></i>&nbsp;</h2>
+    <p>
+        <a href="https://www.betterhealth.vic.gov.au/health/healthyliving/talking-through-problems" class="popup-link" id="popup-link-ani" target="_blank">🛈</a>
+    </p>
+    </div>
+
+<p style="text-align: justify; flex: 1; font-size: 18px;">
+    <i>Discover the Therapeutic Benefits of Open Communication: </i>
+    <br>Engage in Meaningful Conversations with Trusted Individuals to Relieve Stress, Share Burdens, and Find Support in Difficult Times.
+</p>
+
+<p style="text-align: justify; flex: 1; margin-top: 10px; margin-bottom: 1cm;">
+    ...
+</p>
+{% endblock %}

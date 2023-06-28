@@ -1,0 +1,72 @@
+{% extends "base.html" %} {% block title %}Animal{% endblock %}
+
+{% block content %}
+<style>
+    /* Custom styles for specific pop-up links */
+      #popup-link-ani::before {
+        content: "How it helps?";
+      }
+      
+    </style>
+
+<br />
+<h1 align="center">Activity</h1>
+<p style="line-height: 1; font-size: 12px; text-align: right;" class="popup-info">
+  <span style="font-size: 16px;">🛈</span>
+  <button onclick="changeColor_green()" 
+  style="color: #C7EDCC; background-color: #C7EDCC; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_yellow()" 
+  style="color: #FAF9DE; background-color: #FAF9DE; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_orange()" 
+  style="color: #FFF2E2; background-color: #FFF2E2; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_red()" 
+  style="color: #FDE6E0; background-color: #FDE6E0; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_blue()" 
+  style="color: #DCE2F1; background-color: #DCE2F1; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_purple()" 
+  style="color: #E9EBFE; background-color: #E9EBFE; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_grey()" 
+  style="color: #EAEAEF; background-color: #EAEAEF; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_greenLight()" 
+  style="color: #E3EDCD; background-color: #E3EDCD; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_white()" 
+  style="color: #FFFFFF; background-color: #FFFFFF; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+</p>
+
+<div style="display: flex; flex-direction: row;">
+    <img src="{{ url_for('static', filename='/image/btn-cat.png') }}" 
+        alt="number-two" style="width:1cm;height:1cm; margin-right: 20px; margin-top: 5px">
+    <h2 style="margin-bottom: 15px;"><i><b>Find Comfort in Furry Friends</b></i>&nbsp;</h2>
+    <p>
+        <a href="https://newsinhealth.nih.gov/2018/02/power-pets" class="popup-link" id="popup-link-ani" target="_blank">🛈</a>
+    </p>
+    </div>
+
+<p style="text-align: justify; flex: 1; font-size: 18px;">
+    <i>Explore the Healing Connection: </i>
+    <br>Discover the Power of Pet Therapy for Stress Relief and Unleash the Soothing Benefits of Interacting with Animals.
+</p>
+
+<p style="text-align: justify; flex: 1; margin-top: 10px; margin-bottom: 1cm;">
+    Can't Interact with Pets or Animals? No Worries! 
+    Indulge in the Delightful World of Cute Animal Videos for Instant Stress Relief and Experience 
+    the Joy of Watching Adorable Creatures Interacting with Humans.
+</p>
+
+<div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+    <iframe width="532" height="299.25" 
+        src="https://www.youtube.com/embed/NgPUpwlH2io" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen></iframe>
+
+    <iframe width="532" height="299.25" 
+        src="https://www.youtube.com/embed/Sg1_7eZ9psc" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen
+        style="margin-left: 1.4cm;"></iframe>
+</div>
+{% endblock %}

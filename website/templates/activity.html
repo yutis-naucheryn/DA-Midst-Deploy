@@ -40,93 +40,104 @@
 <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
   <!-- Music image button -->
   <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; ">
-      <a href="/activity#section1">
+      <a href="/activity/music">
         <img src="{{ url_for('static', filename='/image/btn-music.png') }}" alt="Music" 
-        style="width:150px; height:150px;">
+        style="width:135px; height:135px;">
       </a>
-      
+      <p style="text-align: center; height: 40px; margin-top: 10px;">Music</p>
     </div>
-  <p style="margin-left: 1cm;">Music</p>
+  
 <!-- Journaling image button -->
-    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 50px;">
-      <a href="/activity#section2">
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 2.5cm;">
+      <a href="/space">
         <img src="{{ url_for('static', filename='/image/btn-space.png') }}" alt="Journaling" 
-        style="width:150px; height:150px;">
+        style="width:135px; height:135px;">
       </a>
-      
+      <p style="text-align: center; height: 40px; margin-top: 10px;">Journaling</p>
     </div>
-  <p style="margin-left: 1cm;">Journaling</p>
+  
 <!-- Eating image button -->
-    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 50px;">
-      <a href="https://www.healthline.com/health/healthy-eating/why-do-i-eat-when-im-stressed#eating-when-stressed" target="_blank">
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 2.5cm;">
+      <a href="/activity/eating">
         <img src="{{ url_for('static', filename='/image/healthy-food.png') }}" alt="Eating" 
-        style="width:150px; height:150px;">
+        style="width:135px; height:135px;">
       </a>
-      
+      <p style="text-align: center; height: 40px; margin-top: 10px;">Eating</p>
     </div>
-  <p style="margin-left: 1cm;">Eating</p>
+  
 <!-- Sleeping image button -->
-  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 50px;">
-    <a href="/activity#section2">
+  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 2.5cm;">
+    <a href="/activity/sleep">
       <img src="{{ url_for('static', filename='/image/btn-sleep.png') }}" alt="Sleeping" 
-      style="width:150px; height:150px;">
+      style="width:135px; height:135px;">
     </a>
-    
+    <p style="text-align: center; height: 40px; margin-top: 10px;">Sleeping</p>
   </div>
-<p style="margin-left: 1cm;">Sleeping</p>
+
+<!-- Exercise image button -->
+  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 2.5cm;">
+    <a href="/activity/exercise">
+      <img src="{{ url_for('static', filename='/image/exercising.png') }}" alt="Exercising" 
+      style="width:135px; height:135px;">
+    </a>
+    <p style="text-align: center; height: 40px; margin-top: 10px;">Exercise</p>
+  </div>
+
 </div>
-<br /> <br />
+
 <!-- Second row -->
 <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-  <!-- Exercise image button -->
-  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-    <a href="https://www.healthline.com/health/heart-disease/exercise-stress-relief" target="_blank">
-      <img src="{{ url_for('static', filename='/image/exercising.png') }}" alt="Exercising" 
-      style="width:120px; height:120px;">
-    </a>
-    
-  </div>
-<p style="margin-left: 0.5cm;">Exercise</p>
   <!-- Singing image button -->
-  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 50px;">
-    <a href="/activity#section2">
+  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <a href="/activity/sing">
       <img src="{{ url_for('static', filename='/image/btn-sing.png') }}" alt="Sing" 
-      style="width:120px; height:120px;">
+      style="width:135px; height:135px;">
     </a>
-    
+    <p style="text-align: center; height: 40px; margin-top: 10px;">Sing<br></p>
   </div>
-<p style="margin-left: 0.5cm;">Sing</p>
+
   <!-- Talk image button -->
-  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 50px;">
-    <a href="/activity#section2">
+  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 2.5cm;">
+    <a href="/activity/talk">
       <img src="{{ url_for('static', filename='/image/btn-talk.png') }}" alt="Talk to trusted ones" 
-      style="width:120px; height:120px;">
+      style="width:135px; height:135px;">
     </a>
-    
+    <p style="text-align: center; height: 40px; margin-top: 10px;">Talk to<br>trusted ones</p>
   </div>
-<p style="margin-left: 0.5cm; text-align: center;">Pour out</p>
+
   <!-- Interact image button -->
-  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 50px;">
-    <a href="/activity#section2">
+  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 2.5cm;">
+    <a href="/activity/animal">
       <img src="{{ url_for('static', filename='/image/btn-cat.png') }}" alt="Interact with pets or animals" 
-      style="width:120px; height:120px;">
+      style="width:135px; height:135px;">
     </a>
-    
+    <p style="text-align: center; height: 40px; margin-top: 10px;">Interact with<br>pets or animals</p>
   </div>
-<p style="margin-left: 0.5cm;">Interact</p>
+
   <!-- Drawing image button -->
-  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 50px;">
-    <a href="https://www.healthline.com/health/mental-health/anxiety-drawing" target="_blank">
+  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 2.5cm;">
+    <a href="/activity/drawing">
       <img src="{{ url_for('static', filename='/image/btn-drawing.png') }}" alt="Drawing" 
-      style="width:120px; height:120px;">
+      style="width:135px; height:135px;">
     </a>
-    
+    <p style="text-align: center; height: 40px; margin-top: 10px;">Drawing<br></p>
   </div>
-<p style="margin-left: 0.5cm;">Drawing</p>
+
+  <!-- Meditation image button -->
+  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 2.5cm;">
+    <a href="/activity/meditation">
+      <img src="{{ url_for('static', filename='/image/meditation.png') }}" alt="Meditation" 
+      style="width:135px; height:135px;">
+    </a>
+    <p style="text-align: center; height: 40px; margin-top: 10px;">Meditation<br></p>
+  </div>
+
 </div>
 <br>
 <br>
 <div id="section1"></div>
+
+{#
 <!-- Listen to Music -->
 <div style="display: flex; flex-direction: row;">
     <img src="{{ url_for('static', filename='/image/number-one.png') }}" 
@@ -205,6 +216,8 @@
 <!-- go to reference website -->
 <button type="button" class="btn btn-outline-info" onClick="window.open('https://psychcentral.com/stress/how-to-begin-journaling-for-stress-relief', '_blank');" target="_blank" style="float: right; margin-left: 10px;">Learn More</button>
 </p></div>
+#}
+
 <br /><br />
 <h5 style="text-align: justify; flex:1;">
     Looking for more ways to manage your stress and anxiety? Here are more options for you.</h5>

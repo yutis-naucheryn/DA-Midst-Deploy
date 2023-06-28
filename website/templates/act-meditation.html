@@ -1,0 +1,68 @@
+{% extends "base.html" %} {% block title %}Meditation{% endblock %}
+
+{% block content %}
+<style>
+    /* Custom styles for specific pop-up links */
+      #popup-link-medi::before {
+        content: "How it helps?";
+      }
+      
+    </style>
+
+<br />
+<h1 align="center">Activity</h1>
+<p style="line-height: 1; font-size: 12px; text-align: right;" class="popup-info">
+  <span style="font-size: 16px;">🛈</span>
+  <button onclick="changeColor_green()" 
+  style="color: #C7EDCC; background-color: #C7EDCC; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_yellow()" 
+  style="color: #FAF9DE; background-color: #FAF9DE; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_orange()" 
+  style="color: #FFF2E2; background-color: #FFF2E2; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_red()" 
+  style="color: #FDE6E0; background-color: #FDE6E0; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_blue()" 
+  style="color: #DCE2F1; background-color: #DCE2F1; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_purple()" 
+  style="color: #E9EBFE; background-color: #E9EBFE; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_grey()" 
+  style="color: #EAEAEF; background-color: #EAEAEF; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_greenLight()" 
+  style="color: #E3EDCD; background-color: #E3EDCD; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+  <button onclick="changeColor_white()" 
+  style="color: #FFFFFF; background-color: #FFFFFF; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
+</p>
+
+<div style="display: flex; flex-direction: row;">
+    <img src="{{ url_for('static', filename='/image/meditation.png') }}" 
+        alt="number-two" style="width:1cm;height:1cm; margin-right: 20px; margin-top: 5px">
+    <h2 style="margin-bottom: 15px;"><i><b>Meditation</b></i>&nbsp;</h2>
+    <p>
+        <a href="https://www.mayoclinic.org/tests-procedures/meditation/in-depth/meditation/art-20045858" class="popup-link" id="popup-link-medi" target="_blank">🛈</a>
+    </p>
+    </div>
+
+<p style="text-align: justify; flex: 1; font-size: 18px;">
+    In the stillness of meditation, the turbulent waves of stress find their calm, and the mind discovers serenity amidst the chaos.
+</p>
+
+<p style="text-align: justify; flex: 1; margin-top: 10px; margin-bottom: 1cm;">
+    Embark on a tranquil journey of self-discovery and inner peace through our guided meditation video. 
+    Play the video to delve into the soothing realm of mindfulness and rejuvenate your spirit.
+</p>
+
+<div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+    <iframe width="532" height="299.25" src="https://www.youtube.com/embed/inpok4MKVLM" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen></iframe>
+    
+    <iframe width="532" height="299.25" src="https://www.youtube.com/embed/O-6f5wQXSu8" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen
+        style="margin-left: 1.4cm;"></iframe>
+</div>
+{% endblock %}

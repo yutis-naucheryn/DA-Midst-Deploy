@@ -219,3 +219,57 @@ def sent_analysis(note,noteId):
 def about_us():
     
     return render_template("about-us.html", user=current_user)  
+
+@views.route('/activity/animal', methods=['GET', 'POST'])
+@login_required
+def activity_animal():
+    
+    return render_template("act-animal.html", user=current_user) 
+
+@views.route('/activity/drawing', methods=['GET', 'POST'])
+@login_required
+def activity_drawing():
+    
+    return render_template("act-drawing.html", user=current_user) 
+
+@views.route('/activity/eating', methods=['GET', 'POST'])
+@login_required
+def activity_eating():
+    
+    return render_template("act-eating.html", user=current_user) 
+
+@views.route('/activity/exercise', methods=['GET', 'POST'])
+@login_required
+def activity_exercise():
+    
+    return render_template("act-exercise.html", user=current_user) 
+
+@views.route('/activity/meditation', methods=['GET', 'POST'])
+@login_required
+def activity_meditation():
+    
+    return render_template("act-meditation.html", user=current_user) 
+
+@views.route('/activity/music', methods=['GET', 'POST'])
+@login_required
+def activity_music():
+    
+    return render_template("act-music.html", user=current_user) 
+
+@views.route('/activity/sing', methods=['GET', 'POST'])
+@login_required
+def activity_sing():
+    
+    return render_template("act-sing.html", user=current_user) 
+
+@views.route('/activity/sleep', methods=['GET', 'POST'])
+@login_required
+def activity_sleep():
+    
+    return render_template("act-sleeping.html", user=current_user) 
+
+@views.route('/activity/talk', methods=['GET', 'POST'])
+@login_required
+def activity_talk():
+    
+    return render_template("act-talk.html", user=current_user) 
