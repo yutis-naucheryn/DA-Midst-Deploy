@@ -2,32 +2,11 @@
 
 {% block content %}
 <style>
-.popup-link {
-  position: relative; /* Set position of link to relative */
-  text-decoration: none; /* Remove default underline */
-}
+/* Custom styles for specific pop-up links */
+  #popup-link-home::before {
+    content: "About DA-Midst";
+  }
 
-.popup-link::before {
-  content: "About DA-Midst"; /* Set content of the popup */
-  position: absolute; /* Set position of popup to absolute */
-  top: -30px; /* Set distance from top of link to the popup */
-  left: 50%; /* Set distance from left of link to the popup */
-  transform: translateX(-50%); /* Center the popup horizontally */
-  padding: 8px 12px; /* Add padding to the popup */
-  background-color: #fff; /* Set background color of the popup */
-  border: 1px solid #ccc; /* Add border to the popup */
-  border-radius: 4px; /* Add border radius to the popup */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add box shadow to the popup */
-  font-size: 14px; /* Set font size of the popup */
-  opacity: 0; /* Hide the popup by default */
-  transition: opacity 0.2s ease-in-out; /* Add transition effect to the popup */
-  width: 4cm;
-  text-align: center;
-}
-
-.popup-link:hover::before {
-  opacity: 1; /* Show the popup when the user hovers over the link */
-}
 </style>
 
 <br /><br />
@@ -60,7 +39,7 @@
 <!-- title -->
 <p style="text-align: left; font-size: 24px; line-height: 1;">
     A Chatbot-Enabled Platform for Stress and Anxiety Management System &nbsp;
-    <a href="/about-us" class="popup-link">🛈</a></p>
+    <a href="/about-us" class="popup-link" id="popup-link-home">🛈</a></p>
 <br />
 
 <!-- menu -->

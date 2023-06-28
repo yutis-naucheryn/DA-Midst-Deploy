@@ -25,3 +25,30 @@ body {
   .popup-info:hover::before {
     opacity: 1; /* Show the popup when the user hovers over the link */
   }
+
+  .popup-link {
+    position: relative;
+    text-decoration: none;
+  }
+  
+  .popup-link::before {
+    /* Common styles for all pop-up links */
+    position: absolute;
+    top: -40px;
+    left: 100%;
+    /* transform: translateX(5%); */
+    padding: 8px 12px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    width: 4cm;
+    text-align: center;
+  }
+  
+  .popup-link:hover::before {
+    opacity: 1;
+  }

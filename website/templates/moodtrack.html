@@ -1,6 +1,16 @@
 {% extends "base.html" %} {% block title %}Daily Mood Tracking{% endblock %}
 
 {% block content %}
+<style>
+/* Custom styles for specific pop-up links */
+  #popup-link1::before {
+    content: "How it helps?";
+  }
+  
+  #popup-link2::before {
+    content: "Learn more about why DASS-21";
+  }
+</style>
 
 <br />
 <h1 align="center">Daily Mood Tracking</h1>
@@ -26,7 +36,37 @@
     style="color: #FFFFFF; background-color: #FFFFFF; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
   </p>
 <br />
+<!-- content -->
+<div style="display: flex; flex-direction: row;">
+<h2 style="margin-bottom: 15px;">Let's monitor your mood with DASS-21 &nbsp;</h2>
+<p>
+    <a href="https://www.thoughtfull.world/mental-health/three-benefits-of-tracking-your-mood" class="popup-link" id="popup-link1" target="_blank">🛈</a>
+</p>
+</div>
+
 <br />
+<div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+    <!-- DASS-21 image button -->
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; ">
+        <a href="/moodtrack/dass-21">
+          <img src="{{ url_for('static', filename='/image/btn-dass21.png') }}" alt="DASS-21 Survey" 
+          style="width:240px; height:240px;">
+        </a>
+        
+      </div>
+    <p style="margin-left: 1cm;">DASS-21 Survey</p>
+  <!-- DASS-21 record image button -->
+      <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 150px;">
+        <a href="/moodtrack/dass-21/result">
+          <img src="{{ url_for('static', filename='/image/btn-dass_record.png') }}" alt="DASS-21 Record" 
+          style="width:240px; height:240px;">
+        </a>
+        
+      </div>
+    <p style="margin-left: 1cm;">DASS-21 Records</p>
+</div>
+
+{#
 <div style="display: flex; flex-direction: row;">
 <img src="{{ url_for('static', filename='/image/stress-anxiety-depress.jpg') }}" 
     alt="stress-anxiety-depress" style="width:425px;height:282px; margin-right: 1cm;">
@@ -42,11 +82,19 @@
     <br />
     <!--go to DASS-21-->
 <button type="button" class="btn btn-secondary" onClick="dass21()" style="float: right; margin-left: 10px;">DASS-21 Survey</button>
-<button type="button" class="btn btn-outline-secondary" onclick="dass21_result()" style="float: right;">DASS-21 Score History</button></p></div>
+<button type="button" class="btn btn-outline-secondary" onclick="dass21_result()" style="float: right;">DASS-21 Score History</button>
+</p>
+</div> #}
+
 <br />
 <br />
 <!-- Explanation of Why DASS-21 -->
-<h2 style="margin-bottom: 15px;">Why DASS-21?</h2>
+<div style="display: flex; flex-direction: row;">
+    <h2 style="margin-bottom: 15px;">Why DASS-21? &nbsp;</h2>
+    <p>
+        <a href="https://www.naluri.life/news-and-reports/why-you-should-consider-taking-a-mental-health-assessment" class="popup-link" id="popup-link2" target="_blank">🛈</a>
+    </p>
+    </div>
 <div style="display: flex; flex-direction: row;">
     <img src="{{ url_for('static', filename='/image/number-one.png') }}" 
     alt="number-one" style="width:1cm;height:1cm; margin-right: 20px; margin-top: 5px">
