@@ -47,7 +47,41 @@
     <br>Engage in Meaningful Conversations with Trusted Individuals to Relieve Stress, Share Burdens, and Find Support in Difficult Times.
 </p>
 
-<p style="text-align: justify; flex: 1; margin-top: 10px; margin-bottom: 1cm;">
-    ...
-</p>
+<br /><br />
+
+<div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+  <!-- Image 1 -->
+  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; ">
+
+        <img src="{{ url_for('static', filename='/image/img-talk1.png') }}" alt="Talk" 
+        style="width:200px; height:200px;">
+
+      <p style="text-align: center; height: 40px; margin-top: 10px;">
+        <span style="font-size: 16px;"><i><b>Seek solace in trusted connections.</b></i></span> <br>
+        Share your burdens with those who care. </p>
+    </div>
+
+  <!-- Image 2 -->
+  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 3cm;">
+
+      <img src="{{ url_for('static', filename='/image/img-talk2.png') }}" alt="Love" 
+      style="width:200px; height:200px;">
+
+    <p style="text-align: center; height: 40px; margin-top: 10px;">
+      <span style="font-size: 16px;"><i><b>Foster empathetic conversations.</b></i></span> <br>
+      Engage with loved ones who understand you.</p>
+  </div>
+
+  <!-- Image 3 -->
+  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 3cm;">
+
+      <img src="{{ url_for('static', filename='/image/img-talk3.png') }}" alt="Hug" 
+      style="width:200px; height:200px;">
+
+    <p style="text-align: center; height: 40px; margin-top: 10px;">
+      <span style="font-size: 16px;"><i><b>Unleash the strength of shared experiences.</b></i></span> <br>
+      Recognize that you are not alone in your struggles. </p>
+  </div>
+</div>
+
 {% endblock %}
