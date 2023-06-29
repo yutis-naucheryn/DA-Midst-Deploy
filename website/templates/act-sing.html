@@ -48,6 +48,36 @@
 </p>
 
 <p style="text-align: justify; flex: 1; margin-top: 10px; margin-bottom: 1cm;">
-    place karaoke video here...
+  Unlock the hidden melodies of joy! Embark on a karaoke adventure and click your way through an enchanting 
+  array of playlist buttons to discover musical treasures that will make your vocal cords dance with delight!
 </p>
+
+<br />
+<div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+<!-- List 1 -->
+  <a href="https://youtube.com/playlist?list=PL0562084654703201" target="_blank">
+    <img src="{{ url_for('static', filename='/image/btn-playlist.png') }}" alt="Music" 
+    style="width:250px; height:250px;" id="myList1" onclick="changeImage('myList1', '{{ url_for('static', filename='/image/btn-singlist.png') }}')">
+  </a>
+
+<!-- List 2 -->
+  <a href="https://youtube.com/playlist?list=PLLFS4jqFaVsCVsJuuWaPdrYPnsSi6HJ9R" target="_blank">
+    <img src="{{ url_for('static', filename='/image/btn-playlist.png') }}" alt="Music" 
+    style="width:250px; height:250px; margin-left: 3cm;" id="myList2" onclick="changeImage('myList2', '{{ url_for('static', filename='/image/btn-singlist.png') }}')">
+  </a>
+
+<!-- List 3 -->
+  <a href="https://youtube.com/playlist?list=PLfLrbDhqhVEnzDRDGuubgA1PoYY1noCcF" target="_blank">
+    <img src="{{ url_for('static', filename='/image/btn-playlist.png') }}" alt="Music" 
+    style="width:250px; height:250px; margin-left: 3cm;" id="myList3" onclick="changeImage('myList3', '{{ url_for('static', filename='/image/btn-singlist.png') }}')">
+  </a>
+</div>
+
+<script>
+  // Function to change the image
+  function changeImage(imageId, imagePath) {
+    var image = document.getElementById(imageId);
+    image.src = imagePath;
+  }
+</script>
 {% endblock %}

@@ -22,7 +22,19 @@
       background-size: cover;
       color: white;
     }
-    
+
+    .btn-img {
+      height: 300px;
+      width: 300px;
+      transition: filter 0.3s, box-shadow 0.3s;
+      border-radius: 50%; /* Make the image round */
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-img:hover {
+      filter: brightness(80%); /* Reduce the brightness on hover */
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5); /* Increase the shadow on hover */
+    }
   </style>
 </head>
 
@@ -40,7 +52,7 @@ source music: https://www.chosic.com/download-audio/29960/-->
         alt="number-two" style="width:1cm;height:1cm; margin-right: 20px; margin-top: 5px">
     <h2 style="margin-bottom: 15px;"><i><b>ZzzZzZzzzzz...</b></i>&nbsp;</h2>
     <p>
-        <a href="https://www.singupfoundation.org/singing-health" class="popup-link" id="popup-link-ani" target="_blank">🛈</a>
+        <a href="https://www.sleepscore.com/blog/how-rest-your-way-less-stress/" class="popup-link" id="popup-link-ani" target="_blank">🛈</a>
     </p>
     </div>
 
@@ -50,7 +62,7 @@ source music: https://www.chosic.com/download-audio/29960/-->
   {#<button onclick="darkMode()" class="btn btn-dark btn">Toggle dark mode</button>#}
 
   <img 
-    src="{{ url_for('static', filename='/image/day-and-night.png') }}" 
+    src="{{ url_for('static', filename='/image/day-and-night2.png') }}" 
     alt="Toggle dark mode" 
     onclick="darkMode()" 
     style="height: 300px; width: 300px;"
