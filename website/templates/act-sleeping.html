@@ -1,52 +1,74 @@
 {% extends "base.html" %} {% block title %}Sleeping{% endblock %}
 
 {% block content %}
+<!DOCTYPE html>
+<html>
+<head>
 <style>
     /* Custom styles for specific pop-up links */
       #popup-link-ani::before {
         content: "How it helps?";
       }
-      
-    </style>
+    
+    /* For night mode */
+    body {
+      background-color: white;
+      color: black;
+    }
 
+    .dark-mode {
+      /* Source image: https://unsplash.com/photos/RmoWqDCqN2E */
+      background-image: url("{{ url_for('static', filename='/image/nightmode-bg1edit2.jpg') }}");
+      background-size: cover;
+      color: white;
+    }
+    
+  </style>
+</head>
+
+<body>
 <br />
-<h1 align="center">Activity</h1>
-<p style="line-height: 1; font-size: 12px; text-align: right;" class="popup-info">
-  <span style="font-size: 16px;">🛈</span>
-  <button onclick="changeColor_green()" 
-  style="color: #C7EDCC; background-color: #C7EDCC; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
-  <button onclick="changeColor_yellow()" 
-  style="color: #FAF9DE; background-color: #FAF9DE; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
-  <button onclick="changeColor_orange()" 
-  style="color: #FFF2E2; background-color: #FFF2E2; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
-  <button onclick="changeColor_red()" 
-  style="color: #FDE6E0; background-color: #FDE6E0; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
-  <button onclick="changeColor_blue()" 
-  style="color: #DCE2F1; background-color: #DCE2F1; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
-  <button onclick="changeColor_purple()" 
-  style="color: #E9EBFE; background-color: #E9EBFE; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
-  <button onclick="changeColor_grey()" 
-  style="color: #EAEAEF; background-color: #EAEAEF; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
-  <button onclick="changeColor_greenLight()" 
-  style="color: #E3EDCD; background-color: #E3EDCD; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
-  <button onclick="changeColor_white()" 
-  style="color: #FFFFFF; background-color: #FFFFFF; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
-</p>
+<h1 align="center">😴</h1>
+<br />
+<!-- Background Music -->
+<!-- sourcecode: https://www.tutorialspoint.com/How-to-add-background-music-to-your-web-page 
+source music: https://www.chosic.com/download-audio/29960/-->
+<embed src="{{ url_for('static', filename='/music/silent-wood.mp3') }}" loop="true" autostart="true" width="0" height="0">
 
 <div style="display: flex; flex-direction: row;">
     <img src="{{ url_for('static', filename='/image/btn-sleep.png') }}" 
         alt="number-two" style="width:1cm;height:1cm; margin-right: 20px; margin-top: 5px">
-    <h2 style="margin-bottom: 15px;"><i><b>Sleeping</b></i>&nbsp;</h2>
+    <h2 style="margin-bottom: 15px;"><i><b>ZzzZzZzzzzz...</b></i>&nbsp;</h2>
     <p>
         <a href="https://www.singupfoundation.org/singing-health" class="popup-link" id="popup-link-ani" target="_blank">🛈</a>
     </p>
     </div>
 
-<p style="text-align: justify; flex: 1; font-size: 18px;">
-    add bgm...
+<br />
+<!-- Dark mode image button -->
+<div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+  {#<button onclick="darkMode()" class="btn btn-dark btn">Toggle dark mode</button>#}
+
+  <img 
+    src="{{ url_for('static', filename='/image/day-and-night.png') }}" 
+    alt="Toggle dark mode" 
+    onclick="darkMode()" 
+    style="height: 300px; width: 300px;"
+    class="btn-img">
+</div>
+
+<br />
+<p style="text-align: center; flex: 1;">
+  In peaceful sleep, stress finds release, <br>
+  A refuge for the weary, granting ease.
 </p>
 
-<p style="text-align: justify; flex: 1; margin-top: 10px; margin-bottom: 1cm;">
-    add nightmode...
-</p>
+<script>
+  function darkMode() {
+     var element = document.body;
+     element.classList.toggle("dark-mode");
+  }
+  </script>
+</body>
+</html>
 {% endblock %}
