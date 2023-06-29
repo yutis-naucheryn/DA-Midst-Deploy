@@ -4,9 +4,12 @@
 <style>
 /* Custom styles for specific pop-up links */
   #popup-link-home::before {
-    content: "About DA-Midst";
-  }
+      content: "About DA-Midst";
+    }
 
+  .btn-img:hover {
+      filter: brightness(80%); /* Reduce the brightness on hover */
+    }
 </style>
 
 <br /><br />
@@ -48,7 +51,7 @@
     <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
       <a href="/moodtrack">
         <img src="{{ url_for('static', filename='/image/btn-moodtrack.png') }}" alt="Daily Mood Tracking" 
-        style="width:130px; height:130px;">
+        style="width:130px; height:130px;" class="btn-img">
       </a>
       <p style="text-align: center; flex: 1; margin-top: 4px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
         Mood Tracking
@@ -58,7 +61,7 @@
     <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 80px;">
       <a href="/activity">
         <img src="{{ url_for('static', filename='/image/btn-activity.png') }}" alt="Activity" 
-        style="width:130px; height:130px;">
+        style="width:130px; height:130px;" class="btn-img">
       </a>
       <p style="text-align: center; flex: 1; margin-top: 4px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
         Activity
@@ -68,7 +71,7 @@
     <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 80px;">
       <a href="/space">
         <img src="{{ url_for('static', filename='/image/btn-space.png') }}" alt="Personal Space" 
-        style="width:130px; height:130px;">
+        style="width:130px; height:130px;" class="btn-img">
       </a>
       <p style="text-align: center; flex: 1; margin-top: 4px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
         Personal Space
@@ -78,7 +81,7 @@
     <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 80px;">
       <a href="/moodtrack/dass-21">
         <img src="{{ url_for('static', filename='/image/btn-dass21.png') }}" alt="DASS-21 Survey" 
-        style="width:130px; height:130px;">
+        style="width:130px; height:130px;" class="btn-img">
       </a>
       <p style="text-align: center; flex: 1; margin-top: 4px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
         DASS-21 Survey
@@ -88,7 +91,7 @@
     <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 80px;">
       <a href="/moodtrack/dass-21/result">
         <img src="{{ url_for('static', filename='/image/btn-dass_record.png') }}" alt="DASS-21 Record" 
-        style="width:130px; height:130px;">
+        style="width:130px; height:130px;" class="btn-img">
       </a>
       <p style="text-align: center; flex: 1; margin-top: 4px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
         DASS-21 Record
@@ -100,7 +103,8 @@
 <div style="display: flex; flex-direction: row;">
   <div style="display: flex; flex-direction: column;">
   <a href="/home/chat">
-  <img src="{{ url_for('static', filename='/image/chatbot.png') }}" alt="chatbot" style="width:240px; height:240px; margin-right: 1cm;"></a>
+  <img src="{{ url_for('static', filename='/image/chatbot.png') }}" alt="chatbot" 
+    style="width:240px; height:240px; margin-right: 1cm;" class="btn-img"></a>
   <p style="text-align: center; flex: 1; margin-top: 10px; margin-right: 1cm; color: #7e7e7e;">
     <i>Available 24/7</i>
   </p>

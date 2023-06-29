@@ -10,6 +10,10 @@
   #popup-link2::before {
     content: "Learn more about why DASS-21";
   }
+
+  .btn-img:hover {
+    filter: brightness(80%); /* Reduce the brightness on hover */
+  }
 </style>
 
 <br />
@@ -50,7 +54,7 @@
     <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; ">
         <a href="/moodtrack/dass-21">
           <img src="{{ url_for('static', filename='/image/btn-dass21.png') }}" alt="DASS-21 Survey" 
-          style="width:240px; height:240px;">
+          style="width:240px; height:240px;" class="btn-img">
         </a>
         
       </div>
@@ -59,7 +63,7 @@
       <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 150px;">
         <a href="/moodtrack/dass-21/result">
           <img src="{{ url_for('static', filename='/image/btn-dass_record.png') }}" alt="DASS-21 Record" 
-          style="width:240px; height:240px;">
+          style="width:240px; height:240px;" class="btn-img">
         </a>
         
       </div>

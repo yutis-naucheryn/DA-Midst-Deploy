@@ -7,6 +7,9 @@
         content: "How it helps?";
       }
       
+      .btn-img:hover {
+        filter: brightness(80%); /* Reduce the brightness on hover */
+      }
     </style>
 
 <br />
@@ -57,19 +60,22 @@
 <!-- List 1 -->
   <a href="https://youtube.com/playlist?list=PL0562084654703201" target="_blank">
     <img src="{{ url_for('static', filename='/image/btn-playlist.png') }}" alt="Music" 
-    style="width:250px; height:250px;" id="myList1" onclick="changeImage('myList1', '{{ url_for('static', filename='/image/btn-singlist.png') }}')">
+    style="width:250px; height:250px;" id="myList1"  class="btn-img"
+    onclick="changeImage('myList1', '{{ url_for('static', filename='/image/btn-singlist.png') }}')">
   </a>
 
 <!-- List 2 -->
   <a href="https://youtube.com/playlist?list=PLLFS4jqFaVsCVsJuuWaPdrYPnsSi6HJ9R" target="_blank">
     <img src="{{ url_for('static', filename='/image/btn-playlist.png') }}" alt="Music" 
-    style="width:250px; height:250px; margin-left: 3cm;" id="myList2" onclick="changeImage('myList2', '{{ url_for('static', filename='/image/btn-singlist.png') }}')">
+    style="width:250px; height:250px; margin-left: 3cm;" id="myList2"  class="btn-img"
+    onclick="changeImage('myList2', '{{ url_for('static', filename='/image/btn-singlist.png') }}')">
   </a>
 
 <!-- List 3 -->
   <a href="https://youtube.com/playlist?list=PLfLrbDhqhVEnzDRDGuubgA1PoYY1noCcF" target="_blank">
     <img src="{{ url_for('static', filename='/image/btn-playlist.png') }}" alt="Music" 
-    style="width:250px; height:250px; margin-left: 3cm;" id="myList3" onclick="changeImage('myList3', '{{ url_for('static', filename='/image/btn-singlist.png') }}')">
+    style="width:250px; height:250px; margin-left: 3cm;" id="myList3"  class="btn-img"
+    onclick="changeImage('myList3', '{{ url_for('static', filename='/image/btn-singlist.png') }}')">
   </a>
 </div>
 

@@ -1,6 +1,12 @@
 {% extends "base.html" %} {% block title %}Activity{% endblock %}
 
 {% block content %}
+<style>
+  .btn-img:hover {
+      filter: brightness(80%); /* Reduce the brightness on hover */
+    }
+</style>
+
 <br />
 <h1 align="center">Activity</h1>
 <p style="line-height: 1; font-size: 12px; text-align: right;" class="popup-info">
@@ -42,7 +48,7 @@
   <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; ">
       <a href="/activity/music">
         <img src="{{ url_for('static', filename='/image/btn-music.png') }}" alt="Music" 
-        style="width:135px; height:135px;">
+        style="width:135px; height:135px;" class="btn-img">
       </a>
       <p style="text-align: center; height: 40px; margin-top: 10px;">Music</p>
     </div>
@@ -51,7 +57,7 @@
     <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 2.5cm;">
       <a href="/space">
         <img src="{{ url_for('static', filename='/image/btn-space.png') }}" alt="Journaling" 
-        style="width:135px; height:135px;">
+        style="width:135px; height:135px;" class="btn-img">
       </a>
       <p style="text-align: center; height: 40px; margin-top: 10px;">Journaling</p>
     </div>
@@ -60,7 +66,7 @@
     <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 2.5cm;">
       <a href="/activity/eating">
         <img src="{{ url_for('static', filename='/image/healthy-food.png') }}" alt="Eating" 
-        style="width:135px; height:135px;">
+        style="width:135px; height:135px;" class="btn-img">
       </a>
       <p style="text-align: center; height: 40px; margin-top: 10px;">Eating</p>
     </div>
@@ -69,7 +75,7 @@
   <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 2.5cm;">
     <a href="/activity/sleep">
       <img src="{{ url_for('static', filename='/image/btn-sleep.png') }}" alt="Sleeping" 
-      style="width:135px; height:135px;">
+      style="width:135px; height:135px;" class="btn-img">
     </a>
     <p style="text-align: center; height: 40px; margin-top: 10px;">Sleeping</p>
   </div>
@@ -78,7 +84,7 @@
   <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 2.5cm;">
     <a href="/activity/exercise">
       <img src="{{ url_for('static', filename='/image/exercising.png') }}" alt="Exercising" 
-      style="width:135px; height:135px;">
+      style="width:135px; height:135px;" class="btn-img">
     </a>
     <p style="text-align: center; height: 40px; margin-top: 10px;">Exercise</p>
   </div>
@@ -91,7 +97,7 @@
   <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
     <a href="/activity/sing">
       <img src="{{ url_for('static', filename='/image/btn-sing.png') }}" alt="Sing" 
-      style="width:135px; height:135px;">
+      style="width:135px; height:135px;" class="btn-img">
     </a>
     <p style="text-align: center; height: 40px; margin-top: 10px;">Sing<br></p>
   </div>
@@ -100,7 +106,7 @@
   <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 2.5cm;">
     <a href="/activity/talk">
       <img src="{{ url_for('static', filename='/image/btn-talk.png') }}" alt="Talk to trusted ones" 
-      style="width:135px; height:135px;">
+      style="width:135px; height:135px;" class="btn-img">
     </a>
     <p style="text-align: center; height: 40px; margin-top: 10px;">Talk to<br>trusted ones</p>
   </div>
@@ -109,7 +115,7 @@
   <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 2.5cm;">
     <a href="/activity/animal">
       <img src="{{ url_for('static', filename='/image/btn-cat.png') }}" alt="Interact with pets or animals" 
-      style="width:135px; height:135px;">
+      style="width:135px; height:135px;" class="btn-img">
     </a>
     <p style="text-align: center; height: 40px; margin-top: 10px;">Interact with<br>pets or animals</p>
   </div>
@@ -118,7 +124,7 @@
   <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 2.5cm;">
     <a href="/activity/drawing">
       <img src="{{ url_for('static', filename='/image/btn-drawing.png') }}" alt="Drawing" 
-      style="width:135px; height:135px;">
+      style="width:135px; height:135px;" class="btn-img">
     </a>
     <p style="text-align: center; height: 40px; margin-top: 10px;">Drawing<br></p>
   </div>
@@ -127,7 +133,7 @@
   <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 2.5cm;">
     <a href="/activity/meditation">
       <img src="{{ url_for('static', filename='/image/meditation.png') }}" alt="Meditation" 
-      style="width:135px; height:135px;">
+      style="width:135px; height:135px;" class="btn-img">
     </a>
     <p style="text-align: center; height: 40px; margin-top: 10px;">Meditation<br></p>
   </div>
