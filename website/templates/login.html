@@ -36,9 +36,16 @@
             placeholder="Enter password"
         />
     </div>
+    <!-- Don't have account and needs register -->
     <p style="color: rgb(160, 160, 160); font-size: 14px;">Don't have an account? Click 
         <a href="/register">here</a> to register.</p>
+    
+    <div style="display: flex; flex-direction: row; align-items: center;">
     <button type="submit" class="btn btn-dark">Login</button>
+    <!-- Forgot password -->
+    <p style="margin-left: 20px; font-size: 14px;">
+        <a href="/reset" style="color: #007bff; text-decoration: underline;">Forgot password?</a>
+    </p></div>
 </form>
 
 {% endblock %}

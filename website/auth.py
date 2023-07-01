@@ -75,13 +75,11 @@ def register():
             # Generate verification token
             token = ts.dumps(email, salt='email-confirm-key')
 
-            # Send verification email
-            # Now we'll send the email confirmation link
+            # Send verification email with confirmation link
             subject = "Confirm your email"
             confirm_url = url_for('auth.confirm_email', token=token, _external=True)
             html = render_template('email/activate.html', confirm_url=confirm_url)
             
-            # We'll assume that send_email has been defined in myapp/util.py
             send_email(email, subject, html)
 
             flash('Account created! Please check your email to confirm your email address.', category='success')
@@ -107,3 +105,50 @@ def confirm_email(token):
         flash('The confirmation link is invalid or has expired.', category='error')
 
     return redirect(url_for('auth.login'))
+
+@auth.route('/reset', methods=["GET", "POST"])
+def reset():
+    form = EmailForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=form.email.data).first_or_404()
+
+        subject = "Password reset requested"
+
+        # use the URLSafeTimedSerializer created in `util.py` 
+        token = ts.dumps(user.email, salt='recover-key')
+
+        recover_url = url_for(
+            'auth.reset_with_token',
+            token=token,
+            _external=True)
+
+        html = render_template(
+            'email/recover.html',
+            recover_url=recover_url)
+
+        send_email(user.email, subject, html)
+
+        return redirect(url_for('auth.login'))
+    return render_template('reset.html', form=form, user=current_user)
+
+@auth.route('/reset/<token>', methods=["GET", "POST"])
+def reset_with_token(token):
+    try:
+        email = ts.loads(token, salt="recover-key", max_age=86400)
+    except:
+        abort(404)
+
+    form = PasswordForm()
+
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=email).first_or_404()
+
+        user.password = generate_password_hash(form.new_password.data, method='scrypt')
+        user.is_verified = True
+
+        db.session.add(user)
+        db.session.commit()
+
+        return redirect(url_for('auth.login'))
+
+    return render_template('reset_with_token.html', form=form, token=token, user=current_user)

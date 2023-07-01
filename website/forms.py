@@ -1,10 +1,10 @@
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, validators
+from wtforms.validators import DataRequired, Email, EqualTo
 
-from flask_wtf import Form
-from wtforms import StringField, PasswordField
-from wtforms.validators import DataRequired, Email
-
-class EmailForm(Form):
+class EmailForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
 
-class PasswordForm(Form):
-    password = PasswordField('Email', validators=[DataRequired()])
+class PasswordForm(FlaskForm):
+    new_password = PasswordField('New Password', validators=[DataRequired()])
+    confirm_password = PasswordField('Confirm New Password', validators=[DataRequired(), validators.EqualTo('new_password', message='Passwords must match')])
