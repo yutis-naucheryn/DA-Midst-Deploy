@@ -1,6 +1,5 @@
 from website import create_app
-import asyncio
-
+from flask_mail import Mail
 import sys, asyncio
 
 # to solve ValueError: set_wakeup_fd only works in main thread
@@ -9,6 +8,17 @@ if sys.platform == "win32" and (3, 8, 0) <= sys.version_info < (3, 9, 0):
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
 app = create_app()
+
+# Email configuration
+app.config['MAIL_SERVER'] = 'smtp.elasticemail.com'
+app.config['MAIL_PORT'] = 2525
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = 'csning.528@gmail.com'
+app.config['MAIL_PASSWORD'] = '7E3E11AF5EAA1CE56691C433950697D689B1'
+app.config['MAIL_DEFAULT_SENDER'] = 'csning.528@gmail.com'
+app.config['MAIL_DEBUG'] = True
+
+mail = Mail(app)
 
 @app.before_first_request
 def start_event_loop():

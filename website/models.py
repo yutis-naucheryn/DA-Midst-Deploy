@@ -21,6 +21,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(150), unique=True)  #invalid for user to have same email with another user
     password = db.Column(db.String(150))
     user_name = db.Column(db.String(150))
+    is_verified = db.Column(db.Boolean, default=False)
     notes = db.relationship('Note')     #use the name of the target class when doing relationship
 
 class SentimentResult(db.Model):

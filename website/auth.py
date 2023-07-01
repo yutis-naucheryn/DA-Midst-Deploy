@@ -1,10 +1,14 @@
-from flask import Blueprint, render_template, request, flash, redirect, url_for
+from flask import Blueprint, render_template, request, flash, redirect, url_for, abort
 from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash
-from . import db
+from . import db, create_app
 from flask_login import login_user, login_required, logout_user, current_user
 from email_validator import validate_email, EmailNotValidError
 import re
+
+from .forms import EmailForm, PasswordForm
+from .util import send_email
+from .utils.security import ts
 
 auth = Blueprint('auth', __name__)
 
@@ -16,12 +20,15 @@ def login():
 
         user = User.query.filter_by(email=email).first()
         if user:
-            if check_password_hash(user.password, password):
-                flash('Logged in successfully!', category='success')
-                login_user(user, remember=True)
-                return redirect(url_for('views.home'))
+            if user.is_verified:
+                if check_password_hash(user.password, password):
+                    flash('Logged in successfully!', category='success')
+                    login_user(user, remember=True)
+                    return redirect(url_for('views.home'))
+                else:
+                    flash('Incorrect password, try again.', category='error')
             else:
-                flash('Incorrect password, try again.', category='error')
+                flash('Email not verified. Please check your email to verify your account.', category='error')
         else:
             flash('Email does not exist.', category='error')
 
@@ -51,14 +58,6 @@ def register():
             flash('Email is too short.', category='error')
         elif not re.match(email_pattern, email):
             flash('Invalid email address.', category='error')
-        # elif re.match(email_pattern, email):
-        #     try:
-        #         valid = validate_email(email) # validate and get info
-        #         email = valid.email # replace with normalized form
-        #         print(email)
-        #     except EmailNotValidError as e:
-        #         # email is not valid, exception message is human-readable
-        #         flash('Invalid email address.', category='error')
         elif len(user_name) < 2:
             flash('Your name must be greater than 1 character.', category='error')
         elif password1 != password2:
@@ -66,14 +65,45 @@ def register():
         elif len(password1) <7:
             flash('Password must be at lest 7 characters.', category='error')
         else:
-            new_user = User(email=email, user_name=user_name, password=generate_password_hash(password1, method='sha256'))
+            new_user = User(email=email, user_name=user_name, password=generate_password_hash(password1, method='scrypt'))
             db.session.add(new_user)
             db.session.commit()
-            login_user(new_user, remember=True)
-            flash('Account created!', category='success')
+
+            # login_user(new_user, remember=True) # to authenticate user
+            # flash('Account created!', category='success')
+
+            # Generate verification token
+            token = ts.dumps(email, salt='email-confirm-key')
+
+            # Send verification email
+            # Now we'll send the email confirmation link
+            subject = "Confirm your email"
+            confirm_url = url_for('auth.confirm_email', token=token, _external=True)
+            html = render_template('email/activate.html', confirm_url=confirm_url)
+            
+            # We'll assume that send_email has been defined in myapp/util.py
+            send_email(email, subject, html)
+
+            flash('Account created! Please check your email to confirm your email address.', category='success')
             return redirect(url_for('views.home'))
 
             # add user to database
 
     return render_template("register.html", user=current_user)
 
+@auth.route('/confirm/<token>')
+def confirm_email(token):
+    try:
+        email = ts.loads(token, salt="email-confirm-key", max_age=86400)    # Token expiration time: 1 day
+        user = User.query.filter_by(email=email).first()
+        if user:
+            user.is_verified = True
+            db.session.commit()
+            flash('Email confirmed! You can now log in.', category='success')
+        else:
+            flash('Invalid token.', category='error')
+    except:
+        # abort(404)
+        flash('The confirmation link is invalid or has expired.', category='error')
+
+    return redirect(url_for('auth.login'))
