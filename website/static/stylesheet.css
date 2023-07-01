@@ -1,10 +1,13 @@
 body {
     background-color: white;
   }
-
+  
   .popup-info {
     position: relative; /* Set position of link to relative */
     text-decoration: none; /* Remove default underline */
+    line-height: 1;
+    font-size: 12px;
+    text-align: right;
   }
   
   .popup-info::before {
@@ -51,4 +54,60 @@ body {
   
   .popup-link:hover::before {
     opacity: 1;
+  }
+
+  .info-icon {
+    font-size: 16px;
+    color: #404040;
+  }
+  
+  .color-button {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .color-button:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Button colors */
+  .green {
+    background-color: #C7EDCC;
+  }
+  
+  .yellow {
+    background-color: #FAF9DE;
+  }
+  
+  .orange {
+    background-color: #FFF2E2;
+  }
+  
+  .red {
+    background-color: #FDE6E0;
+  }
+  
+  .blue {
+    background-color: #DCE2F1;
+  }
+  
+  .purple {
+    background-color: #E9EBFE;
+  }
+  
+  .grey {
+    background-color: #EAEAEF;
+  }
+  
+  .green-light {
+    background-color: #E3EDCD;
+  }
+  
+  .white {
+    background-color: #FFFFFF;
   }

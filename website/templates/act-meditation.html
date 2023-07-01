@@ -11,27 +11,18 @@
 
 <br />
 <h1 align="center">Activity</h1>
-<p style="line-height: 1; font-size: 12px; text-align: right;" class="popup-info">
-  <span style="font-size: 16px;">🛈</span>
-  <button onclick="changeColor_green()" 
-  style="color: #C7EDCC; background-color: #C7EDCC; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
-  <button onclick="changeColor_yellow()" 
-  style="color: #FAF9DE; background-color: #FAF9DE; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
-  <button onclick="changeColor_orange()" 
-  style="color: #FFF2E2; background-color: #FFF2E2; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
-  <button onclick="changeColor_red()" 
-  style="color: #FDE6E0; background-color: #FDE6E0; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
-  <button onclick="changeColor_blue()" 
-  style="color: #DCE2F1; background-color: #DCE2F1; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
-  <button onclick="changeColor_purple()" 
-  style="color: #E9EBFE; background-color: #E9EBFE; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
-  <button onclick="changeColor_grey()" 
-  style="color: #EAEAEF; background-color: #EAEAEF; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
-  <button onclick="changeColor_greenLight()" 
-  style="color: #E3EDCD; background-color: #E3EDCD; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
-  <button onclick="changeColor_white()" 
-  style="color: #FFFFFF; background-color: #FFFFFF; border: 0.5; border-color: rgb(230, 230, 230);">&#9632;</button>
-</p>
+<p class="popup-info">
+    <button onclick="changeColor_green()" class="color-button green"></button>
+    <button onclick="changeColor_yellow()" class="color-button yellow"></button>
+    <button onclick="changeColor_orange()" class="color-button orange"></button>
+    <button onclick="changeColor_red()" class="color-button red"></button>
+    <button onclick="changeColor_blue()" class="color-button blue"></button>
+    <button onclick="changeColor_purple()" class="color-button purple"></button>
+    <button onclick="changeColor_grey()" class="color-button grey"></button>
+    <button onclick="changeColor_greenLight()" class="color-button green-light"></button>
+    <button onclick="changeColor_white()" class="color-button white"></button>
+    <span class="info-icon">🛈</span>
+  </p>  
 
 <div style="display: flex; flex-direction: row;">
     <img src="{{ url_for('static', filename='/image/meditation.png') }}" 

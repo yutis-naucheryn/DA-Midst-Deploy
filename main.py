@@ -13,9 +13,9 @@ app = create_app()
 app.config['MAIL_SERVER'] = 'smtp.elasticemail.com'
 app.config['MAIL_PORT'] = 2525
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'csning.528@gmail.com'
-app.config['MAIL_PASSWORD'] = '7E3E11AF5EAA1CE56691C433950697D689B1'
-app.config['MAIL_DEFAULT_SENDER'] = 'csning.528@gmail.com'
+app.config['MAIL_USERNAME'] = 'damidst.uum@gmail.com'
+app.config['MAIL_PASSWORD'] = '569601D3F9850E76961282CA8A5EE01AA40F'
+app.config['MAIL_DEFAULT_SENDER'] = 'damidst.uum@gmail.com'
 app.config['MAIL_DEBUG'] = True
 
 mail = Mail(app)

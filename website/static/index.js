@@ -67,38 +67,100 @@ function all_journal(){
   window.location.href = "/all-journal";
 }
 
+// Retrieve the color from localStorage on page load
+window.addEventListener("DOMContentLoaded", function() {
+  var storedColor = localStorage.getItem("backgroundColor");
+  if (storedColor) {
+    document.body.style.backgroundColor = storedColor;
+  }
+});
+
 function changeColor_green() {
-  document.body.style.backgroundColor = "#C7EDCC"; // set new background color
+  var color = "#C7EDCC"; // set new background color
+
+  // Store the color in localStorage
+  localStorage.setItem("backgroundColor", color);
+
+  // Change the background color
+  document.body.style.backgroundColor = color;
 }
 
 function changeColor_yellow() {
-  document.body.style.backgroundColor = "#FAF9DE"; // set new background color
+  var color = "#FAF9DE"; // set new background color
+
+  // Store the color in localStorage
+  localStorage.setItem("backgroundColor", color);
+
+  // Change the background color
+  document.body.style.backgroundColor = color;
 }
 
 function changeColor_orange() {
-  document.body.style.backgroundColor = "#FFF2E2"; // set new background color
+  var color = "#FFF2E2"; // set new background color
+
+  // Store the color in localStorage
+  localStorage.setItem("backgroundColor", color);
+
+  // Change the background color
+  document.body.style.backgroundColor = color;
 }
 
 function changeColor_red() {
-  document.body.style.backgroundColor = "#FDE6E0"; // set new background color
+  var color = "#FDE6E0"; // set new background color
+
+  // Store the color in localStorage
+  localStorage.setItem("backgroundColor", color);
+
+  // Change the background color
+  document.body.style.backgroundColor = color;
 }
 
 function changeColor_blue() {
-  document.body.style.backgroundColor = "#DCE2F1"; // set new background color
+  var color = "#DCE2F1"; // set new background color
+
+  // Store the color in localStorage
+  localStorage.setItem("backgroundColor", color);
+
+  // Change the background color
+  document.body.style.backgroundColor = color;
 }
 
 function changeColor_purple() {
-  document.body.style.backgroundColor = "#E9EBFE"; // set new background color
+  var color = "#E9EBFE"; // set new background color
+
+  // Store the color in localStorage
+  localStorage.setItem("backgroundColor", color);
+
+  // Change the background color
+  document.body.style.backgroundColor = color;
 }
 
 function changeColor_grey() {
-  document.body.style.backgroundColor = "#EAEAEF"; // set new background color
+  var color = "#EAEAEF"; // set new background color
+
+  // Store the color in localStorage
+  localStorage.setItem("backgroundColor", color);
+
+  // Change the background color
+  document.body.style.backgroundColor = color;
 }
 
 function changeColor_greenLight() {
-  document.body.style.backgroundColor = "#FAF9DE"; // set new background color
+  var color = "#FAF9DE"; // set new background color
+
+  // Store the color in localStorage
+  localStorage.setItem("backgroundColor", color);
+
+  // Change the background color
+  document.body.style.backgroundColor = color;
 }
 
 function changeColor_white() {
-  document.body.style.backgroundColor = "#FFFFFF"; // set new background color
+  var color = "#FFFFFF"; // set new background color
+
+  // Store the color in localStorage
+  localStorage.setItem("backgroundColor", color);
+
+  // Change the background color
+  document.body.style.backgroundColor = color;
 }
