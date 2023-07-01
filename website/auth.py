@@ -110,7 +110,11 @@ def confirm_email(token):
 def reset():
     form = EmailForm()
     if form.validate_on_submit():
-        user = User.query.filter_by(email=form.email.data).first_or_404()
+        user = User.query.filter_by(email=form.email.data).first()
+
+        if user is None:
+            flash('Invalid email address. Please check your email address and try again.', 'error')
+            return render_template('reset.html', form=form, user=current_user)
 
         subject = "Password reset requested"
 
@@ -128,7 +132,7 @@ def reset():
 
         send_email(user.email, subject, html)
 
-        return redirect(url_for('auth.login'))
+        return redirect(url_for('auth.reset_requested'))
     return render_template('reset.html', form=form, user=current_user)
 
 @auth.route('/reset/<token>', methods=["GET", "POST"])
@@ -149,6 +153,12 @@ def reset_with_token(token):
         db.session.add(user)
         db.session.commit()
 
+        flash('Your password has been successfully reset. You can now log in using your new password.', 'success')
         return redirect(url_for('auth.login'))
 
     return render_template('reset_with_token.html', form=form, token=token, user=current_user)
+
+@auth.route('/reset_requested', methods=['GET', 'POST'])
+def reset_requested():
+
+    return render_template("reset_requested.html", user=current_user)
