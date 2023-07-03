@@ -22,69 +22,6 @@
         padding: 5px;
         }
     </style>
-      <script>
-        function calculateDASS21Score() {
-          // Get the selected option values from the select elements
-          var item1 = parseInt(document.getElementById("dass-q1").value);
-          var item2 = parseInt(document.getElementById("dass-q2").value);
-          var item3 = parseInt(document.getElementById("dass-q3").value);
-          var item4 = parseInt(document.getElementById("dass-q4").value);
-          var item5 = parseInt(document.getElementById("dass-q5").value);
-          var item6 = parseInt(document.getElementById("dass-q6").value);
-          var item7 = parseInt(document.getElementById("dass-q7").value);
-          var item8 = parseInt(document.getElementById("dass-q8").value);
-          var item9 = parseInt(document.getElementById("dass-q9").value);
-          var item10 = parseInt(document.getElementById("dass-q10").value);
-          var item11 = parseInt(document.getElementById("dass-q11").value);
-          var item12 = parseInt(document.getElementById("dass-q12").value);
-          var item13 = parseInt(document.getElementById("dass-q13").value);
-          var item14 = parseInt(document.getElementById("dass-q14").value);
-          var item15 = parseInt(document.getElementById("dass-q15").value);
-          var item16 = parseInt(document.getElementById("dass-q16").value);
-          var item17 = parseInt(document.getElementById("dass-q17").value);
-          var item18 = parseInt(document.getElementById("dass-q18").value);
-          var item19 = parseInt(document.getElementById("dass-q19").value);
-          var item20 = parseInt(document.getElementById("dass-q20").value);
-          var item21 = parseInt(document.getElementById("dass-q21").value);
-          
-          // Calculate the subscale scores
-          // Based on https://www.healthfocuspsychology.com.au/tools/dass-21/ 
-          var depressionScore = (item3 + item5 + item10 + item13 + item16 + item17 + item21);
-          var anxietyScore = (item2 + item4 + item7 + item9 + item15 + item19 + item20);
-          var stressScore = (item1 + item6 + item8 + item11 + item12 + item14 + item18);
-
-          // Another way
-        //   var depressionScore = (item3 + item5 + item10 + item13 + item16 + item17 + item21) * 2;
-        //   var anxietyScore = (item2 + item4 + item7 + item9 + item15 + item19 + item20) * 2;
-        //   var stressScore = (item1 + item6 + item8 + item11 + item12 + item14 + item18) * 2;
-          
-          // Calculate the total score
-          var totalScore = depressionScore + anxietyScore + stressScore;
-          
-          // Display the results
-          alert("Your DASS-21 score is:\n\nDepression: " + depressionScore + "\nAnxiety: " + anxietyScore + "\nStress: " + stressScore + "\n\nTotal: " + totalScore);
-          
-          // create a JSON object with the calculated scores
-          var data = {
-              'depressionScore': depressionScore,
-              'anxietyScore': anxietyScore,
-              'stressScore': stressScore
-          };
-          // make an AJAX request to save the scores to the database
-          var xhr = new XMLHttpRequest();
-          xhr.open('POST', '/moodtrack/dass-21/submit', true);
-          xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-          xhr.onload = function() {
-              if (xhr.status === 200) {
-                  console.log('DASS-21 scores saved to database');
-              } else {
-                  console.log('Error saving DASS-21 scores to database');
-              }
-          };
-          xhr.send(JSON.stringify(data));
-        
-        }
-      </script>
   </head>
 
 <br />
@@ -343,8 +280,7 @@
 <br />
 <!-- Display latest score -->
 <h5>Latest DASS-21 score: </h5>
-<p>If you just submitted a new survey, please refresh to view the newest score.
-  To view all score history, please click 'Previous scores' button above.</p>
+<p>To view all score history, please click 'Previous scores' button above.</p>
 <table style="margin: 0 auto;">
   <thead>
     <tr>
@@ -366,8 +302,7 @@
 {% else %}
 <br /><br />
 <h5>Latest DASS-21 score:</h5>
-<p>There are no latest scores to display. 
-  If you have recently submitted a survey, please refresh the page to view the newest score.</p>
+<p>There are no latest scores to display. </p>
 
 {% endif %}
 <br /><br />
@@ -437,6 +372,70 @@
   <br />
   <br />
   <br />
-  
+
+  <script>
+    function calculateDASS21Score() {
+      // Get the selected option values from the select elements
+      var item1 = parseInt(document.getElementById("dass-q1").value);
+      var item2 = parseInt(document.getElementById("dass-q2").value);
+      var item3 = parseInt(document.getElementById("dass-q3").value);
+      var item4 = parseInt(document.getElementById("dass-q4").value);
+      var item5 = parseInt(document.getElementById("dass-q5").value);
+      var item6 = parseInt(document.getElementById("dass-q6").value);
+      var item7 = parseInt(document.getElementById("dass-q7").value);
+      var item8 = parseInt(document.getElementById("dass-q8").value);
+      var item9 = parseInt(document.getElementById("dass-q9").value);
+      var item10 = parseInt(document.getElementById("dass-q10").value);
+      var item11 = parseInt(document.getElementById("dass-q11").value);
+      var item12 = parseInt(document.getElementById("dass-q12").value);
+      var item13 = parseInt(document.getElementById("dass-q13").value);
+      var item14 = parseInt(document.getElementById("dass-q14").value);
+      var item15 = parseInt(document.getElementById("dass-q15").value);
+      var item16 = parseInt(document.getElementById("dass-q16").value);
+      var item17 = parseInt(document.getElementById("dass-q17").value);
+      var item18 = parseInt(document.getElementById("dass-q18").value);
+      var item19 = parseInt(document.getElementById("dass-q19").value);
+      var item20 = parseInt(document.getElementById("dass-q20").value);
+      var item21 = parseInt(document.getElementById("dass-q21").value);
+      
+      // Calculate the subscale scores
+      // Based on https://www.healthfocuspsychology.com.au/tools/dass-21/ 
+      var depressionScore = (item3 + item5 + item10 + item13 + item16 + item17 + item21);
+      var anxietyScore = (item2 + item4 + item7 + item9 + item15 + item19 + item20);
+      var stressScore = (item1 + item6 + item8 + item11 + item12 + item14 + item18);
+
+      // Another way
+    //   var depressionScore = (item3 + item5 + item10 + item13 + item16 + item17 + item21) * 2;
+    //   var anxietyScore = (item2 + item4 + item7 + item9 + item15 + item19 + item20) * 2;
+    //   var stressScore = (item1 + item6 + item8 + item11 + item12 + item14 + item18) * 2;
+      
+      // Calculate the total score
+      var totalScore = depressionScore + anxietyScore + stressScore;
+      
+      // Display the results
+      confirm("Your DASS-21 score is:\n\nDepression: " + depressionScore + "\nAnxiety: " + anxietyScore + "\nStress: " + stressScore + "\n\nTotal: " + totalScore);
+      
+      // create a JSON object with the calculated scores
+      var data = {
+          'depressionScore': depressionScore,
+          'anxietyScore': anxietyScore,
+          'stressScore': stressScore
+      };
+      // make an AJAX request to save the scores to the database
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', '/moodtrack/dass-21/submit', true);
+      xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+      xhr.onload = function() {
+          if (xhr.status === 200) {
+              console.log('DASS-21 scores saved to database');
+              location.reload(); // Refresh the page
+          } else {
+              console.log('Error saving DASS-21 scores to database');
+          }
+      };
+      xhr.send(JSON.stringify(data));
+    
+    }
+  </script>
 
 {% endblock %}
