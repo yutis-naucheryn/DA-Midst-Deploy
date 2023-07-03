@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}Forgot Password{% endblock %}
+
+{% block content %}
+
+<!doctype html>
+<html>
+  <head>
+<style>
+  .ttt-button {
+    width: 60px;
+    height: 60px;
+    font-size: 18px;
+    background-color: #ffffff;
+    border: 2px solid #535353;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .ttt-button:hover {
+        color: #efffda; /* Reduce the brightness on hover */
+        transform: scale(1.01);
+  }
+
+  .ttt-button:disabled {
+    background-color: #eeeeee;
+    cursor: not-allowed;
+  }
+</style>
+
+    <br />
+    <h1 align="center">Tic Tac Toe</h1>
+    <p class="popup-info">
+      <button onclick="changeColor_green()" class="color-button green"></button>
+      <button onclick="changeColor_yellow()" class="color-button yellow"></button>
+      <button onclick="changeColor_orange()" class="color-button orange"></button>
+      <button onclick="changeColor_red()" class="color-button red"></button>
+      <button onclick="changeColor_blue()" class="color-button blue"></button>
+      <button onclick="changeColor_purple()" class="color-button purple"></button>
+      <button onclick="changeColor_grey()" class="color-button grey"></button>
+      <button onclick="changeColor_greenLight()" class="color-button green-light"></button>
+      <button onclick="changeColor_white()" class="color-button white"></button>
+      <span class="info-icon">🛈</span>
+    </p>  
+  </head>
+  <body>
+<div class="container">
+<div class="card mt-5">
+<div class="card-body">
+    <h2>{{msg}}</h2>
+    <p>{{ user.user_name }}'s turn.</p>
+    <br>
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <form action="" method="POST">
+      <table>
+        {% for j in range(2, -1, -1) %}
+        <tr>
+          {% for i in range(0, 3) %}
+          <td>
+            <button type="submit" name="choice" value="{{j*3+i+1}}"
+             {{"disabled" if ttt.spot_string(i, j)!="_"}} class="ttt-button">
+              {{ttt.spot_string(i, j)}}
+            </button>
+          </td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </table>
+      <br>
+    <button type="submit" class="btn btn-outline-dark" name="reset" style="float: center; margin-left: 45px;">Start Over</button>
+    </form>
+    <p style="text-align: center; margin-top: 20px;">Clicks here to restart the game! </p>
+    </div>
+    
+</div>
+</div>
+</div>
+  </body>
+</html>
+
+{% endblock %}

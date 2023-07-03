@@ -67,6 +67,11 @@ function all_journal(){
   window.location.href = "/all-journal";
 }
 
+function tic_tac_toe(){
+
+  window.location.href = "/game/tic-tac-toe";
+}
+
 // Retrieve the color from localStorage on page load
 window.addEventListener("DOMContentLoaded", function() {
   var storedColor = localStorage.getItem("backgroundColor");

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Forgot Password{% endblock %}
+
+{% block content %}
+
+<style>
+    .btn-img:hover {
+        filter: brightness(80%); /* Reduce the brightness on hover */
+        transform: scale(1.05);
+      }
+  </style>
+  
+  <br />
+  <h1 align="center">Game</h1>
+  <p class="popup-info">
+    <button onclick="changeColor_green()" class="color-button green"></button>
+    <button onclick="changeColor_yellow()" class="color-button yellow"></button>
+    <button onclick="changeColor_orange()" class="color-button orange"></button>
+    <button onclick="changeColor_red()" class="color-button red"></button>
+    <button onclick="changeColor_blue()" class="color-button blue"></button>
+    <button onclick="changeColor_purple()" class="color-button purple"></button>
+    <button onclick="changeColor_grey()" class="color-button grey"></button>
+    <button onclick="changeColor_greenLight()" class="color-button green-light"></button>
+    <button onclick="changeColor_white()" class="color-button white"></button>
+    <span class="info-icon">🛈</span>
+  </p>  
+
+<!-- Navigation words -->
+<h3>Welcome to the Mini Game Zone!</h3>
+
+
+
+<br /><br />
+<div style="display: flex; flex-direction: row;">
+<!-- Tic Tac Toe image button -->
+<div style="display: flex; flex-direction: column;">
+    <a href="/game/tic-tac-toe">
+      <img src="{{ url_for('static', filename='/image/tic-tac-toe.png') }}" alt="Tic Tac Toe" 
+      style="width:350px; height:350px;" class="btn-img">
+    </a>
+  </div>
+  <p style="text-align: justify; flex: 1; margin-left: 2cm;">
+    Take a break from the daily grind and indulge in our collection of stress-relieving mini games. 
+    Start with a classic game of Tic Tac Toe and challenge yourself against our AI opponent. 
+    Stay tuned as we add more exciting games to keep you entertained and relaxed.
+    <br />
+    <br />
+<!-- go to tic tac toe -->
+<button type="button" class="btn btn-outline-success" onclick="tic_tac_toe()" style="float: right; margin-left: 10px;">Try Now</button>
+</p>
+</div>
+{% endblock %}
