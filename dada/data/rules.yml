@@ -182,6 +182,11 @@ rules:
   - intent: tired
   - action: utter_tired
 
+- rule: User is bored
+  steps:
+  - intent: bored
+  - action: utter_bored
+
 - rule: Thank you
   steps:
   - intent: thank_you

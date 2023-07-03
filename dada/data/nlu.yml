@@ -400,6 +400,20 @@ nlu:
     - I'm in desperate need of a nap.
     - I'm so worn down.
     - I feel like I could sleep for days.
+- intent: bored
+  examples: |
+    - I am boring
+    - I am bored 
+    - I'm so bored right now, I need something to do.
+    - There's nothing interesting happening, I'm really bored.
+    - I'm feeling bored and restless, I need some excitement.
+    - I have nothing to do and it's making me bored.
+    - I'm finding everything so dull, I wish I had something to occupy my time.
+    - I'm bored out of my mind, I need something fun to do.
+    - I'm feeling really uninterested and bored with everything around me.
+    - I'm looking for something engaging to do, I'm feeling bored.
+    - I'm lacking stimulation and feeling bored, I need a change.
+    - I'm stuck in this boredom, I'm craving some entertainment.
 - intent: curious_about_bot
   examples: |
     - what can you understand?

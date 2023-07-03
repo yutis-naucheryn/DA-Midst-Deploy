@@ -40,6 +40,7 @@ intents:
 - '*'
 - tired
 - curious_about_bot
+- bored
 entities:
 - place
 slots:
@@ -214,12 +215,19 @@ responses:
   - text: When you're feeling tired, it's crucial to listen to your body's needs and make time for rest and relaxation.
   - text: Feeling exhausted is a signal that it's time to recharge. Consider taking short breaks throughout the day to rest and rejuvenate.
   - text: Remember, it's okay to feel tired. Take care of yourself by getting enough sleep and engaging in activities that help you relax and unwind.
+  utter_bored:
+  - text: I hear you. Boredom can be frustrating. How about exploring a new hobby or activity? It could be a great way to discover something interesting and pass the time.
+  - text: I understand the feeling of boredom. Have you considered trying out a new book, movie, or TV series? Entertainment can be a good way to engage your mind and find enjoyment.
+  - text: Boredom can be an opportunity for creativity. Why not try something artistic, like painting, writing, or playing a musical instrument? It could be a fun way to express yourself and find inspiration.
+  - text: When boredom strikes, it can be helpful to connect with others. Reach out to friends or family, or join online communities with shared interests. Engaging in conversations or activities together can alleviate boredom.
+  - text: Boredom often stems from routine. Break the monotony by taking a walk in nature, trying a new workout, or exploring your surroundings. Fresh experiences can bring a sense of excitement and alleviate boredom.
   utter_understanding:
   - text: I'm here to provide support and help you manage stress. I can understand and respond to various topics related to stress, such as discussing your feelings, suggesting stress management techniques, offering resources for support, providing advice on self-care, and guiding you through relaxation exercises. Feel free to share your thoughts and concerns with me, and I'll do my best to assist you on your journey to stress management.
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 actions:
+- utter_bored
 - utter_understanding
 - utter_tired
 - utter_listen
