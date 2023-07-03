@@ -177,7 +177,17 @@ rules:
   - intent: sleeping_trouble
   - action: utter_sleeping_trouble
 
+- rule: User is tired
+  steps:
+  - intent: tired
+  - action: utter_tired
+
 - rule: Thank you
   steps:
   - intent: thank_you
   - action: utter_helping
+
+- rule: Curious
+  steps:
+  - intent: curious_about_bot
+  - action: utter_understanding

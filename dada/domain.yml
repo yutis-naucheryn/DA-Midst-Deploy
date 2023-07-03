@@ -38,6 +38,8 @@ intents:
 - where_i_live
 - worrying
 - '*'
+- tired
+- curious_about_bot
 entities:
 - place
 slots:
@@ -51,51 +53,66 @@ slots:
 responses:
   utter_greet:
   - text: Hey! How do you feel today?
-    buttons:
-    - title: I am great today
-      payload: /mood_positive
-    - title: I don't know
-      payload: /mood_neutral
-    - title: Not so good
-      payload: /mood_negative
+  - text: Hello! I'm here to help you manage your stress. How are you feeling today?
+  - text: Welcome! I'm here to support you in your journey towards stress management. How can I assist you today?
+  - text: i there! Let's work together to find effective ways to reduce your stress. How can I be of help?
+  - text: Greetings! Take a deep breath and let's explore techniques and strategies to better cope with stress. What can I do for you today?
+  - text: Hello! I'm here to provide guidance and resources for stress management. How are you doing? Let's find ways to make it better.
   utter_to_help:
   - text: I want you to know that there is help available and you don't have to go through this alone. Can I help you find some resources?
-    buttons:
-    - title: Financial advice
-      payload: /problem_financial
-    - title: Assignments handling advice
-      payload: /problem_assignment
-    - title: Stress relieving activities recommendation
-      payload: /ask_for_stress_handling_advice
-    - title: Just listen to me
-      payload: /ask_for_listening
-    - title: No thanks
-      payload: /refuse_help
+  - text: Absolutely! I'm here to support you. Let's find some resources together to help you through this challenging time.
+  - text: You're not alone in this. I'm here to assist you in finding the right resources that can provide the help you need.
+  - text: I'm glad you reached out. It's important to remember that support is available. Let's work together to locate some helpful resources.
+  - text: Acknowledging that you need help is a courageous step. I'm here to assist you in finding the resources that can provide the support you're looking for.
+  - text: You're not alone on this journey. I'm here to help you connect with the resources that can offer the assistance you deserve.
   utter_suggest_activity:
   - text: Exercising, listening to music, spending time in nature... There are many activities that can help you to handle your stress. You can also try to write some journal in your personal space! :D
+  - text: Engaging in creative activities like painting, drawing, or playing a musical instrument can also be a great way to reduce stress. Why not give it a try?
+  - text: Mindfulness and meditation practices can be effective stress-relievers. Consider incorporating them into your routine for a calmer state of mind.
+  - text: Taking a break from screens and engaging in a hobby such as gardening, cooking, or knitting can provide a much-needed distraction and relaxation.
+  - text: Have you ever tried deep breathing exercises or yoga? These activities can help you relax, relieve tension, and promote a sense of well-being.
+  - text: Reading a good book or watching a favorite movie can transport you to another world and help you unwind. It's a simple yet effective way to manage stress.
   utter_listen:
   - text: I'm here for you and I'm listening. Take your time and share whatever you feel comfortable sharing. I'm here to support you.
+  - text: I'm here to lend an ear and provide a safe space for you to express yourself. Take your time, and whenever you're ready, I'm here to listen.
+  - text: You don't have to face this alone. I'm here to listen and offer support. Whenever you're ready to share, I'm here to listen with an open mind and heart.
+  - text: Remember that your thoughts and feelings matter. I'm here to listen without judgment and provide a compassionate ear. Take your time and share at your own pace.
+  - text: I'm here to provide a listening ear and support you through whatever you're going through. Whenever you're ready, know that I'm here to listen and help in any way I can.
+  - text: You're not alone, and I'm here to listen attentively. Take your time, and when you're ready, feel free to share. I'm here to provide support and understanding.
   utter_done_listen:
   - text: I appreciate you sharing with me. Is there anything else I can do to support you right now?
-    buttons:
-    - title: Financial advice
-      payload: /problem_financial
-    - title: Assignments handling advice
-      payload: /problem_assignment
-    - title: Stress relieving activities recommendation
-      payload: /ask_for_stress_handling_advice
-    - title: Just listen
-      payload: /ask_for_listening
-    - title: Nothing
-      payload: /refuse_help
+  - text: Thank you for opening up. If there's anything else on your mind or any specific way I can assist you further, please let me know.
+  - text: I'm grateful that you trusted me enough to share. If there's anything else you'd like to discuss or any specific support you need, feel free to let me know.
+  - text: Thank you for confiding in me. If there's anything else you'd like to talk about or any additional support you require, please don't hesitate to reach out.
+  - text: I appreciate you sharing your thoughts and feelings. If there's anything else I can do to be of assistance or if there's any other topic you'd like to discuss, I'm here for you.
+  - text: Your openness is appreciated. If there's anything else you'd like to address or any specific guidance or resources you're seeking, feel free to let me know, and I'll do my best to assist you.
   utter_stress_avoid_advice:
   - text: To reduce stress, prioritize self-care, manage your workload and time effectively, set boundaries, take care of your physical health, stay connected with others, and practice stress-reduction techniques.
+  - text: In addition to the suggestions mentioned, consider incorporating relaxation techniques like deep breathing exercises or mindfulness meditation into your daily routine to further reduce stress.
+  - text: Remember to engage in activities that bring you joy and relaxation, such as hobbies, listening to music, or practicing yoga. These can help alleviate stress and improve your overall well-being.
+  - text: Don't underestimate the power of a good night's sleep. Prioritize getting enough restful sleep as it plays a vital role in managing stress levels and maintaining mental clarity.
+  - text: Avoid excessive caffeine and alcohol consumption, as they can amplify feelings of stress and anxiety. Opt for healthier alternatives like herbal tea or infused water to stay hydrated and calm.
+  - text: Consider seeking professional help if stress becomes overwhelming or persists over time. A therapist or counselor can provide valuable guidance and support tailored to your specific needs.
   utter_calming_advice:
   - text: You can try taking a few deep breaths, focusing on inhaling and exhaling slowly and deeply to help calm your nerves.
+  - text: One effective technique is progressive muscle relaxation. Start by tensing and then slowly releasing each muscle group in your body, promoting relaxation and easing tension.
+  - text: Engaging in gentle physical activity, such as going for a walk or doing some light stretching, can help release endorphins and promote a sense of calmness.
+  - text: Consider practicing mindfulness by bringing your attention to the present moment without judgment. This can help you stay grounded and reduce anxiety.
+  - text: Listening to calming music or nature sounds can have a soothing effect on your mind and body, helping to alleviate stress and promote relaxation.
+  - text: Creating a calming environment by dimming the lights, lighting scented candles, or using essential oils known for their relaxation properties, such as lavender or chamomile, can help create a serene atmosphere.
   utter_emotional_venting_support:
   - text: It depends on your personal preferences and relationships, but you could try reaching out to a trusted friend, family member, therapist, support group, or religious or spiritual advisor to listen to you vent your emotions.
+  - text: Consider journaling as a way to vent your emotions. Writing down your thoughts and feelings can provideEngaging in creative activities like painting, drawing, or playing an instrument can also serve as a form of emotional venting. Expressing yourself through art can be a powerful outlet.
+  - text: If you prefer a more private approach, talking to yourself or recording your thoughts in a voice memo can be a way to vent your emotions without external judgment or interruption.
+  - text: Exploring online communities or forums dedicated to emotional support can provide a safe space to vent and connect with others who may be going through similar experiences.
+  - text: If you find solace in nature, spending time outdoors, whether it's going for a walk in a park or sitting by a lake, can create a calming environment for you to release and process your emotions.
   utter_respond_to_worry:
   - text: Worrying won't change the situation, so it's important to focus on what you can control and take action where possible.
+  - text: Try to identify the specific aspects of the situation that you have control over. By focusing on those areas, you can take constructive steps to address them and alleviate your worry.
+  - text: Practice mindfulness to bring your attention to the present moment. This can help you let go of excessive worrying about the future and instead focus on what you can do right now.
+  - text: Engage in problem-solving techniques. Break down the situation into manageable tasks and create a plan of action. Taking proactive steps can help alleviate worry and create a sense of empowerment.
+  - text: Cultivate self-care practices to promote emotional well-being. Prioritizing activities that help you relax and recharge can enhance your resilience and reduce the impact of worry on your overall state of mind.
+  - text: Reach out for support. Share your worries with a trusted friend, family member, or therapist. Sometimes, talking about your concerns can provide perspective, reassurance, and new insights.
   utter_cheer_up:
   - text: 'Here is something to cheer you up:'
     image: https://i.imgur.com/nGF1K8f.jpg
@@ -110,18 +127,38 @@ responses:
   utter_goodbye:
   - text: Goodbye! I'm here if you need me again.
   utter_iamabot:
-  - text: I am a bot, powered by Rasa.
+  - text: I am chatbot DaDa, powered by Rasa.
   utter_talk_about_it:
   - text: Can we grab some coffee and talk about it?
+  - text: I understand that you're feeling sad, and I'm here to support you. While grabbing coffee might not be possible, I'm here to listen and talk about what's troubling you. How can I help?
+  - text: I'm sorry to hear that you're feeling sad. Although we can't physically grab coffee, I'm here to lend an ear and provide a safe space for you to talk about what's on your mind. Please feel free to share.
+  - text: I'm sorry that you're feeling down. While we can't meet for coffee, I'm here to listen and offer support. Feel free to express your thoughts and emotions, and I'll do my best to assist you.
+  - text: I understand that you're feeling sad right now. Even though we can't have a coffee chat in person, I'm here to have a conversation and provide comfort. Please let me know what you'd like to talk about.
+  - text: I'm sorry to hear that you're sad. While we can't meet for coffee, I'm here to provide a listening ear and support you through this difficult time. Feel free to share what's on your mind, and together we'll navigate through it.
   utter_danger:
   - text: Your life is valuable and important. Let's find a way to get you the help you need to feel better.
   - text: It's understandable that you're feeling overwhelmed, but suicide is not the answer. Let's work together to find a way to get you the help you need.
   utter_too_many_assignments_advice:
   - text: I'm sorry to hear that you have too many assignments. It can be overwhelming, but remember to prioritize your tasks and break them down into manageable pieces. You might also consider talking to your teacher or professor about your workload and asking for an extension or extra help if needed.
+  - text: When you have too many assignments, it can help to create a schedule or to-do list to organize your tasks. Break them down into smaller, manageable chunks and prioritize them based on deadlines and importance.
+  - text: Consider seeking support from classmates or forming study groups. Collaborating with others can help you share the workload and gain different perspectives on the assignments.
+  - text: Take breaks and practice self-care to avoid burnout. Engage in activities that help you relax and recharge, such as taking short walks, practicing mindfulness, or listening to calming music.
+  - text: If you find yourself consistently overwhelmed with assignments, consider talking to your academic advisor or counselor for guidance. They can provide strategies for managing your workload and explore options for additional support.
+  - text: Remember to communicate with your teachers or professors. If you're struggling to meet deadlines, explain your situation and inquire about any available extensions or accommodations that can help alleviate the pressure.
   utter_financial_issues_advice:
   - text: I'm sorry to hear that you're dealing with financial issues. It can be stressful, but there are resources available to help. You might look into financial aid programs or scholarships, or consider talking to a financial advisor or counselor for guidance.
+  - text: Start by assessing your expenses and creating a budget. Look for areas where you can reduce spending or find alternative, cost-effective solutions.
+  - text: Research available financial assistance programs, grants, or scholarships that may be applicable to your situation. Many organizations and institutions offer support to individuals facing financial difficulties.
+  - text: Consider reaching out to a financial advisor or counselor who can provide personalized advice and guidance based on your specific circumstances.
+  - text: Explore part-time job opportunities or freelance work that can help improve your financial situation. Additionally, consider seeking advice from career services at your educational institution or local employment centers.
+  - text: Remember that there are community resources and organizations that can provide assistance with financial issues. Reach out to local charities or nonprofits that offer financial support or counseling services.
   utter_difficulties_to_do_presentation_advice:
   - text: It sounds like you're having difficulties with your presentation. Remember to practice ahead of time and familiarize yourself with the material. You might also consider asking a friend or classmate for feedback or seeking help from your teacher or professor. Don't be afraid to take a break and come back to it later if you're feeling overwhelmed.
+  - text: Break down your presentation into smaller sections and practice each part individually. This will help you build confidence and familiarity with the material.
+  - text: Consider using visual aids such as slides or props to enhance your presentation and engage your audience. Visuals can make complex information more understandable and memorable.
+  - text: Practice in front of a mirror or record yourself to identify areas where you can improve. Pay attention to your body language, tone of voice, and overall delivery.
+  - text: Seek feedback from trusted friends, classmates, or your instructor. They can provide constructive criticism and suggestions for improvement.
+  - text: If you're feeling overwhelmed, take a break and come back to your presentation with a fresh perspective. Sometimes, taking a step back can help you approach the task more effectively and confidently.
   utter_continue:
   - text: I just want to make sure that we've covered everything you wanted to talk about. If there's anything else on your mind, I'm here to listen.
   utter_end_conversation:
@@ -135,11 +172,8 @@ responses:
   utter_report_bullying:
   - text: |
       I'm sorry to hear that you are being bullied. Bullying can be really tough to deal with. It takes a lot of courage to speak up about it. Let's talk about what you can do to get help and protect yourself.
-
       You can try talking to a trusted adult, like a teacher or counselor, about what's happening. They can help you come up with a plan to deal with the situation. It's important to remember that you are not alone and that there are people who care about you and want to help.
-
       If you don't feel comfortable talking to someone at school, there are other resources you can turn to. The National Bullying Prevention Center has a lot of great information and resources for people who are dealing with bullying. Here's a link to their website: https://www.pacer.org/bullying/
-
       Remember, it's never okay for someone to bully you or make you feel unsafe. You have the right to feel safe and respected at all times.
   utter_please_rephrase:
   - text: I'm sorry, I didn't quite understand that. Could you rephrase?
@@ -174,10 +208,20 @@ responses:
   utter_sleeping_trouble:
   - text: That sounds frustrating. Have you tried establishing a regular sleep schedule, or creating a relaxing bedtime routine? I can also offer some additional tips for improving your sleep hygiene, such as avoiding screens before bedtime and limiting caffeine intake.
   - text: Getting enough sleep is important for your overall health and well-being. Have you tried establishing a bedtime routine or creating a calming sleep environment? I can offer some additional tips for improving your sleep, if you're interested.
+  utter_tired:
+  - text: I understand, feeling tired can be tough. It's important to prioritize self-care and get some rest when you can.
+  - text: Tiredness is a common sign of stress. Taking breaks and practicing relaxation techniques can help recharge your energy.
+  - text: When you're feeling tired, it's crucial to listen to your body's needs and make time for rest and relaxation.
+  - text: Feeling exhausted is a signal that it's time to recharge. Consider taking short breaks throughout the day to rest and rejuvenate.
+  - text: Remember, it's okay to feel tired. Take care of yourself by getting enough sleep and engaging in activities that help you relax and unwind.
+  utter_understanding:
+  - text: I'm here to provide support and help you manage stress. I can understand and respond to various topics related to stress, such as discussing your feelings, suggesting stress management techniques, offering resources for support, providing advice on self-care, and guiding you through relaxation exercises. Feel free to share your thoughts and concerns with me, and I'll do my best to assist you on your journey to stress management.
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 actions:
+- utter_understanding
+- utter_tired
 - utter_listen
 - utter_end_conversation
 - utter_done_listen

@@ -18,7 +18,7 @@ action_endpoint = EndpointConfig(url="http://localhost:5055/webhook")
 
 # Load the Rasa agent
 #agent = Agent.load(r'C:\Users\Hp\Documents\da-midst\current_directory\models\20230413-230954-dry-font.tar', action_endpoint=action_endpoint)
-agent = Agent.load('./dada/models/20230413-230954-dry-font.tar', action_endpoint=action_endpoint)
+agent = Agent.load('./dada/models/20230703-210258-bare-mastic.tar', action_endpoint=action_endpoint)
 
 @views.route('/', methods=['GET', 'POST']) 
 def welcome():

@@ -137,6 +137,16 @@ nlu:
     - I can't take it anymore
     - I cant take it anymore
     - I wanna die
+    - I don't see a way out of this
+    - Everything seems hopeless
+    - I'm tired of living
+    - I can't bear the pain anymore
+    - I wish I could disappear
+    - Life feels unbearable
+    - I'm overwhelmed and see no way to escape
+    - I'm at my breaking point
+    - The world would be better off without me
+    - I just want the pain to end
 - intent: mood_helpless
   examples: |
     - What can I do?
@@ -155,6 +165,16 @@ nlu:
   examples: |
     - Will worrying about it cause anything to change?
     - Is there any point in worrying about something that's out of my control?
+    - I can't stop thinking about what might go wrong.
+    - I'm really concerned about the outcome of this situation.
+    - I have a lot of worries and uncertainties running through my mind.
+    - I feel so anxious and on edge about what might happen.
+    - I'm finding it hard to relax because I'm constantly worrying.
+    - I can't shake off this feeling of unease and concern.
+    - I'm overwhelmed with worry and it's consuming my thoughts.
+    - I keep replaying worst-case scenarios in my head, and it's making me anxious.
+    - I feel a knot in my stomach because I can't stop worrying about this.
+    - I'm losing sleep because my mind is filled with worries.
 - intent: problem_assignment
   examples: |
     - I feel like I'm falling behind on my coursework, and it's causing me a lot of stress and anxiety
@@ -172,6 +192,16 @@ nlu:
     - I'm having trouble paying my bills this month
     - I'm really struggling to make ends meet right now
     - im poor
+    - I'm really struggling to make ends meet right now.
+    - I'm worried about how I'm going to pay my bills and expenses.
+    - I feel overwhelmed by my financial situation.
+    - I'm having a hard time managing my finances and it's causing a lot of stress.
+    - I'm finding it difficult to keep up with my debts and financial obligations.
+    - I'm feeling the financial pressure and it's affecting my daily life.
+    - I'm concerned about my financial future and how to improve my situation.
+    - I'm constantly worried about money and it's taking a toll on my well-being.
+    - I feel trapped by my financial struggles and don't know how to break free.
+    - I'm feeling the weight of financial stress and it's becoming too much to handle.
 - intent: problem_presentation
   examples: |
     - I'm really nervous about giving this presentation
@@ -210,6 +240,16 @@ nlu:
     - who can I rely on to listen to me vent my emotions?
     - Is there anyone I can talk to when I need to vent my feelings?
     - Who would be a safe and supportive person for me to talk to when I need to release my emotions?
+    - I just need someone to talk to and vent about what I'm going through.
+    - I feel like I'm carrying a heavy emotional burden, and I need someone who can listen without judgment.
+    - I'm feeling overwhelmed with emotions, and I need to let it all out.
+    - I'm going through a tough time, and I could really use someone to lend an ear and offer support.
+    - I'm feeling upset/frustrated/angry, and I need to express my feelings in a safe space.
+    - I have a lot on my mind, and I need someone who can listen and understand what I'm going through.
+    - I'm feeling emotionally drained, and I could use someone who can provide a supportive presence.
+    - I need to unload my feelings and thoughts to someone who can provide a compassionate ear.
+    - I'm struggling with my emotions, and I'm looking for someone who can offer a listening and empathetic ear.
+    - I'm looking for someone who can provide a non-judgmental space for me to vent and release my emotions.
 - intent: ask_for_listening
   examples: |
     - Listen to me
@@ -217,10 +257,30 @@ nlu:
     - can you listen to me?
     - I need you to listen to me
     - please listen to me
+    - Can I have your ear for a moment? I really need someone to listen to me.
+    - I'm going through a tough time, and I could use a listening ear. Would you be able to lend me your time?
+    - I'm feeling overwhelmed, and I just need someone who can listen and understand.
+    - I have a lot on my mind, and it would mean a lot if you could listen and offer support.
+    - I'm struggling with some things, and it would help me immensely if you could listen and provide a safe space.
+    - Could you spare a moment to listen? I could really use someone who can offer a compassionate ear right now.
+    - I'm feeling lost and in need of someone who can listen and provide guidance.
+    - I feel like I'm drowning in my thoughts, and having someone to listen would be a tremendous help.
+    - I'm dealing with a lot emotionally, and having someone who can simply listen would be a great comfort.
+    - If you could just lend an ear, I would appreciate having someone to talk to right now.
 - intent: ask_for_stress_avoidence
   examples: |
     - How can I avoid stress?
     - Is there any way to avoid stress?
+    - What can I do to prevent stress?
+    - Are there any strategies to avoid getting stressed?
+    - Is there a way to minimize or sidestep stress?
+    - How can I steer clear of stress?
+    - Are there any techniques to keep stress at bay?
+    - Is there a way to proactively manage and prevent stress?
+    - What steps can I take to reduce the likelihood of experiencing stress?
+    - Are there any preventive measures I can implement to avoid stress?
+    - How can I create a stress-free environment or lifestyle?
+    - Are there any practices or habits that can help me stay stress-free?
 - intent: finish_talking
   examples: |
     - Thank you for listening to me
@@ -241,6 +301,16 @@ nlu:
   examples: |
     - Can you suggest some music for me to listen to?
     - I need some help finding music to relax to
+    - Can you recommend some music that is soothing and calming?
+    - I'm looking for music suggestions to help me unwind and relax. Any recommendations?
+    - Do you have any favorite relaxing music that you could share with me?
+    - I'm in need of some peaceful and tranquil music. Any ideas?
+    - Could you suggest some melodic tunes that can help me de-stress?
+    - I'm searching for music that can create a calming atmosphere. Any suggestions?
+    - Can you point me towards some soothing tracks or genres that promote relaxation?
+    - I'm interested in finding music that can help me achieve a state of deep relaxation. Any recommendations?
+    - I'm trying to create a playlist for relaxation purposes. Any suggestions for tracks or artists?
+    - Do you have any go-to songs or playlists that you find particularly calming and relaxing?
 - intent: report_bullying
   examples: |
     - Someone is bullying me
@@ -261,14 +331,44 @@ nlu:
   examples: |
     - I'm having trouble keeping up with my coursework
     - I have a lot of assignments due this week and I don't know how to manage my time.
+    - I'm feeling overwhelmed with my coursework and struggling to stay on top of it.
+    - I have a heavy workload and it's becoming difficult to manage all my assignments.
+    - I'm finding it challenging to keep up with the coursework and stay organized.
+    - I feel like I'm falling behind on my assignments, and I'm not sure how to catch up.
+    - I'm feeling stressed because I have a lot of coursework to complete in a short amount of time.
+    - I'm struggling to balance my time between different assignments and courses.
+    - I feel overwhelmed by the number of tasks and deadlines I have to juggle.
+    - I'm feeling the pressure of upcoming assignments and deadlines, and I need help with time management.
+    - I'm finding it hard to prioritize my coursework and allocate enough time to each task.
+    - I could use some guidance on how to effectively manage my time and stay on track with my coursework.
 - intent: time_management_tips
   examples: |
     - Can you provide me some tips on time management?
     - How can I manage my time?
+    - Do you have any advice on effective time management?
+    - Can you share some tips for better time management?
+    - How can I improve my time management skills?
+    - Do you have any strategies for managing time more efficiently?
+    - Can you provide guidance on organizing and prioritizing my tasks effectively?
+    - What are some techniques for managing my time more effectively?
+    - Can you suggest ways to balance my time between work, studies, and personal life?
+    - How can I make the most of my time and avoid procrastination?
+    - Do you have any recommendations for creating a time management routine?
+    - Can you provide me with some time management tools or resources?
 - intent: self_care
   examples: |
     - I feel really burnt out lately
     - I've been feeling really stressed and overwhelmed lately
+    - Lately, I've been experiencing a high level of burnout and exhaustion.
+    - I've been feeling completely drained and overwhelmed recently.
+    - The stress has been taking a toll on me, and I'm feeling burnt out.
+    - I'm finding it hard to cope with the overwhelming feelings of stress and exhaustion.
+    - I've been struggling to manage my stress, and it's starting to feel overwhelming.
+    - I'm feeling emotionally and physically exhausted due to the ongoing stress.
+    - The constant pressure has left me feeling burnt out and drained.
+    - I'm at a point where the stress is becoming too much to handle, and I'm feeling overwhelmed.
+    - The combination of stress and fatigue has left me feeling burnt out and in need of some relief.
+    - I'm reaching a breaking point with the stress and overwhelm, and I'm not sure how to bounce back.
 - intent: self_care_tips
   examples: |
     - Can you provide me some tips on self care?
@@ -285,11 +385,64 @@ nlu:
   examples: |
     - I'm having trouble sleeping at night
     - I have trouble falling asleep at night and then feel tired during the day
+    - I can't sleep
+    - I don't know how to sleep
+- intent: tired
+  examples: |
+    - I am so tired
+    - I feel exhausted.
+    - I'm so tired.
+    - I could really use some rest.
+    - I'm feeling drained and worn out.
+    - I'm running on fumes.
+    - I'm completely wiped out.
+    - I'm feeling fatigued and lacking energy.
+    - I'm in desperate need of a nap.
+    - I'm so worn down.
+    - I feel like I could sleep for days.
+- intent: curious_about_bot
+  examples: |
+    - what can you understand?
+    - what do you know?
+    - what can you help?
 - intent: thank_you
   examples: |
     - thanks
     - thank you
     - thank you very much
+    - you helped a lot thank you
+    - appreciate your help
+    - cheers
+    - thank you
+    - thanks
+    - thanks a lot
+    - terrific thank you
+    - great thank you
+    - thanks so much
+    - thank you so much
+    - thanks for your help
+    - thank you for your help
+    - nice thank you
+    - I appreciate it
+    - I thank you
+    - thank you that will be all
+    - thanks buddy
+    - thanks love
+    - thank you my friend
+    - well thanks
+    - very good thank you
+    - good thanks
+    - thanks again
+    - thank you again
+    - all thank you
+    - alright thank you
+    - alright thanks
+    - no thank you that's all
+    - perfect thank you
+    - so nice of you
+    - well thank you
+    - thnx
+    - thanx
 - synonym: difficulties to do presentation
   examples: |
     - nervous about giving this presentation
