@@ -7,4 +7,4 @@ class EmailForm(FlaskForm):
 
 class PasswordForm(FlaskForm):
     new_password = PasswordField('New Password', validators=[DataRequired()])
-    confirm_password = PasswordField('Confirm New Password', validators=[DataRequired(), validators.EqualTo('new_password', message='Passwords must match')])
+    confirm_password = PasswordField('Confirm New Password', validators=[DataRequired(), validators.EqualTo('new_password', message='Passwords not match. Please try again.')])
