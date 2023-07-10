@@ -82,8 +82,8 @@ def register():
             
             send_email(email, subject, html)
 
-            flash('Account created! Please check your email to confirm your email address.', category='success')
-            return redirect(url_for('views.home'))
+            #flash('Account created! Please check your email to confirm your email address.', category='success')
+            return redirect(url_for('auth.confirmation'))
 
             # add user to database
 
@@ -162,3 +162,8 @@ def reset_with_token(token):
 def reset_requested():
 
     return render_template("reset_requested.html", user=current_user)
+
+@auth.route('/confirmation', methods=['GET', 'POST'])
+def confirmation():
+
+    return render_template("confirmation.html", user=current_user)
