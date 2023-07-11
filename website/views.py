@@ -256,6 +256,12 @@ def activity_music():
     
     return render_template("act-music.html", user=current_user) 
 
+@views.route('/activity/music/random-music', methods=['GET', 'POST'])
+@login_required
+def activity_music_random():
+    
+    return render_template("act-musicrandom.html", user=current_user) 
+
 @views.route('/activity/sing', methods=['GET', 'POST'])
 @login_required
 def activity_sing():

@@ -1,0 +1,455 @@
+{% extends "base.html" %} {% block title %}Music{% endblock %}
+
+{% block content %}
+<style>
+    /* Custom styles for specific pop-up links */
+    #popup-link-music::before {
+    content: "How it helps?";
+    }
+
+    .btn-img:hover {
+      filter: brightness(80%); /* Reduce the brightness on hover */
+    }
+</style>
+
+<script>
+    // Function to change the image
+    function changeImage(imageId, imagePath) {
+      var image = document.getElementById(imageId);
+      image.src = imagePath;
+    }
+  </script>
+
+<br />
+<h1 align="center">Activity</h1>
+<p class="popup-info">
+    <button onclick="changeColor_green()" class="color-button green"></button>
+    <button onclick="changeColor_yellow()" class="color-button yellow"></button>
+    <button onclick="changeColor_orange()" class="color-button orange"></button>
+    <button onclick="changeColor_red()" class="color-button red"></button>
+    <button onclick="changeColor_blue()" class="color-button blue"></button>
+    <button onclick="changeColor_purple()" class="color-button purple"></button>
+    <button onclick="changeColor_grey()" class="color-button grey"></button>
+    <button onclick="changeColor_greenLight()" class="color-button green-light"></button>
+    <button onclick="changeColor_white()" class="color-button white"></button>
+    <span class="info-icon">🛈</span>
+  </p>  
+
+<div style="display: flex; flex-direction: row;">
+    <a href="/activity/music">
+    <img src="{{ url_for('static', filename='/image/btn-music.png') }}" class="btn-img"
+        alt="number-two" style="width:1cm;height:1cm; margin-right: 20px; margin-top: 5px"></a>
+    <h2 style="margin-bottom: 15px;"><i><b>Random Music</b></i>&nbsp;</h2>
+    <p>
+        <a href="https://www.unr.edu/counseling/virtual-relaxation-room/releasing-stress-through-the-power-of-music" class="popup-link" id="popup-link-music" target="_blank">🛈</a>
+    </p>
+    </div>
+
+<p style="text-align: justify; flex: 1; font-size: 18px;">
+    Melodies unknown, an adventure unfolds, random music beckons, secrets waiting to be told.
+</p>
+
+<p style="text-align: justify; flex: 1; margin-top: 10px; margin-bottom: 1cm;">
+    Explore soothing melodies and click the any icons to discover random music for instant stress relief.
+</p>
+
+<p></p>
+<!-- first row -->
+<div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+<!-- Music 1 "Souvenir" by Franz Drdla - Violin and Piano -->
+<a href="https://youtu.be/-0FbRjJp5Og" target="_blank">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage1" onclick="changeImage('myImage1', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+  </a>
+<!-- Music 2 "Clair de Lune" by Claude Debussy - Violin and Piano -->
+<a href="https://youtu.be/hnevVcGiKvE" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage2" onclick="changeImage('myImage2', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+  </a>
+<!-- Music 3 "Canon in D" - Flute and Harp -->
+<a href="https://youtu.be/c7-NS3Xv3gw" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage3" onclick="changeImage('myImage3', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+  </a>
+<!-- Music 4 【指弹古筝】冠军小星星Like A Star - 极致泛音唯美旋律 -->
+<a href="https://youtu.be/ZLWQuYzE-PE" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage4" onclick="changeImage('myImage4', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+  </a>
+<!-- Music 5 Aimer「星の消えた夜に -rit. ver.-」MUSIC VIDEO -->
+<a href="https://youtu.be/ngrBbLTvjN4" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage5" onclick="changeImage('myImage5', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+  </a>
+<!-- Music 6 夜明けと蛍/n-buna(strings arrange ver covered byあれくん -->
+<a href="https://youtu.be/X97TUJ13-YM" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage6" onclick="changeImage('myImage6', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+  </a>
+<!-- Music 7 Christina Perri - A Thousand Years [Official Music Video] -->
+<a href="https://youtu.be/rtOvBOTyX00" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage7" onclick="changeImage('myImage7', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+  </a>
+<!-- Music 8 あのね。/あれくん &『ユイカ』【MV】 -->
+<a href="https://youtu.be/BHfL4ns7-CM" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage8" onclick="changeImage('myImage8', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+  </a>
+<!-- Music 9 Always with me (Spirited Away OST) いつも何度でも Itsumo Nando Demo Ocarina cover ♪ Anime Music, 3 Hours -->
+<a href="https://youtu.be/nINwOjDN4Ms" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage9" onclick="changeImage('myImage9', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+  </a>
+<!-- Music 10 Path of the Wind - My Neighbor Totoro [Piano Tutorial] (Synthesia) // Torby Brand -->
+<a href="https://youtu.be/asB23WeoyM0" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage10" onclick="changeImage('myImage10', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+  </a>
+<!-- Music 11 雨宿り - 猫かぶり【Official Music Video】#02 -->
+<a href="https://youtu.be/1Bp15UMElrA" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage11" onclick="changeImage('myImage11', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+  </a>
+<!-- Music 12  【#告白之夜/#告白の夜#TheReasonWhy】 -->
+<a href="https://youtu.be/qDvKVxFe7VA" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage12" onclick="changeImage('myImage12', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+  </a>
+<!-- Music 13 Camille et Julie Berthollet - Palladio -->
+<a href="https://youtu.be/pOdollDkFSs" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage13" onclick="changeImage('myImage13', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+  </a>
+<!-- Music 14 Camille & Julie Berthollet - Forrest Gump -->
+<a href="https://youtu.be/duSQ3b7y05w" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage14" onclick="changeImage('myImage14', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+  </a>
+<!-- Music 15 J.S. Bach, Prelude, Cello Solo Suite I BWV 1007 -->
+<a href="https://youtu.be/Enhbex3YovU" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage15" onclick="changeImage('myImage15', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+  </a>
+</div>
+
+<br />
+<!-- second row -->
+<div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+<!-- Music 1 Yo-Yo Ma, Kathryn Stott - The Swan (Saint-Saëns) -->
+<a href="https://youtu.be/3qrKjywjo7Q" target="_blank">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-b1" onclick="changeImage('myImage-b1', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 2 eill | フィナーレ。 (Official Music Video) -->
+<a href="https://youtu.be/1lYb9nLO_FY" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-b2" onclick="changeImage('myImage-b2', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 3 The Way I Still Love You - Reynard Silva【中英動態歌詞Lyrics】 -->
+<a href="https://youtu.be/o2gah6hYm7Y" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-b3" onclick="changeImage('myImage-b3', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 4 'Dream It Possible' Delacey -->
+<a href="https://youtu.be/nFneHDfiJN0" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-b4" onclick="changeImage('myImage-b4', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 5 [Genshin Impact 2 Year Anniversary Fansong] If you suddenly think of me 【如果突然想起我】 -->
+<a href="https://youtu.be/11R3H8kackA" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-b5" onclick="changeImage('myImage-b5', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 6 Mili - Ga1ahad and Scientific Witchery -->
+<a href="https://youtu.be/d-nxW9qBtxQ" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-b6" onclick="changeImage('myImage-b6', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 7 YOASOBI「群青」Official Music Video -->
+<a href="https://youtu.be/Y4nEEZwckuU" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-b7" onclick="changeImage('myImage-b7', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 8 ROSÉ - 'Gone' M/V -->
+<a href="https://youtu.be/K9_VFxzCuQ0" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-b8" onclick="changeImage('myImage-b8', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 9 BTS (방탄소년단) JUNGKOOK 'Still With You' MV -->
+<a href="https://youtu.be/x1tAVUAs4Kc" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-b9" onclick="changeImage('myImage-b9', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 10  Relaxing Music for Stress Relief. Calm Music for Meditation, Sleep, Relax #Relaxing -->
+<a href="https://youtu.be/PNiLq-cZUBU" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-b10" onclick="changeImage('myImage-b10', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 11 Beautiful Japanese Piano Music ~ Relaxing Music for Sleeping And Studying -->
+<a href="https://youtu.be/yoY81oAiwD0" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-b11" onclick="changeImage('myImage-b11', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 12 勉強 集中 音楽: 集中できる音楽、3分後勉強したい、記憶力アップ、仕事がデキない人、Playlist for study、All-nighters、Study Jolice BGM、AS22 -->
+<a href="https://youtu.be/REEr7EAl12k" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-b12" onclick="changeImage('myImage-b12', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 13 番茄時鐘(25+5)✍ | 高效率運用時間、療癒吉他音樂、自帶鈴聲提醒、專注讀書音樂、Pomodoro Timer⏲ -->
+<a href="https://youtu.be/viHMzgS4jnE" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-b13" onclick="changeImage('myImage-b13', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 14 [3h] Cute and Simple Piano Music Mix, 귀여운 음악, 플레이리스트 -->
+<a href="https://youtu.be/bRkIL13jVXU" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-b14" onclick="changeImage('myImage-b14', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 15 四神没有一摩拉！(Genshin original song) -->
+<a href="https://youtu.be/uf0yE2OV3ak" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-b15" onclick="changeImage('myImage-b15', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+</div>
+
+<br />
+<!-- third row -->
+<div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+<!-- Music 1 NO COPYRIGHT cute background music| Funny Cat by Sunha Lee -->
+<a href="https://youtu.be/BNm-VUj27gE" target="_blank">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-c1" onclick="changeImage('myImage-c1', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 2 かわいいしっぽ -->
+<a href="https://youtu.be/shd_yOhd6jU" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-c2" onclick="changeImage('myImage-c2', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 3 わんこのいたずら -->
+<a href="https://youtu.be/uH3ww7HAojA" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-c3" onclick="changeImage('myImage-c3', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 4 I Threw the Flower at the Cat -->
+<a href="https://youtu.be/1YBvasGqHo8" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-c4" onclick="changeImage('myImage-c4', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 5 [Playlist] 카페에서 듣기 좋은 잔잔한 팝송★彡 -->
+<a href="https://youtu.be/1IuAlqDG-D8" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-c5" onclick="changeImage('myImage-c5', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 6 [Playlist] work & study jazz - 집중할 때 듣기 좋은 재즈-->
+<a href="https://youtu.be/OzWnvdS0TMg" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-c6" onclick="changeImage('myImage-c6', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 7 Cozy music / 30minutes / study,work,relax,vlog / -->
+<a href="https://youtu.be/ENxmyBt6kyU" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-c7" onclick="changeImage('myImage-c7', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 8 Cute cat -->
+<a href="https://youtu.be/fDyzDWHqj0k" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-c8" onclick="changeImage('myImage-c8', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 9 sweet cafe ☕ (1 hour) : cute music -->
+<a href="https://youtu.be/K7nu8X34Hko" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-c9" onclick="changeImage('myImage-c9', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 10 Sanrio Background Music 1 HOUR w My Melody -->
+<a href="https://youtu.be/N4dkDCdH1kw" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-c10" onclick="changeImage('myImage-c10', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 11 Cuppy ~ Lofi Hip Hop Mix -->
+<a href="https://youtu.be/c0BqnltvL3c" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-c11" onclick="changeImage('myImage-c11', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 12 Lofi Bee ~ Lofi Hip Hop Mix -->
+<a href="https://youtu.be/RC5O-pCK_zQ" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-c12" onclick="changeImage('myImage-c12', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 13 (aesthetic music) relaxing music, music for chill, study, sleeping, vlogmusic -->
+<a href="https://youtu.be/Z9v9EgzZmMg" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-c13" onclick="changeImage('myImage-c13', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 14 [Aesthetic Music] 1hour of Aesthetic Music Study | No Copyright -->
+<a href="https://youtu.be/_XM2Y5aWikA" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-c14" onclick="changeImage('myImage-c14', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 15 [Aesthetic Music] 1hour of Aesthetic Music | No Copyright -->
+<a href="https://youtu.be/x7qlOTzmi58" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-c15" onclick="changeImage('myImage-c15', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+</div>
+
+<br />
+<!-- forth row -->
+<div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+<!-- Music 1 sincerely (Violet Evergarden but is it okay if it's lofi hiphop?) -->
+<a href="https://youtu.be/vd-RmMMl708" target="_blank">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-d1" onclick="changeImage('myImage-d1', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 2 La La Land - Mia and Sebastian’s Theme (Piano Version) -->
+<a href="https://youtu.be/5hwFiShs8cs" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-d2" onclick="changeImage('myImage-d2', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 3 your favorite anime but it's lofi -->
+<a href="https://youtu.be/IHxdByfPuLY" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-d3" onclick="changeImage('myImage-d3', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 4 your favorite anime but it's lofi 2 -->
+<a href="https://youtu.be/SETEBQH85TI" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-d4" onclick="changeImage('myImage-d4', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 5 「アイドル」idol by yoasobi but its lofi? - oshi no ko op 「アイドル」YOASOBI -->
+<a href="https://youtu.be/fB21NXYbv8s" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-d5" onclick="changeImage('myImage-d5', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 6 best anime openings but it's lofi remix part 2 extended edition (2 hours) -->
+<a href="https://youtu.be/DkPjOnUr4M4" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-d6" onclick="changeImage('myImage-d6', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 7 Memories ( One Piece Song ) but it's lofi || xdx prod -->
+<a href="https://youtu.be/-a3q-x6Wb-A" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-d7" onclick="changeImage('myImage-d7', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 8 (1Hour)[Music Box] Rui Theme - Demon Slayer: Kimetsu no Yaiba OST -->
+<a href="https://youtu.be/Nm7heFKHGkI" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-d8" onclick="changeImage('myImage-d8', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 9 (1Hour)[Music Box] All Endings - Bungou Stray Dogs -->
+<a href="https://youtu.be/exbidENnvR0" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-d9" onclick="changeImage('myImage-d9', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 10 Fukashigi no Carte—Bunny Girl Senpai Ending Theme Music Box Cover -->
+<a href="https://youtu.be/7eYcE4NcIGk" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-d10" onclick="changeImage('myImage-d10', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 11 Veil—Fire Force Ending—Music Box Cover -->
+<a href="https://youtu.be/nKThOKJVvVc" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-d11" onclick="changeImage('myImage-d11', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 12 [Music Box] Orange - Shigatsu wa Kimi no Uso(Your Lie in April) ED -->
+<a href="https://youtu.be/oyqwSbh7IwE" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-d12" onclick="changeImage('myImage-d12', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 13 best anime openings but it's lofi remix extended edition (2 hours) -->
+<a href="https://youtu.be/GNWLILeztaI" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-d13" onclick="changeImage('myImage-d13', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 14 River but is it okay if it's lofi? -->
+<a href="https://youtu.be/uk_wKYFLO0I" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-d14" onclick="changeImage('myImage-d14', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 15 Akuma no Ko but it's lofi -->
+<a href="https://youtu.be/h0S1Yzk1zDg" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-d15" onclick="changeImage('myImage-d15', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+</div>
+
+<br />
+<!-- fifth row -->
+<div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+<!-- Music 1 艾辰 - 戀愛啦「偷偷手一牽，怎麼就緊張紅了臉」動態歌詞版 -->
+<a href="https://youtu.be/h06MnR8whoY" target="_blank">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-e1" onclick="changeImage('myImage-e1', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 2 一首好聽的日文歌--ただ声一つ(ロクデナシ)【中日字幕】 -->
+<a href="https://youtu.be/qmR8b6iCwjw" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-e2" onclick="changeImage('myImage-e2', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 3 スパークル [original ver.] -Your name. Music Video edition- 予告編 from new album「人間開花」初回盤DVD -->
+<a href="https://youtu.be/a2GujJZfXpg" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-e3" onclick="changeImage('myImage-e3', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 4 RADWIMPS - 前前前世 (movie ver.) [Official Music Video] -->
+<a href="https://youtu.be/PDSkFeMVNFs" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-e4" onclick="changeImage('myImage-e4', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 5 RADWIMPS - 愛にできることはまだあるかい [Official Music Video]-->
+<a href="https://youtu.be/EQ94zflNqn4" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-e5" onclick="changeImage('myImage-e5', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 6 Song of Seventeen. -->
+<a href="https://youtu.be/TLvMXOEXi_k" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-e6" onclick="changeImage('myImage-e6', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 7 YOASOBI「海のまにまに」Official Music Video -->
+<a href="https://youtu.be/7G0ovtPqHnI" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-e7" onclick="changeImage('myImage-e7', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 8 あのね。/あれくん &『ユイカ』【MV】-->
+<a href="https://youtu.be/BHfL4ns7-CM" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-e8" onclick="changeImage('myImage-e8', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 9 【Original Genshin Fansong】让风告诉你 (Let the Wind Tell You) -->
+<a href="https://youtu.be/KrNUrgaOsCc" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-e9" onclick="changeImage('myImage-e9', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 10 【皎月云间之梦 Jade Moon Upon a Sea of Clouds】Disc 1 - 琉璃明月照海平 Glazed Moon Over the Tides｜原神-->
+<a href="https://youtu.be/t1O7LpOTBfM" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-e10" onclick="changeImage('myImage-e10', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 11 Cardamon's Mom ( Super Extended ) - Bee and Puppycat -->
+<a href="https://youtu.be/ofOq4mF9KP8" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-e11" onclick="changeImage('myImage-e11', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 12 Isabella's Lullaby (vocal and mandolin ver.) [extended] -->
+<a href="https://youtu.be/GCSqIJGQ4Ss" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-e12" onclick="changeImage('myImage-e12', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 13 Producing the Sounds of Liyue | Genshin Impact: Behind the Scenes -->
+<a href="https://youtu.be/pFrKZxStL_U" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-e13" onclick="changeImage('myImage-e13', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 14 Realm of Tranquil Eternity：Inazuma Live Symphony Performance | Genshin Impact -->
+<a href="https://youtu.be/97ErYJFflEY" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-e14" onclick="changeImage('myImage-e14', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+<!-- Music 15 Yo-Yo Ma, Kathryn Stott - Ave Maria (J.S. Bach/ Gounod) -->
+<a href="https://youtu.be/hyUhEjtlDLA" target="_blank" style="margin-left: 20px;">
+    <img src="{{ url_for('static', filename='/image/btn-question.png') }}" alt="Music"  class="btn-img"
+    style="width:50px; height:50px;" id="myImage-e15" onclick="changeImage('myImage-e15', '{{ url_for('static', filename='/image/btn-randommusic.png') }}')">
+    </a>
+</div>
+{% endblock %}
